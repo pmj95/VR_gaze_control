@@ -22,8 +22,8 @@ public class LaserInput : MonoBehaviour
     {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(transform.position, transform.forward, 100.0F);
-        Debug.Log("Pos" + transform.position);
-        Debug.Log("For" + transform.forward);
+        //Debug.Log("Pos" + transform.position);
+        //Debug.Log("For" + transform.forward);
 
         for (int i = 0; i < hits.Length; i++)
         {
@@ -36,9 +36,10 @@ public class LaserInput : MonoBehaviour
                 currObject = hit.collider.gameObject;
                 string name = currObject.name;
                 string tag = currObject.tag;
+                Debug.Log("Hallo " + name);
                 if (tag == "Button")
                 {
-                    Debug.Log("Hallo " + name);
+                    
                 }
             }
         }

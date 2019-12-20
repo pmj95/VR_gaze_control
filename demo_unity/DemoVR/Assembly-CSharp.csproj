@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\rocket\ViveGameController.cs" />
     <Compile Include="Assets\Scripts\LaserInput.cs" />
+    <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -277,6 +278,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.4.11f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="AsyncIO">
+      <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
+    </Reference>
+    <Reference Include="NetMQ">
+      <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
       <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
@@ -646,6 +653,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{DD572CF2-6F08-9C41-AD75-51AD53F9B145}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
       <Project>{7C1E46C1-CC9F-9C4B-1B8E-32C27F91DA48}</Project>
       <Name>SteamVR_Actions</Name>

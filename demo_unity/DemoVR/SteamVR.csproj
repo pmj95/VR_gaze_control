@@ -485,6 +485,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="AsyncIO">
+      <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
+    </Reference>
+    <Reference Include="NetMQ">
+      <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
+    </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
       <HintPath>C:/Users/ClemensMollik/Desktop/DHBW/Studienarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>

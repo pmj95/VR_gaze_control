@@ -251,3 +251,5 @@ C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\Dem
 C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\DemoVR\obj\Debug\SteamVR.csproj.CopyComplete
 C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\DemoVR\obj\Debug\SteamVR.dll
 C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\DemoVR\obj\Debug\SteamVR.pdb
+C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\DemoVR\Temp\bin\Debug\AsyncIO.dll
+C:\Users\ClemensMollik\Desktop\DHBW\Studienarbeit\VR_gaze_control\demo_unity\DemoVR\Temp\bin\Debug\NetMQ.dll
