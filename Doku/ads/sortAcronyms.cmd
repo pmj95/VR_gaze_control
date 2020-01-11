@@ -1,1 +1,0 @@
-sort ads/acronyms.tex > ads/sortedAcronyms.tex
