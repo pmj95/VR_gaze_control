@@ -4,44 +4,33 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 using Valve.VR.Extras;
+using System;
 
 public class LaserInput : MonoBehaviour
 {
-
-    public static GameObject currObject;
-    private int currID;
     // Start is called before the first frame update
     void Start()
     {
-        currObject = null;
-        currID = 0;
+        SteamVR_LaserPointer laserPointer = GameObject.FindObjectOfType<SteamVR_LaserPointer>();
+        laserPointer.PointerClick += SteamVR_LaserPointer_PointerClick;
+    }
+
+    private void SteamVR_LaserPointer_PointerClick(object sender, PointerEventArgs e)
+    {
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+        {
+            GameObject currObject = hit.collider.gameObject;
+
+            GeneralButton bc = currObject.GetComponent<GeneralButton>();
+            if (bc != null)
+            {
+                bc.DoAction();
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.forward, 100.0F);
-        //Debug.Log("Pos" + transform.position);
-        //Debug.Log("For" + transform.forward);
-
-        for (int i = 0; i < hits.Length; i++)
-        {
-            RaycastHit hit = hits[i];
-            int id = hit.collider.gameObject.GetInstanceID();
-
-            if (currID != id)
-            {
-                currID = id;
-                currObject = hit.collider.gameObject;
-                string name = currObject.name;
-                string tag = currObject.tag;
-                Debug.Log("Hallo " + name);
-                if (tag == "Button")
-                {
-                    
-                }
-            }
-        }
     }
 }

@@ -64,7 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\rocket\ViveGameController.cs" />
-    <Compile Include="Assets\Scripts\ColorMenu\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\ColorMenu\ButtonBlue.cs" />
+    <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
+    <Compile Include="Assets\Scripts\ColorMenu\ButtonRed.cs" />
+    <Compile Include="Assets\Scripts\ColorMenu\GeneralButton.cs" />
+    <Compile Include="Assets\Scripts\ColorMenu\Player.cs" />
     <Compile Include="Assets\Scripts\LaserInput.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <Reference Include="Unity.Timeline.Editor">
