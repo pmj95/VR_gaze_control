@@ -64,10 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\rocket\ViveGameController.cs" />
-<<<<<<< Updated upstream
-=======
     <Compile Include="Assets\Scripts\ColorMenu\ChangeColor.cs" />
->>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\LaserInput.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <Reference Include="Unity.Timeline.Editor">

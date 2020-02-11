@@ -10,7 +10,7 @@ public class ChangeColor : MonoBehaviour
 
     private Color[] colors = { Color.red, Color.white, Color.green, Color.yellow };
 
-    private const int fps = 90;
+    private const int fps = 1;
     private int frameCounter = 0;
     private int colorCounter = 0;
 
