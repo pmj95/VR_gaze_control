@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.demovr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\ClemensMollik\\Desktop\\DHBW\\Studienarbeit\\VR_gaze_control\\demo_unity\\DemoVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "E:\\Studiarbeit\\VR_gaze_control\\demo_unity\\DemoVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "DemoVR [Testing]"
