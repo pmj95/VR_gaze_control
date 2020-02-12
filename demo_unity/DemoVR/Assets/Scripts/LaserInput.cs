@@ -6,13 +6,29 @@ using Valve.VR.InteractionSystem;
 using Valve.VR.Extras;
 using System;
 
-public class LaserInput : MonoBehaviour
+public class LaserInput : BaseMono
 {
-    // Start is called before the first frame update
-    void Start()
+    public SteamVR_LaserPointer laserPointer;
+    
+    protected override void DoAwake()
     {
-        SteamVR_LaserPointer laserPointer = GameObject.FindObjectOfType<SteamVR_LaserPointer>();
-        laserPointer.PointerClick += SteamVR_LaserPointer_PointerClick;
+        this.laserPointer = GameObject.FindObjectOfType<SteamVR_LaserPointer>();
+        this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    protected override void DoDestroy()
+    {
+        this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    protected override void OnCalibrationStarted()
+    {
+        this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    protected override void OnCalibrationRoutineDone()
+    {
+        this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
     }
 
     private void SteamVR_LaserPointer_PointerClick(object sender, PointerEventArgs e)
@@ -27,10 +43,5 @@ public class LaserInput : MonoBehaviour
                 bc.DoAction();
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

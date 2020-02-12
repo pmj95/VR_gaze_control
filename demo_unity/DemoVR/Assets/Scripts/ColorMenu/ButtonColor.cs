@@ -1,15 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public abstract class ButtonColor : GeneralButton
+public class ButtonColor : GeneralButton
 {
+    public Color color;
     private GameObject[] walls;
     private Light light;
     private List<Renderer> renderers;
+    private bool calibrationRunning = false;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void OnCalibrationStarted()
+    {
+        this.calibrationRunning = true;
+    }
+
+    protected override void OnCalibrationRoutineDone()
+    {
+        this.calibrationRunning = false;
+    }
+
+    protected override void DoAwake()
     {
         walls = GameObject.FindGameObjectsWithTag("Wall");
         renderers = new List<Renderer>();
@@ -23,18 +35,17 @@ public abstract class ButtonColor : GeneralButton
         light = licht.GetComponent<Light>();
     }
 
-    void Update()
+    protected override void DoDestroy()
     {
-
+        // nothing to do
     }
 
     // Update is called once per frame
     public override void DoAction()
     {
-        Color color = this.GetColor();
-
-        this.changeWall(color);
-        this.changeLight(color);
+        var colors = this.GetComponent<Button>().colors;
+        colors.normalColor = this.color;
+        this.GetComponent<Button>().colors = colors;
     }
 
     void changeWall(Color color)
@@ -49,7 +60,4 @@ public abstract class ButtonColor : GeneralButton
     {
         light.color = color;
     }
-
-    public abstract Color GetColor();
-
 }

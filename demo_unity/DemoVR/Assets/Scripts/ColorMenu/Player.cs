@@ -3,17 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using PupilLabs;
 
-public class Player : MonoBehaviour
+public class Player : BaseMono
 {
-    private GazeController gazeController;
-    private GazeVisualizer gazeVisualizer;
+    public GazeController gazeController;
     public Transform gazeOrigin;
-    // Start is called before the first frame update
-    void Start()
+    public Light mainLight;
+    private Color mainLightColor;
+
+    protected override void DoAwake()
     {
-        gazeController = GameObject.FindObjectOfType<GazeController>();
-        gazeController.OnReceive3dGaze += GazeController_OnReceive3dGaze;
-        gazeVisualizer = GameObject.FindObjectOfType<GazeVisualizer>();
+        this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
+    }
+
+    protected override void DoDestroy()
+    {
+        this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
+    }
+
+    protected override void OnCalibrationStarted()
+    {
+        this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
+        this.mainLightColor = this.mainLight.color;
+        this.mainLight.color = Color.white;
+    }
+
+    protected override void OnCalibrationRoutineDone()
+    {
+        this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
+        this.mainLight.color = this.mainLightColor;
     }
 
     private void GazeController_OnReceive3dGaze(GazeData obj)
@@ -30,11 +47,5 @@ public class Player : MonoBehaviour
                 bc.DoAction();
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
