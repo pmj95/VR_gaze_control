@@ -8,6 +8,7 @@ TagManager:
   - Button
   - Wall
   - Light
+  - Instruction
   layers:
   - Default
   - TransparentFX
