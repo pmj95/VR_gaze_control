@@ -3,62 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using System.IO;
 
-public class GameLevel1
+public class GameLevel1 : BaseMono
 {
-    private static GameLevel1 instance;
     private Measurement measurement;
     private List<int> searchValues;
-    private Text instructionField;
+    public Text instructionField;
 
-    private GameLevel1()
+    private void resetGame()
     {
-        var gameObject = GameObject.FindGameObjectWithTag("Instruction");
-        this.instructionField = GameObject.FindGameObjectWithTag("Instruction").GetComponent<Text>();
+        this.searchValues.Clear();
         this.measurement = new Measurement();
-        this.searchValues = new List<int>();
-    }
 
-    public static GameLevel1 getInstance()
-    {
-        if (instance == null)
-        {
-            instance = new GameLevel1();
-        }
-
-        return instance;
-    }
-
-    public void startGame()
-    {
-        this.measurement.start();
-        
         for (int i = 1; i <= 16; i++)
         {
             this.searchValues.Add(i);
         }
 
         this.searchValues = this.searchValues.OrderBy(x => Random.value).ToList<int>();
-        this.setInstruction();
-    }
+        this.searchValues.RemoveRange(4, this.searchValues.Count - 4);
 
-    public void endGame()
-    {
-        this.measurement.stop();
-    }
-
-    public bool ButtonClicked(int number)
-    {
-        bool retVal = false;
-
-        if (this.searchValues.IndexOf(number) == 0)
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Level1Button"))
         {
-            this.searchValues.Remove(number);
-            this.setInstruction();
-            retVal = true;
+            ColorBlock colors = go.GetComponent<Button>().colors;
+            colors.normalColor = Color.white;
+            go.GetComponent<Button>().colors = colors;
         }
-
-        return retVal;
+        
     }
 
     private void setInstruction()
@@ -72,8 +44,69 @@ public class GameLevel1
         else
         {
             instruction = "Congratulations!";
+            this.endGame();
         }
 
         this.instructionField.text = instruction;
+    }
+
+    public void startGame()
+    {
+        this.resetGame();   
+        this.setInstruction();
+        this.measurement.start();
+    }
+
+    public void endGame()
+    {
+        this.measurement.stop();
+        string jsonstring = JsonUtility.ToJson(this.measurement, true);
+        string filename = System.DateTime.Now.ToFileTime().ToString() + ".json";
+        File.WriteAllText("Measurement\\" + filename, jsonstring);
+    }
+
+    public bool ButtonClicked(int number)
+    {
+        bool retVal;
+
+        if (this.searchValues.IndexOf(number) == 0)
+        {
+            this.measurement.addMeasurement(true);
+            this.searchValues.Remove(number);
+            this.setInstruction();
+            retVal = true;
+        }
+        else
+        {
+            this.measurement.addMeasurement(false);
+            retVal = false;
+        }
+
+        return retVal;
+    }
+
+    protected override void DoStart()
+    {
+        this.searchValues = new List<int>();
+    }
+
+    protected override void DoAwake()
+    {
+        // nothing todo
+    }
+
+    protected override void DoDestroy()
+    {
+        // nothing todo
+    }
+
+    protected override void OnCalibrationStarted()
+    {
+        // nothing todo
+    }
+
+    protected override void OnCalibrationRoutineDone()
+    {
+        // nothing todo
     }
 }

@@ -7,26 +7,27 @@ public abstract class BaseMono : MonoBehaviour
 {
     private CalibrationController calibrationController;
 
-    void Start()
+    private void Start()
     {
-        Debug.Log("Start");
+        this.DoStart();
     }
 
-    void Awake()
+    private void Awake()
     {
         this.calibrationController = GameObject.FindObjectOfType<CalibrationController>();
-        Debug.Log("Awake");
         calibrationController.OnCalibrationStarted += OnCalibrationStarted;
         calibrationController.OnCalibrationRoutineDone += OnCalibrationRoutineDone;
         this.DoAwake();
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         calibrationController.OnCalibrationStarted -= OnCalibrationStarted;
         calibrationController.OnCalibrationRoutineDone -= OnCalibrationRoutineDone;
         this.DoDestroy();
     }
+
+    protected abstract void DoStart();
 
     protected abstract void DoAwake();
 

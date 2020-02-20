@@ -1,16 +1,45 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
+[Serializable]
 public class Measurement
-{  
+{
+    public long startTime;
+    public long stopTime;
+    public List<long> timestamps;
+    public List<bool> successfull;
+
+    public Measurement()
+    {
+        this.timestamps = new List<long>();
+        this.successfull = new List<bool>();
+    }
+
     public void start()
     {
+        this.timestamps.Clear();
+        this.successfull.Clear();
+        this.startTime = this.getTimestamp();
+    }
 
+    public void addMeasurement(bool val)
+    {
+        this.timestamps.Add(this.getTimestamp());
+        this.successfull.Add(val);
     }
 
     public void stop()
     {
-        // Serialize Measurement
+        this.stopTime = this.getTimestamp();
+    }
+
+    private long getTimestamp()
+    {
+        DateTime time = DateTime.Now;
+        long timestamp = time.Hour * 60;
+        timestamp = (timestamp + time.Minute) * 60;
+        timestamp = (timestamp + time.Second) * 1000;
+        timestamp = timestamp + time.Millisecond;
+        return timestamp;
     }
 }

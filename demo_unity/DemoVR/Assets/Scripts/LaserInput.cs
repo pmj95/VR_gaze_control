@@ -9,7 +9,12 @@ using System;
 public class LaserInput : BaseMono
 {
     public SteamVR_LaserPointer laserPointer;
-    
+
+    protected override void DoStart()
+    {
+        // Nothing to do
+    }
+
     protected override void DoAwake()
     {
         this.laserPointer = GameObject.FindObjectOfType<SteamVR_LaserPointer>();
@@ -33,7 +38,7 @@ public class LaserInput : BaseMono
 
     private void SteamVR_LaserPointer_PointerClick(object sender, PointerEventArgs e)
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+        /*if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
         {
             GameObject currObject = hit.collider.gameObject;
 
@@ -42,6 +47,6 @@ public class LaserInput : BaseMono
             {
                 bc.DoAction();
             }
-        }
+        }*/
     }
 }
