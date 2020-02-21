@@ -11,14 +11,18 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-<<<<<<< Updated upstream
-\contentsline {lstlisting}{\numberline {3.1}Einbinden von Code aus externer Datei mit Angabe eines Zeilenbereichs}{7}{lstlisting.3.1}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {3.2}Dies ist ein Listing}{9}{lstlisting.3.2}
-=======
-\contentsline {lstlisting}{\numberline {3.1}Einbinden von Code aus externer Datei mit Angabe eines Zeilenbereichs}{8}{lstlisting.3.1}%
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {3.2}Dies ist ein Listing}{10}{lstlisting.3.2}%
->>>>>>> Stashed changes
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {8.1}Einbinden von Code aus externer Datei mit Angabe eines Zeilenbereichs}{16}{lstlisting.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {lstlisting}{\numberline {8.2}Dies ist ein Listing}{18}{lstlisting.8.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
