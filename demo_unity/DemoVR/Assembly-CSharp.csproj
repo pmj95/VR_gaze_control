@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Level1\GameLevel1.cs" />
     <Compile Include="Assets\Scripts\Level1\Measurement.cs" />
     <Compile Include="Assets\Scripts\Level1\PlayerLevel1.cs" />
+    <Compile Include="Assets\Scripts\TriggerState.cs" />
     <Compile Include="Assets\rocket\ViveGameController.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\AutoSave\ReadMe.txt" />

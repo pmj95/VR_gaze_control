@@ -8,13 +8,14 @@ using System.IO;
 public class GameLevel1 : BaseMono
 {
     private Measurement measurement;
+    private bool isplaying = false;
     private List<int> searchValues;
     public Text instructionField;
 
     private void resetGame()
     {
         this.searchValues.Clear();
-        this.measurement = new Measurement();
+        this.measurement = new Measurement(StateTrigger.currentState);
 
         for (int i = 1; i <= 16; i++)
         {
@@ -54,15 +55,20 @@ public class GameLevel1 : BaseMono
     {
         this.resetGame();   
         this.setInstruction();
+        this.isplaying = true;
         this.measurement.start();
     }
 
     public void endGame()
     {
-        this.measurement.stop();
-        string jsonstring = JsonUtility.ToJson(this.measurement, true);
-        string filename = System.DateTime.Now.ToFileTime().ToString() + ".json";
-        File.WriteAllText("Measurement\\" + filename, jsonstring);
+        if (this.isplaying)
+        {
+            this.isplaying = false;
+            this.measurement.stop();
+            string jsonstring = JsonUtility.ToJson(this.measurement, true);
+            string filename = System.DateTime.Now.ToFileTime().ToString() + ".json";
+            File.WriteAllText("Measurement\\" + filename, jsonstring);
+        }
     }
 
     public bool ButtonClicked(int number)
@@ -87,7 +93,18 @@ public class GameLevel1 : BaseMono
 
     protected override void DoStart()
     {
+        StateTrigger.PropertyChanged += StateTrigger_PropertyChanged;
         this.searchValues = new List<int>();
+    }
+
+    private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        if (isplaying)
+        {
+            this.resetGame();
+            this.instructionField.text = "Canceled Game! Trigger changed";
+            this.isplaying = false;
+        }
     }
 
     protected override void DoAwake()

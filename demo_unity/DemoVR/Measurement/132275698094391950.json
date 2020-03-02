@@ -1,0 +1,16 @@
+{
+    "startTime": 79002000,
+    "stopTime": 79009439,
+    "timestamps": [
+        79004680,
+        79006306,
+        79008099,
+        79009439
+    ],
+    "successfull": [
+        true,
+        true,
+        true,
+        true
+    ]
+}

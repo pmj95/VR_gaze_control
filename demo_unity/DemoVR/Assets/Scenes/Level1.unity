@@ -7083,6 +7083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gazeOrigin: {fileID: 1912739688}
+  laserEyeTrackingSlider: {fileID: 99674728}
+  triggerBlinkDetectionSlider: {fileID: 2063271402}
   laserPointer: {fileID: 102445502}
   subscriptionsController: {fileID: 103432182}
   gazeController: {fileID: 419471038}
@@ -8073,7 +8075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rutsch ma de buckel na!
+  m_Text: Please start the game!
 --- !u!222 &2092651338
 CanvasRenderer:
   m_ObjectHideFlags: 0

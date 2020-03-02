@@ -6,13 +6,15 @@ public class Measurement
 {
     public long startTime;
     public long stopTime;
+    public TriggerState currentState;
     public List<long> timestamps;
     public List<bool> successfull;
 
-    public Measurement()
+    public Measurement(TriggerState currentState)
     {
         this.timestamps = new List<long>();
         this.successfull = new List<bool>();
+        this.currentState = currentState;
     }
 
     public void start()

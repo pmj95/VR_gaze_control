@@ -7,14 +7,13 @@ using UnityEngine.UI;
 using System;
 
 public abstract class BasePlayer : BaseMono
-{
-    private enum TriggerState { LaserTrigger = 0, EyeTrigger = 1, LaserBlinking = 2, BlinkingEye = 3 };
-
+{   
     /**
      * Unity Quatsch
      */
     public Transform gazeOrigin;
-    private Transform lastLaserPosition;
+    public Slider laserEyeTrackingSlider;
+    public Slider triggerBlinkDetectionSlider;
 
     /**
      * SteamVR
@@ -35,20 +34,17 @@ public abstract class BasePlayer : BaseMono
     public float blinkDuration = 0.5f;
     private bool blinking = false;
     private bool onBlinking = false;
-    private TriggerState currentTriggerState = TriggerState.LaserTrigger;
 
     #region Override Stuff
 
     protected override void DoStart()
     {
-        this.subscribeLaserPointer();
-        this.subscribeBlink();
     }
 
     protected override void DoAwake()
     {
         this.requestCtrl = this.subscriptionsController.requestCtrl;
-        this.subscribeEyetracking();
+        this.setInitialTriggerState();
     }
 
     protected override void DoDestroy()
@@ -87,39 +83,40 @@ public abstract class BasePlayer : BaseMono
     private void subscribeLaserPointer()
     {
         if (this.laserPointer != null
-            && (this.currentTriggerState == TriggerState.LaserTrigger
-            || this.currentTriggerState == TriggerState.EyeTrigger
-            || this.currentTriggerState == TriggerState.LaserBlinking))
+            && (StateTrigger.currentState == TriggerState.LaserTrigger
+            || StateTrigger.currentState == TriggerState.EyeTrigger
+            || StateTrigger.currentState == TriggerState.LaserBlinking))
         {
             this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
         }
 
-        if (this.currentTriggerState == TriggerState.EyeTrigger || this.currentTriggerState == TriggerState.BlinkingEye)
+        if (StateTrigger.currentState == TriggerState.EyeTrigger || StateTrigger.currentState == TriggerState.BlinkingEye)
         {
             this.laserPointer.thickness = 0f;
+        }
+        else if (StateTrigger.currentState == TriggerState.LaserTrigger || StateTrigger.currentState == TriggerState.LaserBlinking)
+        {
+            this.laserPointer.thickness = 0.002f;
         }
     }
 
     private void unsubscribeLaserPointer()
     {
         if (this.laserPointer != null
-            && (this.currentTriggerState == TriggerState.LaserTrigger
-            || this.currentTriggerState == TriggerState.EyeTrigger
-            || this.currentTriggerState == TriggerState.LaserBlinking))
+            && (StateTrigger.currentState == TriggerState.LaserTrigger
+            || StateTrigger.currentState == TriggerState.EyeTrigger
+            || StateTrigger.currentState == TriggerState.LaserBlinking))
         {
             this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
         }
 
-        if (this.currentTriggerState == TriggerState.EyeTrigger || this.currentTriggerState == TriggerState.BlinkingEye)
-        {
-            this.laserPointer.thickness = 0.002f;
-        }
+        this.laserPointer.thickness = 0f;
     }
 
     private void subscribeEyetracking()
     {
-        if (this.currentTriggerState == TriggerState.BlinkingEye
-            || this.currentTriggerState == TriggerState.EyeTrigger)
+        if (StateTrigger.currentState == TriggerState.BlinkingEye
+            || StateTrigger.currentState == TriggerState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
         }
@@ -127,8 +124,8 @@ public abstract class BasePlayer : BaseMono
 
     private void unsubscribeEyetracking()
     {
-        if (this.currentTriggerState == TriggerState.BlinkingEye
-            || this.currentTriggerState == TriggerState.EyeTrigger)
+        if (StateTrigger.currentState == TriggerState.BlinkingEye
+            || StateTrigger.currentState == TriggerState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
         }
@@ -136,8 +133,9 @@ public abstract class BasePlayer : BaseMono
 
     private void subscribeBlink()
     {
-        if (this.currentTriggerState == TriggerState.BlinkingEye
-            || this.currentTriggerState == TriggerState.LaserBlinking)
+        if (requestCtrl != null 
+            && (StateTrigger.currentState == TriggerState.BlinkingEye
+            || StateTrigger.currentState == TriggerState.LaserBlinking))
         {
             requestCtrl.OnConnected += StartBlinkSubscription;
 
@@ -150,8 +148,9 @@ public abstract class BasePlayer : BaseMono
 
     private void unsubscribeBlink()
     {
-        if (this.currentTriggerState == TriggerState.BlinkingEye
-            || this.currentTriggerState == TriggerState.LaserBlinking)
+        if (requestCtrl != null
+            && (StateTrigger.currentState == TriggerState.BlinkingEye
+            || StateTrigger.currentState == TriggerState.LaserBlinking))
         {
             requestCtrl.OnConnected -= StartBlinkSubscription;
 
@@ -206,7 +205,7 @@ public abstract class BasePlayer : BaseMono
             this.onBlinking = true;
             this.blinking = true;
 
-            switch (this.currentTriggerState)
+            switch (StateTrigger.currentState)
             {
                 case TriggerState.LaserTrigger:
                     break;
@@ -242,7 +241,7 @@ public abstract class BasePlayer : BaseMono
 
     private void SteamVR_LaserPointer_PointerClick(object sender, PointerEventArgs e)
     {
-        switch (this.currentTriggerState)
+        switch (StateTrigger.currentState)
         {
             case TriggerState.LaserTrigger:
                 {
@@ -301,7 +300,35 @@ public abstract class BasePlayer : BaseMono
     private void setTriggerState(TriggerState state)
     {
         this.unsubscribeAll();
-        this.currentTriggerState = state;
+        StateTrigger.currentState = state;
+        this.subscribeAll();
+    }
+
+    private void setInitialTriggerState()
+    {
+        if (this.laserEyeTrackingSlider.value == 0)
+        {
+            if (this.triggerBlinkDetectionSlider.value == 0)
+            {
+                StateTrigger.currentState = TriggerState.LaserTrigger;
+            }
+            else if (this.triggerBlinkDetectionSlider.value == 1)
+            {
+                StateTrigger.currentState = TriggerState.LaserBlinking;
+            }
+        }
+        else if (this.laserEyeTrackingSlider.value == 1)
+        {
+            if (this.triggerBlinkDetectionSlider.value == 0)
+            {
+                StateTrigger.currentState = TriggerState.EyeTrigger;
+            }
+            else if (this.triggerBlinkDetectionSlider.value == 1)
+            {
+                StateTrigger.currentState = TriggerState.BlinkingEye;
+            }
+        }
+
         this.subscribeAll();
     }
 
@@ -309,14 +336,14 @@ public abstract class BasePlayer : BaseMono
 
     public void LaserEyeTrackingSliderChanged()
     {
-        int state = (int)this.currentTriggerState;
+        int state = (int)StateTrigger.currentState;
         state = state ^ 0b01;
         this.setTriggerState((TriggerState)state);
     }
 
     public void TriggerBlinkDetectionSliderChanged()
     {
-        int state = (int)this.currentTriggerState;
+        int state = (int)StateTrigger.currentState;
         state = state ^ 0b10;
         this.setTriggerState((TriggerState)state);
     }
