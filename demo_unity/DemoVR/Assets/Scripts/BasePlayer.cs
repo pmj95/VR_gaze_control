@@ -19,6 +19,7 @@ public abstract class BasePlayer : BaseMono
      * SteamVR
      */
     public SteamVR_LaserPointer laserPointer;
+    public SteamVR_GazeTracker gazeTracker;
 
     /**
      * Pupil Labs
@@ -338,7 +339,7 @@ public abstract class BasePlayer : BaseMono
     {
         int state = (int)StateTrigger.currentState;
         state = state ^ 0b01;
-        this.setTriggerState((TriggerState)state);
+        //this.setTriggerState((TriggerState)state);
     }
 
     public void TriggerBlinkDetectionSliderChanged()

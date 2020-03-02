@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ColissionChecker.cs" />
     <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
     <Compile Include="Assets\Scripts\GeneralButton.cs" />
+    <Compile Include="Assets\Scripts\HeadGazeVisualizer.cs" />
     <Compile Include="Assets\Scripts\LaserInput.cs" />
     <Compile Include="Assets\Scripts\Level1\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\Level1\ButtonNumber.cs" />
