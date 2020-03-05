@@ -110,16 +110,16 @@ public abstract class BaseGame : BaseMono
     private void saveMeasurement()
     {
         DateTime date = DateTime.Now;
-        string filename = date.ToString("HH_mm_ss") + ".json";
+        string filename = date.ToString("yyyy_MM_dd_HH_mm_ss") + ".json";
         string jsonstring = JsonUtility.ToJson(this.measurement, true);
-        string dayFolder = "Measurement\\" + date.ToString("yyyy_MM_dd") + "\\";
+        string levelFolder = "Measurement\\" + this.level + "\\";
 
-        if (!Directory.Exists(dayFolder))
+        if (!Directory.Exists(levelFolder))
         {
-            Directory.CreateDirectory(dayFolder);
+            Directory.CreateDirectory(levelFolder);
         }
 
-        File.WriteAllText(dayFolder + filename, jsonstring);
+        File.WriteAllText(levelFolder + filename, jsonstring);
     }
 
     protected override void DoAwake()
