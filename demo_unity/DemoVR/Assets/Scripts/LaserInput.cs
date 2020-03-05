@@ -4,44 +4,49 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 using Valve.VR.Extras;
+using System;
 
-public class LaserInput : MonoBehaviour
+public class LaserInput : BaseMono
 {
+    public SteamVR_LaserPointer laserPointer;
 
-    public static GameObject currObject;
-    private int currID;
-    // Start is called before the first frame update
-    void Start()
+    protected override void DoStart()
     {
-        currObject = null;
-        currID = 0;
+        // Nothing to do
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void DoAwake()
     {
-        RaycastHit[] hits;
-        hits = Physics.RaycastAll(transform.position, transform.forward, 100.0F);
-        //Debug.Log("Pos" + transform.position);
-        //Debug.Log("For" + transform.forward);
+        this.laserPointer = GameObject.FindObjectOfType<SteamVR_LaserPointer>();
+        this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
+    }
 
-        for (int i = 0; i < hits.Length; i++)
+    protected override void DoDestroy()
+    {
+        this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    protected override void OnCalibrationStarted()
+    {
+        this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    protected override void OnCalibrationRoutineDone()
+    {
+        this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
+    }
+
+    private void SteamVR_LaserPointer_PointerClick(object sender, PointerEventArgs e)
+    {
+        /*if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
         {
-            RaycastHit hit = hits[i];
-            int id = hit.collider.gameObject.GetInstanceID();
+            GameObject currObject = hit.collider.gameObject;
 
-            if (currID != id)
+            GeneralButton bc = currObject.GetComponent<GeneralButton>();
+            if (bc != null)
             {
-                currID = id;
-                currObject = hit.collider.gameObject;
-                string name = currObject.name;
-                string tag = currObject.tag;
-                Debug.Log("Hallo " + name);
-                if (tag == "Button")
-                {
-                    
-                }
+                bc.DoAction();
             }
-        }
+        }*/
     }
 }

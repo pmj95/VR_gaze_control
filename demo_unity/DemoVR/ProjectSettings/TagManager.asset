@@ -8,6 +8,10 @@ TagManager:
   - Button
   - Wall
   - Light
+  - Instruction
+  - CalibrationLight
+  - BlinkTriggerSlider
+  - Level1Button
   layers:
   - Default
   - TransparentFX
