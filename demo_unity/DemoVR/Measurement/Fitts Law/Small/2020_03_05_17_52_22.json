@@ -1,0 +1,25 @@
+{
+    "level": "Fitts Law",
+    "currentState": "EyeTrigger",
+    "startTime": 64326799,
+    "stopTime": 64342585,
+    "buttonsPressed": [
+        3,
+        1,
+        16,
+        14
+    ],
+    "timestamps": [
+        64329427,
+        64332520,
+        64338519,
+        64342585
+    ],
+    "successfull": [
+        true,
+        true,
+        true,
+        true
+    ],
+    "scaling": "Small"
+}

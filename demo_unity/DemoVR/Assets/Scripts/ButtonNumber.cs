@@ -13,7 +13,6 @@ public class ButtonNumber: GeneralButton
     protected override void DoStart()
     {
         base.DoStart();
-        this.game = GameObject.FindObjectOfType<GameLevel1>();
     }
 
     protected override void OnCalibrationStarted()

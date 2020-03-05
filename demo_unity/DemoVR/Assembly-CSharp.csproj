@@ -69,12 +69,17 @@
     <Compile Include="Assets\Scripts\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\ButtonNumber.cs" />
     <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
+    <Compile Include="Assets\Scripts\FittsLaw\ButtonCanvas.cs" />
+    <Compile Include="Assets\Scripts\FittsLaw\GameFittsLaw.cs" />
+    <Compile Include="Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs" />
+    <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />
     <Compile Include="Assets\Scripts\GeneralButton.cs" />
     <Compile Include="Assets\Scripts\LaserInput.cs" />
     <Compile Include="Assets\Scripts\Level1\GameLevel1.cs" />
     <Compile Include="Assets\Scripts\Level1\MeasurementLevel1.cs" />
     <Compile Include="Assets\Scripts\Level1\PlayerLevel1.cs" />
     <Compile Include="Assets\Scripts\Measurement.cs" />
+    <Compile Include="Assets\Scripts\ScalingProperty.cs" />
     <Compile Include="Assets\Scripts\TriggerState.cs" />
     <Compile Include="Assets\rocket\ViveGameController.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />

@@ -1,0 +1,26 @@
+{
+    "level": "Level1",
+    "currentState": "LaserTrigger",
+    "startTime": 63100024,
+    "stopTime": 63108296,
+    "buttonsPressed": [
+        15,
+        1,
+        10,
+        5
+    ],
+    "timestamps": [
+        63102177,
+        63104308,
+        63106098,
+        63108296
+    ],
+    "successfull": [
+        true,
+        true,
+        true,
+        true
+    ],
+    "scaleWidth": 1.0,
+    "scaleHeight": 1.0
+}

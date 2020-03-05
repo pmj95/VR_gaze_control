@@ -23,7 +23,7 @@ public class StateTrigger
         set
         {
             cs = value;
-            Debug.LogWarning("new TriggerState: " + value.ToString());
+
             // Call OnPropertyChanged whenever the property is updated
             OnPropertyChanged();
         }
