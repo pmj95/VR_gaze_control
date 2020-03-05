@@ -19,13 +19,13 @@ public abstract class BasePlayer : BaseMono
      * SteamVR
      */
     public SteamVR_LaserPointer laserPointer;
-    public SteamVR_GazeTracker gazeTracker;
 
     /**
      * Pupil Labs
      */
     public SubscriptionsController subscriptionsController;
     public GazeController gazeController;
+    public GazeVisualizer gazeVisualizer;
     private RequestController requestCtrl;
     private GazeData lastGaze;
 
@@ -120,6 +120,15 @@ public abstract class BasePlayer : BaseMono
             || StateTrigger.currentState == TriggerState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
+        }
+
+        if (StateTrigger.currentState == TriggerState.EyeTrigger || StateTrigger.currentState == TriggerState.BlinkingEye)
+        {
+            this.gazeVisualizer.gameObject.SetActive(true);
+        }
+        else if (StateTrigger.currentState == TriggerState.LaserTrigger || StateTrigger.currentState == TriggerState.LaserBlinking)
+        {
+            this.gazeVisualizer.gameObject.SetActive(false);
         }
     }
 
@@ -339,7 +348,7 @@ public abstract class BasePlayer : BaseMono
     {
         int state = (int)StateTrigger.currentState;
         state = state ^ 0b01;
-        //this.setTriggerState((TriggerState)state);
+        this.setTriggerState((TriggerState)state);
     }
 
     public void TriggerBlinkDetectionSliderChanged()
