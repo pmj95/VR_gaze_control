@@ -11,13 +11,12 @@ public abstract class BaseGame : BaseMono
     private Measurement measurement;
     private bool isplaying = false;
     private List<int> searchValues;
-    protected string level;
     public Text instructionField;
 
     private void resetGame()
     {
         this.searchValues.Clear();
-        this.measurement = new Measurement(this.level, StateTrigger.currentState);
+        this.measurement = this.createMeasurement(StateTrigger.currentState);
 
         for (int i = 1; i <= 16; i++)
         {
@@ -91,12 +90,6 @@ public abstract class BaseGame : BaseMono
         return retVal;
     }
 
-    protected override void DoStart()
-    {
-        StateTrigger.PropertyChanged += StateTrigger_PropertyChanged;
-        this.searchValues = new List<int>();
-    }
-
     private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
         if (isplaying)
@@ -112,7 +105,7 @@ public abstract class BaseGame : BaseMono
         DateTime date = DateTime.Now;
         string filename = date.ToString("yyyy_MM_dd_HH_mm_ss") + ".json";
         string jsonstring = JsonUtility.ToJson(this.measurement, true);
-        string levelFolder = "Measurement\\" + this.level + "\\";
+        string levelFolder = "Measurement\\" + this.getLevelDir();
 
         if (!Directory.Exists(levelFolder))
         {
@@ -120,6 +113,16 @@ public abstract class BaseGame : BaseMono
         }
 
         File.WriteAllText(levelFolder + filename, jsonstring);
+    }
+
+    protected abstract string getLevelDir();
+
+    protected abstract Measurement createMeasurement(TriggerState currentState);
+
+    protected override void DoStart()
+    {
+        StateTrigger.PropertyChanged += StateTrigger_PropertyChanged;
+        this.searchValues = new List<int>();
     }
 
     protected override void DoAwake()

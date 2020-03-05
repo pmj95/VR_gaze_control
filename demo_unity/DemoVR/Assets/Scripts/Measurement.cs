@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 [Serializable]
-public class Measurement
+public abstract class Measurement
 {
     public string level;
     public string currentState;
