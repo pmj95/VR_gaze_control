@@ -63,13 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\3DLevel\Game3DLevel.cs" />
+    <Compile Include="Assets\Scripts\3DLevel\Measurement3DLevel.cs" />
+    <Compile Include="Assets\Scripts\3DLevel\Player3DLevel.cs" />
     <Compile Include="Assets\Scripts\BaseGame.cs" />
     <Compile Include="Assets\Scripts\BaseMono.cs" />
     <Compile Include="Assets\Scripts\BasePlayer.cs" />
+    <Compile Include="Assets\Scripts\ButtonCanvas.cs" />
     <Compile Include="Assets\Scripts\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\ButtonNumber.cs" />
     <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
-    <Compile Include="Assets\Scripts\FittsLaw\ButtonCanvas.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\GameFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />

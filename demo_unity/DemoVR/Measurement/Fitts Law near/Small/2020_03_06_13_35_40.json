@@ -1,0 +1,28 @@
+{
+    "level": "Fitts Law near",
+    "currentState": "LaserTrigger",
+    "startTime": 48932789,
+    "stopTime": 48940641,
+    "buttonsPressed": [
+        8,
+        16,
+        1,
+        4,
+        13
+    ],
+    "timestamps": [
+        48935224,
+        48936352,
+        48937737,
+        48938866,
+        48940641
+    ],
+    "successfull": [
+        true,
+        true,
+        true,
+        true,
+        true
+    ],
+    "scaling": "Small"
+}

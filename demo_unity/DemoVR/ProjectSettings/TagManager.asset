@@ -12,6 +12,8 @@ TagManager:
   - CalibrationLight
   - BlinkTriggerSlider
   - Level1Button
+  - ButtonCanvas
+  - SpecialButton
   layers:
   - Default
   - TransparentFX
