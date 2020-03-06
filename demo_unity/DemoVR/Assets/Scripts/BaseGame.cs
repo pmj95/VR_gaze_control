@@ -13,7 +13,7 @@ public abstract class BaseGame : BaseMono
     private List<int> searchValues;
     public Text instructionField;
 
-    private void resetGame()
+    protected virtual void resetGame()
     {
         this.measurement = this.createMeasurement(StateTrigger.currentState);
         this.searchValues = this.getRandomSearchValues();
@@ -24,7 +24,6 @@ public abstract class BaseGame : BaseMono
             colors.normalColor = Color.white;
             go.GetComponent<Button>().colors = colors;
         }
-
     }
 
     private void setInstruction()

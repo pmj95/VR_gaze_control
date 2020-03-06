@@ -1,0 +1,34 @@
+{
+    "level": "Fitts Law near",
+    "currentState": "EyeTrigger",
+    "startTime": 48952939,
+    "stopTime": 48962969,
+    "buttonsPressed": [
+        3,
+        4,
+        13,
+        -1,
+        -1,
+        9,
+        11
+    ],
+    "timestamps": [
+        48955038,
+        48956244,
+        48957614,
+        48959910,
+        48960512,
+        48961237,
+        48962969
+    ],
+    "successfull": [
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+    ],
+    "scaling": "Medium"
+}

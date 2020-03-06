@@ -33,8 +33,7 @@ public class ButtonNumber: GeneralButton
 
     protected override void DoDestroy()
     {
-        base.DoStart();
-        // nothing to do
+        // nothing todo
     }
 
     // Update is called once per frame
