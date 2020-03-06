@@ -304,6 +304,10 @@ public abstract class BasePlayer : BaseMono
             {
                 button.onClick.Invoke();
             }
+            else if (currObject.TryGetComponent<Wall>(out Wall wall))
+            {
+                wall.onTigger();
+            }
         }
     }
 

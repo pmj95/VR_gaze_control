@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameFittsLaw : BaseGame
 {
-    private string level = "Fitts Law";
+    public string level;
 
     public GameFittsLaw()
     {

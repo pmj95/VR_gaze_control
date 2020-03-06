@@ -821,7 +821,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
+  thickness: 0
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -3575,7 +3575,7 @@ PrefabInstance:
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8807455923093254297, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -5783,6 +5783,7 @@ GameObject:
   - component: {fileID: 1315403289}
   - component: {fileID: 1315403288}
   - component: {fileID: 1315403287}
+  - component: {fileID: 1315403291}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -5882,6 +5883,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 180}
+--- !u!114 &1315403291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315403286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f295fe1fca6bb8a478a3e5392efeb57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameobject: {fileID: 2078468670}
 --- !u!1 &1352297350
 GameObject:
   m_ObjectHideFlags: 0
@@ -9024,6 +9038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionField: {fileID: 2092651337}
+  level: Fitts Law near
 --- !u!4 &2078468671
 Transform:
   m_ObjectHideFlags: 0
