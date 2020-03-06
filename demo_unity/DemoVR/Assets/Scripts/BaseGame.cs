@@ -15,16 +15,8 @@ public abstract class BaseGame : BaseMono
 
     private void resetGame()
     {
-        this.searchValues.Clear();
         this.measurement = this.createMeasurement(StateTrigger.currentState);
-
-        for (int i = 1; i <= 16; i++)
-        {
-            this.searchValues.Add(i);
-        }
-
-        this.searchValues = this.searchValues.OrderBy(x => UnityEngine.Random.value).ToList<int>();
-        this.searchValues.RemoveRange(4, this.searchValues.Count - 4);
+        this.searchValues = this.getRandomSearchValues();
 
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Level1Button"))
         {
@@ -90,7 +82,7 @@ public abstract class BaseGame : BaseMono
         return retVal;
     }
 
-    private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    protected void envChanged()
     {
         if (isplaying)
         {
@@ -98,6 +90,11 @@ public abstract class BaseGame : BaseMono
             this.instructionField.text = "Canceled Game! Trigger changed";
             this.isplaying = false;
         }
+    }
+
+    private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        this.envChanged();
     }
 
     private void saveMeasurement()
@@ -114,6 +111,8 @@ public abstract class BaseGame : BaseMono
 
         File.WriteAllText(levelFolder + filename, jsonstring);
     }
+
+    protected abstract List<int> getRandomSearchValues();
 
     protected abstract string getLevelDir();
 
