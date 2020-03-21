@@ -11,12 +11,14 @@ public abstract class Measurement
     public List<int> buttonsPressed;
     public List<long> timestamps;
     public List<bool> successfull;
+    public List<string> gazePoints;
 
     public Measurement(string level, TriggerState currentState)
     {
         this.timestamps = new List<long>();
         this.successfull = new List<bool>();
         this.buttonsPressed = new List<int>();
+        this.gazePoints = new List<string>();
         this.currentState = currentState.ToString();
         this.level = level;
     }
@@ -33,6 +35,11 @@ public abstract class Measurement
         this.timestamps.Add(this.getTimestamp());
         this.successfull.Add(val);
         this.buttonsPressed.Add(button);
+    }
+
+    public void addGazePoint(string point)
+    {
+        this.gazePoints.Add(point);
     }
 
     public void stop()

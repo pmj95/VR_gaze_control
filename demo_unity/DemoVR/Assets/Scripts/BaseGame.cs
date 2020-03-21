@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PupilLabs;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,9 @@ public abstract class BaseGame : BaseMono
     private bool isplaying = false;
     private List<int> searchValues;
     public Text instructionField;
+    public GazeController gazeController;
+    public Transform gazeOrigin;
+    public float gazeLogDistance;
 
     protected virtual void resetGame()
     {
@@ -91,9 +95,53 @@ public abstract class BaseGame : BaseMono
         }
     }
 
+    private void subscribeEyetracking()
+    {
+        if (StateTrigger.currentState == TriggerState.BlinkingEye
+            || StateTrigger.currentState == TriggerState.EyeTrigger)
+        {
+            this.gazeController.OnReceive3dGaze += GazeController_OnReceive3dGaze;
+        }
+    }
+
+    private void unsubscribeEyetracking()
+    {
+        try
+        {
+            this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
+        }
+        catch (Exception ex)
+        {
+            // nothing to do
+        }
+    }
+
+    private void GazeController_OnReceive3dGaze(GazeData obj)
+    {
+        this.StartCoroutine(this.logGaze(obj));
+    }
+
+    public IEnumerator logGaze(GazeData obj)
+    {
+        Vector3 origin = this.gazeOrigin.position;
+        Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
+
+        if (Physics.Raycast(origin, direction, out RaycastHit hit))
+        {
+            Vector3 point = hit.point;
+            this.measurement.addGazePoint(point.ToString());
+        }
+
+        yield return new WaitForSecondsRealtime(this.gazeLogDistance);
+
+        yield break;
+    }
+
     private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
+        this.unsubscribeEyetracking();
         this.envChanged();
+        this.subscribeEyetracking();
     }
 
     private void saveMeasurement()
@@ -135,11 +183,11 @@ public abstract class BaseGame : BaseMono
 
     protected override void OnCalibrationStarted()
     {
-        // nothing todo
+        this.unsubscribeEyetracking();
     }
 
     protected override void OnCalibrationRoutineDone()
     {
-        // nothing todo
+        this.subscribeEyetracking();
     }
 }
