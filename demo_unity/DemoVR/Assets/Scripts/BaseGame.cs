@@ -12,10 +12,11 @@ public abstract class BaseGame : BaseMono
     private Measurement measurement;
     private bool isplaying = false;
     private List<int> searchValues;
+    private int logCounter = 0;
     public Text instructionField;
     public GazeController gazeController;
     public Transform gazeOrigin;
-    public float gazeLogDistance;
+    public int gazeLogDistance;
 
     protected virtual void resetGame()
     {
@@ -118,23 +119,25 @@ public abstract class BaseGame : BaseMono
 
     private void GazeController_OnReceive3dGaze(GazeData obj)
     {
-        this.StartCoroutine(this.logGaze(obj));
-    }
-
-    public IEnumerator logGaze(GazeData obj)
-    {
-        Vector3 origin = this.gazeOrigin.position;
-        Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
-
-        if (Physics.Raycast(origin, direction, out RaycastHit hit))
+        if (this.isplaying == true && this.logCounter == 0)
         {
-            Vector3 point = hit.point;
-            this.measurement.addGazePoint(point.ToString());
+            Vector3 origin = this.gazeOrigin.position;
+            //Debug.LogError("origin " + origin);
+            Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
+
+            if (Physics.Raycast(origin, direction, out RaycastHit hit))
+            {
+                Vector3 point = hit.point;
+                this.measurement.addGazePoint(point.ToString());
+                Debug.LogError(point);
+                /*Debug.LogError("hit distance" + hit.distance);
+                Debug.LogError("gaze direction" + obj.GazeDirection);
+                Debug.LogError("gaze distance" + obj.GazeDistance);
+            */}
         }
-
-        yield return new WaitForSecondsRealtime(this.gazeLogDistance);
-
-        yield break;
+        
+        this.logCounter++;
+        this.logCounter %= this.gazeLogDistance;
     }
 
     private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
