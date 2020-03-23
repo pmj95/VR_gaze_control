@@ -536,6 +536,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+--- !u!4 &79200458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 472612, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 79200457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &87856820
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +827,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0
+  thickness: 0.002
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -3575,7 +3581,7 @@ PrefabInstance:
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8807455923093254297, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -9052,6 +9058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionField: {fileID: 2092651337}
+  gazeController: {fileID: 419471038}
+  gazeOrigin: {fileID: 79200458}
+  gazeLogDistance: 0.5
   level: Fitts Law further
 --- !u!4 &2078468671
 Transform:

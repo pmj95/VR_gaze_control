@@ -7,9 +7,9 @@ using UnityEngine.UI;
 using System;
 
 public abstract class BasePlayer : BaseMono
-{   
+{
     /**
-     * Unity Quatsch
+     * Unity
      */
     public Transform gazeOrigin;
     public Slider laserEyeTrackingSlider;
