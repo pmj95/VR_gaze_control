@@ -122,18 +122,13 @@ public abstract class BaseGame : BaseMono
         if (this.isplaying == true && this.logCounter == 0)
         {
             Vector3 origin = this.gazeOrigin.position;
-            //Debug.LogError("origin " + origin);
             Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
 
             if (Physics.Raycast(origin, direction, out RaycastHit hit))
             {
                 Vector3 point = hit.point;
                 this.measurement.addGazePoint(point.ToString());
-                Debug.LogError(point);
-                /*Debug.LogError("hit distance" + hit.distance);
-                Debug.LogError("gaze direction" + obj.GazeDirection);
-                Debug.LogError("gaze distance" + obj.GazeDistance);
-            */}
+            }
         }
         
         this.logCounter++;
