@@ -255,10 +255,10 @@
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -450,28 +450,28 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="AsyncIO">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

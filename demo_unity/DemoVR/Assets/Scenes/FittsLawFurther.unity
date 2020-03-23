@@ -827,7 +827,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
+  thickness: 0
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -3581,7 +3581,7 @@ PrefabInstance:
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8807455923093254297, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -9060,7 +9060,7 @@ MonoBehaviour:
   instructionField: {fileID: 2092651337}
   gazeController: {fileID: 419471038}
   gazeOrigin: {fileID: 79200458}
-  gazeLogDistance: 0.5
+  gazeLogDistance: 0
   level: Fitts Law further
 --- !u!4 &2078468671
 Transform:

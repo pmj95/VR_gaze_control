@@ -8,33 +8,28 @@ public abstract class Measurement
     public string currentState;
     public long startTime;
     public long stopTime;
-    public List<int> buttonsPressed;
-    public List<long> timestamps;
-    public List<bool> successfull;
     public List<string> gazePoints;
+    public List<string> action;
 
     public Measurement(string level, TriggerState currentState)
     {
-        this.timestamps = new List<long>();
-        this.successfull = new List<bool>();
-        this.buttonsPressed = new List<int>();
         this.gazePoints = new List<string>();
+        this.action = new List<string>();
         this.currentState = currentState.ToString();
         this.level = level;
     }
 
     public void start()
     {
-        this.timestamps.Clear();
-        this.successfull.Clear();
+        this.gazePoints.Clear();
+        this.action.Clear();
         this.startTime = this.getTimestamp();
     }
 
     public void addMeasurement(int button, bool val)
     {
-        this.timestamps.Add(this.getTimestamp());
-        this.successfull.Add(val);
-        this.buttonsPressed.Add(button);
+        string measure = String.Format("{0},{1},{2}", this.getTimestamp(), button, val);
+        this.action.Add(measure);
     }
 
     public void addGazePoint(string point)
