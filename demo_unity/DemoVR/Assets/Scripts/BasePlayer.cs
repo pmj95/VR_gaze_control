@@ -304,6 +304,13 @@ public abstract class BasePlayer : BaseMono
             {
                 button.onClick.Invoke();
             }
+            else if (currObject.CompareTag("ButtonCollider") 
+                && currObject.transform.parent != null 
+                && currObject.transform.parent.parent != null
+                && currObject.transform.parent.parent.TryGetComponent<Button>(out Button buttonCollider))
+            {
+                buttonCollider.onClick.Invoke();
+            }
             else if (currObject.TryGetComponent<Wall>(out Wall wall))
             {
                 wall.onTigger();

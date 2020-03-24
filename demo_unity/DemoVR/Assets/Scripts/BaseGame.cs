@@ -79,7 +79,10 @@ public abstract class BaseGame : BaseMono
         }
         else
         {
-            this.measurement.addMeasurement(number, false);
+            if(this.measurement != null)
+            {
+                this.measurement.addMeasurement(number, false);
+            }
             retVal = false;
         }
 

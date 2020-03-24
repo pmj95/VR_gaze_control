@@ -13,6 +13,17 @@ public class ButtonNumber: GeneralButton
     protected override void DoStart()
     {
         base.DoStart();
+        GameObject go = GameObject.FindGameObjectWithTag("Game");
+        game = go.GetComponent<BaseGame>();
+        // GameObject go = new GameObject();
+        // CylinderCollider cc = this.gameObject.AddComponent<CylinderCollider>();
+        // cc.radius = 65;
+        // cc.height = 1;
+        // cc.boxCount = 5;
+        // cc.widthScale = 1.6f;
+        // go.transform.localScale = this.transform.localScale;
+        // go.transform.position = this.transform.position;
+        // //go.transform.parent = this.transform;
     }
 
     protected override void OnCalibrationStarted()
