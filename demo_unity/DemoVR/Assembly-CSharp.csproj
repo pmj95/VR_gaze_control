@@ -73,6 +73,8 @@
     <Compile Include="Assets\Scripts\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\ButtonNumber.cs" />
     <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
+    <Compile Include="Assets\Scripts\CylinderCollider\CylinderCollider.cs" />
+    <Compile Include="Assets\Scripts\CylinderCollider\CylinderColliderEditor.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\GameFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />

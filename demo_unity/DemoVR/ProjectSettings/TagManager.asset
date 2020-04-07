@@ -14,6 +14,8 @@ TagManager:
   - Level1Button
   - ButtonCanvas
   - SpecialButton
+  - ButtonCollider
+  - Game
   layers:
   - Default
   - TransparentFX
