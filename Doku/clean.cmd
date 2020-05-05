@@ -1,3 +1,4 @@
+@echo off 
 del *.for
 del *.loe
 del *.bak
@@ -15,3 +16,4 @@ del *.toc
 del *.tps
 del *.run.xml
 content\clean.cmd
+exit
