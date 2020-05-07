@@ -1,4 +1,60 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Aufbau der Testumgebungen}
-\todo{}
+\chapter{Versuchsumgebung}
+\todo[inline]{Einführung}
+
+\section{Aufbau}
+Die Versuche finden in einem Raum statt. Sowohl die Wände als auch die Decke sowie der Boden haben dieselbe Farbe. Der Raum wird gleichmäßig beleuchtet. Um die Versuchsergebnisse später besser vergleichen zu können muss der Benutzer bei jedem Versuch auf der selben Position im Raum stehen. Diese Position wird auf dem Boden durch ein rotes Quadrat markiert (siehe \autoref{fig:game-plan}). Vor Beginn des Versuches muss sich der Benutzer auf dem roten Quadrat positionieren. Dies wird benötigt, da der Benutzer die Möglichkeit hat, sich innerhalb einer vom \ac{VR}-Headset berechneten Spielfläche zu bewegen. Dieses Quadrat befindet sich mittig zentriert circa einen halben Meter vor einer Wand. Das Quadrat hat eine Seitenlänge von einem halben Meter.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.75\linewidth]{game-plan}
+	\caption[Draufsicht auf den Raum]{Draufsicht auf den Raum}
+	\label{fig:game-plan}
+\end{figure}
+
+Auf der gegenüberliegenden Wand befindet sich die Versuchsfläche (siehe \autoref{fig:game-view}). Der Versuch ist wie ein Spiel. Es müssen zufällig fünf Zahlen von 1 bis 16 ausgewählt werden. Auf der Spielfläche befinden sich 16 Buttons, die von 1 bis 16 beschriftet sind. Oberhalb der Buttons befindet sich ein Textfeld, welche dem Benutzer die auszuwählende Zahl mitteilt. Zudem teilt das Textfeld das Ende des Spieles mit. Um das Spiel zu starten, muss der Benutzer den GO-Button betätigen. Beim Betätigen eines Buttons wird die Hintergrundfarbe des Buttons verändert. Dies wird in Abhängigkeit der gesuchten Zahl und des ausgewählten Buttons festgelegt. Wenn die gesuchte Zahl und die Beschriftung des ausgewählten Buttons übereinstimmen, wird der Button grün gefärbt, ansonsten rot.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=1\linewidth]{game-view}
+\caption[Benutzersicht auf den Versuch]{Benutzersicht auf den Versuch}
+\label{fig:game-view}
+\end{figure}
+
+\section{Szenen}
+\todo[inline]{Sinnvoll von Metern zu reden oder doch lieber von Einheiten?}
+\todo[inline]{Erklären wieso die Szenen so aufgebaut wurden? Z.B. warum verschiedene Entfernungen? Und wieso das 3D-Level?}
+Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf dem zuvor beschriebenen Aufbau. Jeder der Räume ist 2,5 Meter hoch und 5 Meter breit. In der ersten Szene \glqq FittsLaw\grqq (siehe \autoref{fig:game-view}) steht der Benutzer 4,5 Meter von der gegenüberliegenden Wand entfernt. In der zweiten Szene \glqq FittsLawFar\grqq (siehe \autoref{fig:FittsLawFar}) und der dritten Szene \glqq FittsLawFurther\grqq (siehe \autoref{fig:FittsLawFurther}) wurde die Entfernung zwischen Benutzer und Spielfläche jeweils um 2,5 Meter zur vorherigen Szene vergrößert. Die vierte und letzte Szene \glqq 3D-Level\grqq (siehe \todo{Verweis auf Abbildung}) basiert auf der Szene FittsLawFurther. Der Unterschied ist jedoch, dass sich die Buttons nicht mehr an der Wand befinden sondern frei im Raum schweben. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{FittsLawFar}
+	\caption[Szene FittsLawFar]{Szene FittsLawFar}
+	\label{fig:FittsLawFar}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{FittsLawFurther}
+	\caption[Szene FittsLawFurther]{Szene FittsLawFurther}
+	\label{fig:FittsLawFurther}
+\end{figure}
+
+\missingfigure{Szene 3D-Level: Muss Clemens machen. Ich kann leider den Button nicht aktivieren}
+
+\section{Implementierung}
+\missingfigure{Klassendiagramm}
+wichtigste Klassen erklären \\
+
+4 Wände: komplett Beleuchtet; nur nach vorne Beleuchtet \\
+
+Measurement \\
+Auswahl: Laser oder Trigger; EyeTrigger / Blink Detection; Größe Verstellbar \\
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{switch-different-options}
+	\caption[Einstellungsoberfläche für die Versuchsoptionen]{Einstellungsoberfläche für die Versuchsoptionen; Oben: Auswahl; Mitte: Trigger; Unten: Größe der Buttons}
+	\label{fig:switch-different-options}
+\end{figure}
