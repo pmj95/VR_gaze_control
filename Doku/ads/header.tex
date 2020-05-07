@@ -65,6 +65,10 @@
 \newif\ifabkverz
 \abkverzfalse
 
+% Flag für Einfügen des todo Verzeichnis
+\newif\iftodoverz
+\todoverzfalse
+
 % Flag für Einfügen des Abbildungsverzeichnisses
 \newif\ifabbverz
 \abbverzfalse
@@ -117,9 +121,16 @@
 
 
 %\lstset{language=Matlab}
-\newcommand{\citem}[1]{\item[\texttt{#1}]} % Code-Item für description-Liste
+\newcommand{\citem}[1]{\it\fiem[\texttt{#1}]} % Code-Item für description-Liste
 %\newcommand\todo[1]{\textit{\textcolor{red}{TODO: #1}}\message{LaTeX Warning: \noexpand TODO item left in line \the\inputlineno}} % Todo-Item
-\newcommand\todo[1]{\textit{\textcolor{red}{TODO: #1}}} % Todo-Item
+%\newcommand\todo[1]{\textit{\textcolor{red}{TODO: #1}}} % Todo-Item
+\usepackage{xargs}
+\iftodoverz
+	\usepackage{todonotes}
+	\else
+		\usepackage[disable]{todonotes}
+	
+\fi
 \usepackage{pdfpages}         % pdf-Seiten einbinden
 
 %% Farben (Angabe in HTML-Notation mit großen Buchstaben)
