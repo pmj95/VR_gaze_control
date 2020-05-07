@@ -1,0 +1,16 @@
+{
+    "level": "Fitts Law further",
+    "currentState": "LaserTrigger",
+    "startTime": 44422220,
+    "stopTime": 44430848,
+    "gazePoints": [],
+    "action": [
+        "44424084,5,True",
+        "44425270,6,True",
+        "44427001,-1,False",
+        "44427726,14,True",
+        "44429290,8,True",
+        "44430848,13,True"
+    ],
+    "scaling": "Large"
+}
