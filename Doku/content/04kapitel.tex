@@ -1,19 +1,19 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Versuchsumgebung}
-\todo[inline]{Einführung}
+\todo[inline]{Einführung in Kapitel Versuchsumgebung}
 
 \section{Aufbau}
-Die Versuche finden in einem Raum statt. Sowohl die Wände als auch die Decke sowie der Boden haben dieselbe Farbe. Der Raum wird gleichmäßig beleuchtet. Um die Versuchsergebnisse später besser vergleichen zu können muss der Benutzer bei jedem Versuch auf der selben Position im Raum stehen. Diese Position wird auf dem Boden durch ein rotes Quadrat markiert (siehe \autoref{fig:game-plan}). Vor Beginn des Versuches muss sich der Benutzer auf dem roten Quadrat positionieren. Dies wird benötigt, da der Benutzer die Möglichkeit hat, sich innerhalb einer vom \ac{VR}-Headset berechneten Spielfläche zu bewegen. Dieses Quadrat befindet sich mittig zentriert circa einen halben Meter vor einer Wand. Das Quadrat hat eine Seitenlänge von einem halben Meter.
+Um die Verwendung von Eye-Tracking zur Steuerung von Bedienelementen in \ac{VR} untersuchen zu können, finden die Versuche in einem leeren neutralen Raum statt. Dies hat den Vorteil, dass der Benutzer von der kompletten \ac{VR}-Welt abgeschirmt ist. Der Benutzer kann sich daher besser auf den Versuch fokussieren, da dieser nicht durch eventuell neu gewonne Eindrücke aus der \ac{VR}-Welt abgelenkt wird. Um Ablenkungen bezüglich Farbwechsel an den Wänden, dem Boden oder der Decke zu vermeiden, erhalten diese Elemente die gleiche Hintergrundfarbe. Zudem wird der Raum gleichmäßig beleuchtet. Für eine bessere Vergleichbarkeit der Versuchsergebnissen muss der Benutzer bei jedem Versuch auf der gleichen Position im Raum stehen. Diese Position wird auf dem Boden durch ein rotes Quadrat markiert (siehe \autoref{fig:game-plan}). Vor Beginn des Versuches muss sich der Benutzer auf dem roten Quadrat positionieren. Dies wird benötigt, da der Benutzer die Möglichkeit hat, sich innerhalb einer vom \ac{VR}-Headset berechneten Spielfläche zu bewegen. Dieses Quadrat befindet sich mittig zentriert circa eine halbe Einheit vor einer Wand. Das Quadrat hat eine Seitenlänge von einer halben Einheit.
+
+Zur Untersuchung der Eignung von Eye-Tracking bei der Steuerung von Bedienelementen befindet sich auf der gegenüberliegenden Wand die Versuchsfläche (siehe \autoref{fig:game-view}). Der Versuch ist wie ein Spiel aufgebaut. Der Benutzer muss fünf zufällige Zahlen von 1 bis 16 nacheinander auswählen. Auf der Spielfläche befinden sich 16 Bedienelemente, die mit Zahlen von 1 bis 16 beschriftet sind. Oberhalb der Bedienelemente befindet sich ein Textfeld, welches dem Benutzer die auszuwählende Zahl mitteilt. Zudem teilt das Textfeld das Ende des Spieles mit. Um das Spiel zu starten, muss der Benutzer den GO-Button betätigen. Beim Betätigen eines Bedienelementes wird die Hintergrundfarbe des Elements verändert. Dies wird in Abhängigkeit der gesuchten Zahl und des ausgewählten Elements festgelegt. Wenn die gesuchte Zahl und die Beschriftung des ausgewählten Bedienelements übereinstimmen, wird das Element grün gefärbt, ansonsten rot.
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.75\linewidth]{game-plan}
+	\includegraphics[width=0.65\linewidth]{game-plan}
 	\caption[Draufsicht auf den Raum]{Draufsicht auf den Raum}
 	\label{fig:game-plan}
 \end{figure}
-
-Auf der gegenüberliegenden Wand befindet sich die Versuchsfläche (siehe \autoref{fig:game-view}). Der Versuch ist wie ein Spiel. Es müssen zufällig fünf Zahlen von 1 bis 16 ausgewählt werden. Auf der Spielfläche befinden sich 16 Buttons, die von 1 bis 16 beschriftet sind. Oberhalb der Buttons befindet sich ein Textfeld, welche dem Benutzer die auszuwählende Zahl mitteilt. Zudem teilt das Textfeld das Ende des Spieles mit. Um das Spiel zu starten, muss der Benutzer den GO-Button betätigen. Beim Betätigen eines Buttons wird die Hintergrundfarbe des Buttons verändert. Dies wird in Abhängigkeit der gesuchten Zahl und des ausgewählten Buttons festgelegt. Wenn die gesuchte Zahl und die Beschriftung des ausgewählten Buttons übereinstimmen, wird der Button grün gefärbt, ansonsten rot.
 
 \begin{figure}[!htbp]
 \centering
@@ -25,6 +25,7 @@ Auf der gegenüberliegenden Wand befindet sich die Versuchsfläche (siehe \autor
 \section{Szenen}
 \todo[inline]{Sinnvoll von Metern zu reden oder doch lieber von Einheiten?}
 \todo[inline]{Erklären wieso die Szenen so aufgebaut wurden? Z.B. warum verschiedene Entfernungen? Und wieso das 3D-Level?}
+\todo[inline]{Bezug auf Forschungsfrage}
 Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf dem zuvor beschriebenen Aufbau. Jeder der Räume ist 2,5 Meter hoch und 5 Meter breit. In der ersten Szene \glqq FittsLaw\grqq (siehe \autoref{fig:game-view}) steht der Benutzer 4,5 Meter von der gegenüberliegenden Wand entfernt. In der zweiten Szene \glqq FittsLawFar\grqq (siehe \autoref{fig:FittsLawFar}) und der dritten Szene \glqq FittsLawFurther\grqq (siehe \autoref{fig:FittsLawFurther}) wurde die Entfernung zwischen Benutzer und Spielfläche jeweils um 2,5 Meter zur vorherigen Szene vergrößert. Die vierte und letzte Szene \glqq 3D-Level\grqq (siehe \todo{Verweis auf Abbildung}) basiert auf der Szene FittsLawFurther. Der Unterschied ist jedoch, dass sich die Buttons nicht mehr an der Wand befinden sondern frei im Raum schweben. 
 
 \begin{figure}[!htbp]
