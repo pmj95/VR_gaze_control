@@ -1,9 +1,46 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Durchführung  der Probandenversuche} 
-\todo{} 
+Im folgenden Kapitel werden die geplanten Probandenversuche und deren Durchführung genauer erklärt. Während der Bearbeitung der Arbeit hat sich die grundlegende Situation jedoch so sehr geändert, dass eine Durchführung, wie geplant, nicht stattfinden konnte. Mehr hierzu in Kapitel \ref{section:corona}.
+\section{Probleme der Probandenversuche}
+\label{section:corona}
+Die Durchführung dieser Arbeit war für den Zeitraum November 2019 bis Juni 2020 vorgesehen. Die Durchführung der Probandenversuche war in der ursprünglichen Planung für April 2020 angesetzt. Allerdings wurden durch die Corona-Pandemie \todo{offizielle Quelle zur aktuellen Situation} Kontaktbeschränkungen beschlossen, die eine Durchführung in geplanter Größenordnung verbieten. Ursprünglich war mit einer Teilnehmerzahl von rund 20 Probanden geplant worden. Leider war es nicht möglich, in dieser Größenordnung den Versuch durchzuführen. Alle Daten, die erhoben wurden, sind von einem Probanden und den Autoren selbst erstellt. Dies beeinflusst die Messergebnisse enorm, sodass keine klaren Rückschlüsse und somit keine eindeutige Antwort auf die Forschungsfrage gegeben werden kann. Das folgende Kapitel wird unter Berücksichtigung dieser Einschränkung die vorhandenen Daten auswerten und anhand derer probieren, ob erste Aussagen über die Eignung von Eye-Tracking in VR möglich sind.
 \section{Versuchsaufbau} 
+In Kapitel \ref{section:versuchsumgebung} wird der Aufbau der unterschiedlichen Level bereits erklärt. Es ergeben sich folgende Kombinationsmöglichkeiten für einen Versuchsaufbau:
+\begin{itemize}
+	\item 4 verschiedene Umgebungen
+	\item 2 unterschiedliche Formen des Anvisierens (Laserpointer/Controller und Eye-Tracking)
+	\item 2 unterschiedliche Formen des Auswählens (Triggerbetätigung und Blinzeln)
+	\item 3 unterschiedliche Größen für die Knöpfe
+\end{itemize}
+Daraus lässt sich berechnen wie viele verschiedene Aufbauten A es insgesamt gibt:
+\begin{align}
+	A=4*2*2*3=48
+\end{align}
+Um erste Indizien geben zu können, sollen für jeden möglichen Versuchsaufbau 5 Messungen zur Verfügung stehen. Das bedeutet, dass insgesamt mindestens 240 Messungen durchgeführt werden sollten. Dabei soll jeder Proband alle Steuermöglichkeiten gleich oft testen. Das bedeutet, dass bei 20 Probanden jeder Proband 12 Messungen durchführt. Jeweils 3 sind eine Steuermöglichkeits-Kombination. Diese drei Versuche werden nach folgendem Muster entworfen:
+\begin{enumerate}
+	\item Das erste Level ist eine der vier Steuermöglichkeiten mit einer zugeteilten Distanz und einer zugeteilten Knopfgröße.
+	\item Das zweite Level verändert die Distanz zu den Objekten, behält aber die Knopfgröße und die Steuerart bei.
+	\item Das dritte Level verändert die Größe des Knopfes, behält aber Steuerart und Distanz vom ersten Level bei.
+	\item Dieses Muster wiederholt sich vier mal - für jede Steuerart ein mal.
+\end{enumerate}
+Mit dieser Methode ist es möglich, alle unterschiedlichen Parameter möglichst gleichmäßig zu testen. Da jeder Proband einen unterschiedlichen Ablauf hat, werden Lerneffekte und andere unerwünschte Nebeneffekte neutralisiert. Mit einem Plan, wie in Anhang \todo{Anhang mit Tabelle für Probanden und Versuche aufgelistet} beschrieben, würde jeder Testaufbau mit 5 Versuchen getestet werden. Durch die Veränderung eines Einzelnen Parameters zwischen jedem Versuch lässt sich der Einfluss jedes Parameters in mehreren Testaufbauten messen. 
+
+\subsection{Ablauf eines Probandenversuchs}
+Der Probandenversuch findet in Gruppenterminen statt. Dabei werden nach und nach Probanden benötigt. Da wegen Hardwareeinschränkungen nicht zeitgleich getestet werden kann, wird ein Zeitplan entworfen. Jeder Proband kommt einzeln in den Testraum. Hier werden zunächst Informationen gesammelt, wie bspw. das Alter, Erfahrung mit VR und allgemeiner Umgang mit Computern (Kenntnisse sehr gut bis schlecht) \todo{umformulieren}. Daraufhin wird dem Nutzer die VR-Brille aufgesetzt und die grundsätzlichen Einstellungen (z.B. Band am Kopf anpassen) werden vorgenommen. In einer Beispielumgebung wird dem Proband das Prinzip des Versuchs erklärt. Die Augen werden für das Eye-Tracking kalibriert. Wenn der Proband sich bereit für den Versuch fühlt, werden nach und nach die entsprechenden Level geladen und bewältigt. Die Messdaten werden automatisch erfasst und zur Auswertung gespeichert. Die Daten und Auswertung sind hier zu finden \todo{daten und auswertung verlinken und hinzufügen}. Sobald der Proband die für ihn bestimmten zwölf Versuche durchgeführt hat, füllt er einen Fragebogen (siehe Kapitel \ref{section:fragebogen}) aus. Die Ergebnisse und Auswertung dieser sind hier zu finden \todo{daten und auswertung verlinken und hinzufügen}.
 
 \section{Fragebogen} 
+\label{section:fragebogen}
+Der Fragebogen stellt einen wichtigen Teil in der Beantwortung der Forschungsfrage dar. Da es das Ziel dieser Arbeit ist, herauszufinden, ob sich Eye-Tracking für die Steuerung in VR eignet, ist das subjektive Empfinden der Nutzer enorm wichtig. Mit den Messwerten aus den Versuchen lassen sich zwar Parameter wie Schnelligkeit vergleichen, allerdings ist die subjektive Empfindung bei Eingabegeräten immer ein wichtiger Faktor. Deshalb soll der Fragebogen die Frage beantworten, welche Steuermöglichkeit von den Probanden bevorzugt wird und warum das so ist.
+\subsection{Fragen}
+Der Fragebogen besteht aus zwei Teilen: Einerseits werden Fragen zu jeder Steuermöglichkeit separat gefragt, andererseits werden Fragen zum allgemeinen Empfinden und den Steuermöglichkeiten im Vergleich gefragt.
+Zu jeder Steuermöglichkeit wird gefragt, :
+\begin{itemize}
+	\item wie leicht die Fixierung und das Auswählen des richtigen Knopfes gefallen ist.
+	\item wie gut man sich eine Steuerung mit dieser Konfiguration vorstellen kann.
+	\item wie stark eine Veränderung der Distanz und der Größe der Knöpfe einen Einfluss auf die Steuerung hat.
+\end{itemize}
+Am Ende der Befragung wird der Proband gebeten, ein begründetes Ranking der Steuermöglichkeiten abzugeben. Hier können auch offene Punkte angemerkt werden, die nicht im restlichen Teil des Fragebogens abgefragt werden.
+
 
 \section{Versuche}
