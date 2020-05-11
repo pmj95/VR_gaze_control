@@ -5,9 +5,9 @@ list_of_combos = [[], [], [], []]
 
 
 def fill_list():
-    for i in range(4):
-        for j in range(1, 5):
-            for k in range(1, 4):
+    for i in range(2):
+        for j in range(1, 3):
+            for k in range(1, 3):
                 for l in range(5):
                     list_of_combos[i].append((j, k))
 
@@ -57,7 +57,7 @@ def get_possible_values(a, conf):
 def get_measurments(index):
     previous_chosen_count = 0
     values = []
-    for i in range(4):
+    for i in range(2):
         a = list_of_combos[i][random.randint(0, (20-index)*3)]
         b = (0, 0)
         c = (0, 0)
@@ -77,7 +77,7 @@ def get_measurments(index):
 
 
 fill_list()
-for i in range(20):
+for i in range(5):
     probanden[i] = get_measurments(i)
 
 print(list_of_combos)
