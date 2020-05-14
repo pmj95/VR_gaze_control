@@ -1,6 +1,7 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Grundlagen}
+\todo[inline]{Grundlagen-Einleitung überarbeiten }
 In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst wird das in dieser Arbeit verwendete \acs{VR}-Headset vorgestellt. Nach dem \acs{VR}-Headset folgt der Eye Tracker und zum Schluss die Laufzeit- und Entwicklungsumgebung Unity.
 
 \section{Virtuelle Realität}
@@ -26,19 +27,18 @@ Die \autoref{fig:mixed-reality} zeigt die Abgrenzung zwischen \ac{VR}, \ac{AR} u
 \end{figure}
 
 \section{\acs{VR}-Headset}
-Im Rahmen dieser Arbeit wird das \acs{VR}-Headset HTC Vive verwendet. Das Headset wurde gemeinsam von den Firmen HTC und Valve entwickelt. Das \acs{VR}-Headset lässt sich in die folgenden 3 Teile unterteilen. 
+Um in eine \ac{VR}-Welt einzutauchen, wird ein \ac{VR}-Headset benötigt. Im Rahmen dieser Arbeit wird das \acs{VR}-Headset HTC Vive verwendet. Das Headset wurde von HTC gemeinsam mit dem Spieleentwickler Valve entwickelt und ist seit dem Jahr 2016 auf dem Markt erhältlich. Das \acs{VR}-Headset lässt sich in das \ac{HMD}, Controller und in das Tracking System unterteilen.
 
 \subsection{\acl{HMD}}
-\ac{HMD}
+%Das \ac{HMD} ist die Hauptkomponente, mit welcher der Benutzer in die \ac{VR}-Umgebung eintaucht. Durch Aufsetzen eines \ac{HMD}
+%In \autoref{fig:vive-hardware-hmd-1} ist das \ac{HMD} der HTC Vive dargestellt. 
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\linewidth]{vive-hardware-hmd-1}
-	\caption[HTC Vive HMD]{HTC Vive \acs{HMD} \cite{ViveHMD}}
+	\caption[HMD der HTC Vive]{\acs{HMD} der HTC Vive \cite{ViveHMD}}
 	\label{fig:vive-hardware-hmd-1}
 \end{figure}
-
-\todo{Abbildung von Headset}
 
 \subsection{Controller}
 \begin{figure}[!htbp]
@@ -47,22 +47,26 @@ Im Rahmen dieser Arbeit wird das \acs{VR}-Headset HTC Vive verwendet. Das Headse
 	\caption[Controller der HTC Vive]{Controller der HTC Vive \cite{ViveControllers}}
 	\label{fig:vive-hardware-controllers-1}
 \end{figure}
-\todo{Abbildung von Controller}
 
-\subsection{Lighthouse Tracking System}
+\subsection{Tracking System}
+Für das Umsehen in einer \ac{VR}-Umgebung, wird ein Tracking System benötigt. Ein Tracking System erfasst die Position und die Bewegungen des Benutzers. Nach \citeauthor{Sauter.2015} unterschied sich die HTC Vive nach der Vorstellung auf der Mobile World Congress insbesondere durch das verwendete Tracking. Die Präsenz in \ac{VR} war weitaus besser als das anderer Hersteller. Während der Benutzer bei anderen Herstellern in der \ac{VR}-Umgebung stand und zuschaute, konnte der Benutzer mithilfe des Trackings der HTC Vive erstmals frei bewegen und mit der Umgebung interagieren. \cite{Sauter.2015} 
+
+Das verwendetet Tracking System ist das von der Firma Valve entwickelte SteamVR-Tracking. Valve beschreibt SteamVR-Tracking als eine Hardware- und Softwarelösung, durch die Geräte in Echtzeit ihre Position im Raum ermitteln \cite{Valve.2020}. Während zum Beispiel bei Oculus VR kleine Infrarot-LEDs auf dem \ac{HMD} sitzen, welche von einer externen Kamera erfasst werden, verwendet SteamVR-Tracking keine Kameras \cite{Sauter.2015}. Stattdessen werden zwei Basisstationen verwendet (siehe \autoref{fig:vive-hardware-base-stations}), welche mithilfe von zwei Laserstrahlen der Klasse 1 \glqq das Zimmer mit mehreren Synchronimpulsen und Laserstrahlen im Radius von bis zu 5 Metern\grqq \cite{Valve.2020} scannen. Je ein Laser wird horizontal und vertikal rotiert. Daher wird das System auch als Lighthouse (Leuchtturm) System bezeichnet. In den zu erfassenden Objekten (zum Beispiel \ac{HMD}, Controller, etc.) sind Fotowiderstände als Sensoren integriert. Die millimetergenaue Position der Objekte wird mithilfe der integrierten Sensoren durch das Objekt selbst bestimmt. \cite{Yates.20160512}
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\linewidth]{vive-hardware-base-stations}
-	\caption[Lighthouse Basis Station]{Lighthouse Basis Station \cite{ViveBaseStation}}
+	\caption[Lighthouse Basisstationen]{Lighthouse Basisstationen \cite{ViveBaseStation}}
 	\label{fig:vive-hardware-base-stations}
 \end{figure}
-\todo{Abbildung von Basisstation}
+
+In \autoref{fig:graphic-tracking-steamvr} ist die Funktionsweise von SteamVR-Tracking grafisch dargestellt. Die zwei Basisstationen werden gegenüberliegend an der Wand montiert. Dies ermöglicht eine 360°-Abdeckung des Raumes. Das blaue Rechteck auf dem Boden definiert den Spielbereich, in dem sich der Benutzer frei bewegen kann. Dieser Bereich wird vom Benutzer kalibriert. Die Größe ist auf maximal 15 m$^2$ begrenzt \cite{ViveProduct}. Um ein unabsichtliches Verlassen des Spielbereichs des Benutzers zu verhindern, wird der Benutzer durch das Einblenden einer Chaperone-Spielbereichsbegrenzung in Form eines Energiefeldes bei der Grenze gewarnt \cite{ViveProduct}. 
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1\linewidth]{graphic-tracking}
-	\caption[Darstellung von VR mit dem Tracking von HMD und Controllern]{Darstellung von VR mit dem Tracking von HMD und Controllern \cite{VentureBeat}}
-	\label{fig:graphic-tracking}
+	\includegraphics[width=1\linewidth]{graphic-tracking-steamvr}
+	\caption[Steam VR scannt mit Lighthouse]{Steam VR scannt mit Lighthouse \cite{Sauter.2015}}
+	\label{fig:graphic-tracking-steamvr}
 \end{figure}
 
 \subsection{Systemvoraussetzungen}
@@ -103,3 +107,4 @@ Standardmäßig entspricht 1 Einheit 1 Meter (siehe \cite{BrentAllard.2017} \& \
 \subsection{hmd\_eyes}
 
 \section{Fitts' Law}
+\todo[inline]{Fitts's Law muss hier noch rein}
