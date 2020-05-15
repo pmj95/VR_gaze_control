@@ -8,7 +8,7 @@ In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst
 Die Grundidee der virtuellen Realität existiert bereits seit dem 19. Jahrhundert. David Brewester entwickelte 1848 ein linsenförmiges Stereoskop, welches das Gefühlt von Tiefe und Immersion hervorbrachte. Nennenswerte Entwicklungen im Bereich der virtuellen Realität wurden zu Beginn des 20. Jahrhunderts getätigt. \cite[S. 1f]{Singh.2017} 1987 gebrauchte der Informatiker Jaron Lanier als erster Wissenschaftler den Begriff \ac{VR} \cite{Doerner2019}. 
 
 Bei der Suche einer einheitlichen Definition fällt eine große Diskrepanz in der Literatur auf. Die \citeauthor{BundeszentralefurpolitischeBildung.2018} definiert \ac{VR} als \glqq Darstellung und gleichzeitige Wahrnehmung der Wirklichkeit und ihrer physikalischen Eigenschaften in einer in Echtzeit computergenerierten, interaktiven virtuellen Umgebung\grqq  \cite{BundeszentralefurpolitischeBildung.2018}. \\
-\citeauthor{LaValle.2019} von der University of Oulu definiert \ac{VR} als herbeiführen eines gezielten Verhaltens in einem Organismus durch künstliche sensorische Stimulation, während der Organismus sich der Störung kaum oder gar nicht bewusst ist \cite[S. 1]{LaValle.2019}. Aus seiner Definition kristallisiert \citeauthor{LaValle.2019} die folgenden vier Hauptkomponenten:\cite[S. 1,3]{LaValle.2019}
+\citeauthor{LaValle.2019} von der University of Oulu definiert \ac{VR} als herbeiführen eines gezielten Verhaltens in einem Organismus durch künstliche sensorische Stimulation, während der Organismus sich der Störung kaum oder gar nicht bewusst ist \cite[S. 1]{LaValle.2019}. Aus seiner Definition kristallisiert \citeauthor{LaValle.2019} die folgenden vier Hauptkomponenten:\cite[S. 1,3]{LaValle.2019} \todo{Seitenzahlen weg machen???}
 \begin{enumerate}
 	\item \textbf{Gezieltes Verhalten}: Der Organismus hat eine Erfahrung (zum Beispiel Fliegen), welche durch den Entwickler erstellt wurde. 
 	\item \textbf{Organismus}: Organismus bezieht sich hierbei auf den Benutzer von \ac{VR}, welcher jeglicher Lebensform entsprechen kann. Wissenschaftler setzten die \ac{VR}-Technologie bereits bei Fruchtfliegen, Kakerlaken, Fischen, Nagetiere und Affen ein. 
@@ -28,11 +28,12 @@ Die \autoref{fig:mixed-reality} zeigt die Abgrenzung zwischen \ac{VR}, \ac{AR} u
 
 \section{\acs{VR}-Headset}
 \todo[inline]{VR-Headset oder VR-System?????}
+\todo[inline]{Systemvoraussetzungen mit rein nehmen????}
 Zur Umsetzung von \ac{VR} in der Praxis wird ein \ac{VR}-fähiges System benötigt, welches möglichst viele Sinne des Benutzers stimuliert \cite{Dorner.2019}. Im Rahmen dieser Arbeit wird das \acs{VR} System HTC Vive verwendet. Das System wurde von HTC gemeinsam mit dem Spieleentwickler Valve entwickelt und wurde im April 2016 auf den Markt gebracht \cite{Fehrenbach.14.4.2016}. Das System setzt sich aus den Komponenten \ac{HMD}, Controller und Tracking System zusammen. Die einzelnen Komponenten werden nachfolgend erläutert.
 
 \subsection{\acl{HMD}}
 Da die visuelle Wahrnehmung die stärkste Immersion für den Benutzer hervorbringt, werden \ac{HMD} zum Eintauchen in eine \ac{VR}-Umgebung verwendet. Die Übersetzung von \ac{HMD} lautet \glqq ein am Kopf montiertes Display\grqq. Wie die Übersetzung nahelegt, wird ein Display am Kopf des Benutzers montiert. Ein \ac{HMD} ist ein immersives Display, welches den Sichtbereich des Benutzers von der kompletten Umgebung abschirmt. Die Immersion bei einem \ac{HMD} hängt von der Größe des Sichtfeldes ab. Während ein großes Sichtfeld als immersiv gilt, ist ein kleines weniger immersiv. \cite{Dorner.2019} Jedes Auge hat sein eigenes Display. Da ein \ac{HMD} wie eine Brille vor den Augen angebracht ist und komplett am Kopf befestigt wird, wird ein \ac{VR}-System auch als \ac{VR}-Brille oder \ac{VR}-Headset bezeichnet. \\
-In \autoref{fig:vive-hardware-hmd-1} ist das \ac{HMD} der HTC Vive abgebildet. Das Headset wird mittels Klettverschluss am Kopf befestigt. Die HTC Vive hat eine Auflösung von insgesamt \mbox{2160 x 1200} Pixel, was einer Auflösung von \mbox{1080 x 1200} Pixel pro Auge entspricht. Der Sichtbereich beträgt 110°, die Bildwiederholfrequenz 90 Hz. Es ist möglich Einstellungen bei der Pupillendistanz und des Objektivabstands vorzunehmen. Das Headset ist über Kabel mit dem Computer verbunden. \cite{ViveProduct}
+In \autoref{fig:vive-hardware-hmd-1} ist das \ac{HMD} der HTC Vive abgebildet. Das Headset wird mittels Klettverschluss am Kopf befestigt. Die HTC Vive verwendet AMOLED Displays mit einer Auflösung von insgesamt \mbox{2160 x 1200} Pixel, dies entspricht einer Auflösung von \mbox{1080 x 1200} Pixel pro Auge. Der Sichtbereich beträgt 110°, die Bildwiederholfrequenz 90 Hz. Es ist möglich Einstellungen bei der Pupillendistanz und des Objektivabstands vorzunehmen. Das Headset ist über Kabel mit dem Computer verbunden. \cite{ViveProduct}
 
 \begin{figure}[!htbp]
 	\centering
@@ -42,6 +43,8 @@ In \autoref{fig:vive-hardware-hmd-1} ist das \ac{HMD} der HTC Vive abgebildet. D
 \end{figure}
 
 \subsection{Controller}
+Die HTC Vive beinhaltet die in \autoref{fig:vive-hardware-controllers-1} dargestellten Controller, welche für die Interaktion in einer \ac{VR} verwendet werden können. Durch die Controller ist der Benutzer nicht von Maus und Tastatur abhängig, um mit der \ac{VR}-Umgebung interagieren zu können. Da die Controller ein haptisches Feedback mit einer hohen Auflösung haben, erfährt der Benutzer eine höher Immersion. Die Controller können den Benutzer bei der Bewegung durch Teleportation in \ac{VR} unterstützen. Auf der Oberseite der Controller befindet sich ein Multifunktions-Trackpad, ein Systemknopf, eine Menütaste sowie Greifknöpfe. Auf der Unterseite des Controllers befindet sich ein zweistufiger Abzug. \cite{ViveProduct}
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\linewidth]{vive-hardware-controllers-1}
@@ -70,10 +73,9 @@ In \autoref{fig:graphic-tracking-steamvr} ist die Funktionsweise von SteamVR-Tra
 	\label{fig:graphic-tracking-steamvr}
 \end{figure}
 
-\subsection{Systemvoraussetzungen}
-
 \subsection{SteamVR}
-\todo[inline]{Ein bissel was zu schreiben!}
+\todo[inline]{SteamVR wurde von Valve und HTC als Unterstützung für Entwickler – zusammen mit dem HTC Vive System – veröffentlicht. Es bietet eine Reihe von API-Aufrufen und vorgefertigten Spiele Objekten, welche die Entwicklung von VR-Anwendungen zugänglicher gestaltet. Die Nutzung von SteamVR ist frei unter ihrer Steamworks VR API Code Lizenz}
+\todo[inline]{Überhaupt was zu schreiben?? Oder erst in Unity?? Iwo muss der Zugriff für die Entwickler beschrieben werden.}
 
 \section{Eyetracking}
 Eyetracking ist eine Technologie, die erkennt, in welche Richtung eine Person ihren Blick richtet. Hierfür werden beim Eyetracking Blick sowie Augenbewegungen erfasst. Die hauptsächlichen Parameter, die durch das Eyetracking erfasst werden, sind Fixiationen (von dem Benutzer fixierter Punkt oder Objekt), Sakkaden (schnelle Augenbewegungen bei der Erfassung eines neuen Fixpunktes) und Regression (Rücksprung zu vorherigen Fixpunkte oder Objekte).
