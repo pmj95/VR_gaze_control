@@ -795,7 +795,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
+  thickness: 0
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -3903,7 +3903,7 @@ PrefabInstance:
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8807455923093254297, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -5031,6 +5031,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944227346}
   m_CullTransparentMesh: 0
+--- !u!4 &962633157 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5759569963728653534, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 732409958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963276517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,7 +9746,7 @@ GameObject:
   - component: {fileID: 2078468670}
   m_Layer: 0
   m_Name: GameFittsLaw
-  m_TagString: Untagged
+  m_TagString: Game
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9759,8 +9765,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructionField: {fileID: 2092651337}
   gazeController: {fileID: 419471038}
-  gazeOrigin: {fileID: 1912739688}
-  gazeLogDistance: 240
+  gazeOrigin: {fileID: 962633157}
+  gazeLogDistance: 20
   level: Fitts Law near
 --- !u!4 &2078468671
 Transform:

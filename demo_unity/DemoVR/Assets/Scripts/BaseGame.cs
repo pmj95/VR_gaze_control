@@ -125,13 +125,17 @@ public abstract class BaseGame : BaseMono
         if (this.isplaying == true && this.logCounter == 0)
         {
             Vector3 origin = this.gazeOrigin.position;
-            Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
+            String res = "(" + origin.x.ToString() + ", " + origin.y.ToString() + ", " + origin.z.ToString() + ")";
+            this.measurement.addGazePoint(res); 
+            Debug.Log(res);
+            //Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
 
-            if (Physics.Raycast(origin, direction, out RaycastHit hit))
-            {
-                Vector3 point = hit.point;
-                this.measurement.addGazePoint(point.ToString());
-            }
+            //if (Physics.Raycast(origin, direction, out RaycastHit hit))
+            //{
+            //    Vector3 point = hit.point;
+            //    this.measurement.addGazePoint(point.ToString());
+            //    Debug.Log(point.ToString());
+            //}
         }
         
         this.logCounter++;

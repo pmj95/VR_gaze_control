@@ -1,0 +1,15 @@
+{
+    "level": "Fitts Law far",
+    "currentState": "LaserBlinking",
+    "startTime": 65293343,
+    "stopTime": 65309091,
+    "gazePoints": [],
+    "action": [
+        "65295886,5,True",
+        "65297259,6,True",
+        "65302736,14,True",
+        "65306615,8,True",
+        "65309091,13,True"
+    ],
+    "scaling": "Large"
+}
