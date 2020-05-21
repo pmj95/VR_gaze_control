@@ -795,7 +795,7 @@ MonoBehaviour:
     needsReinit: 0
   active: 1
   color: {r: 0, g: 0, b: 0, a: 0}
-  thickness: 0.002
+  thickness: 0
   clickColor: {r: 0, g: 1, b: 0, a: 1}
   holder: {fileID: 0}
   pointer: {fileID: 0}
@@ -1781,7 +1781,7 @@ GameObject:
   - component: {fileID: 248702792}
   - component: {fileID: 248702791}
   m_Layer: 0
-  m_Name: Wall (3)
+  m_Name: Wall behind
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1860,7 +1860,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 270, y: 180, z: 180}
 --- !u!1 &275927333
 GameObject:
@@ -2385,7 +2385,7 @@ GameObject:
   - component: {fileID: 338105577}
   - component: {fileID: 338105576}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: Wall left
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2464,7 +2464,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 90}
 --- !u!1 &338600122
 GameObject:
@@ -3903,7 +3903,7 @@ PrefabInstance:
     - target: {fileID: 5759569964053480823, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8807455923093254297, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -5981,7 +5981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200168005}
   m_Layer: 0
-  m_Name: Calibration Light
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 1315403287}
   - component: {fileID: 1315403291}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall Game
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6382,7 +6382,7 @@ Transform:
   - {fileID: 870018457}
   - {fileID: 40884521}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 180}
 --- !u!114 &1315403291
 MonoBehaviour:
@@ -6753,7 +6753,7 @@ GameObject:
   - component: {fileID: 1432055964}
   - component: {fileID: 1432055963}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Standing Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7547,7 +7547,7 @@ GameObject:
   - component: {fileID: 1566881882}
   - component: {fileID: 1566881881}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: Wall right
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7627,7 +7627,7 @@ Transform:
   m_Children:
   - {fileID: 102563521}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 180}
 --- !u!1 &1577329442
 GameObject:
@@ -7721,7 +7721,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &1588267323
 GameObject:
@@ -7816,7 +7816,7 @@ Transform:
   m_Children:
   - {fileID: 1432055962}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591470903
 GameObject:

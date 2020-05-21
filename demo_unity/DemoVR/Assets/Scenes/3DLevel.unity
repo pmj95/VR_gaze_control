@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1423,7 +1423,7 @@ RectTransform:
   m_Children:
   - {fileID: 963276518}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 248702791}
   - component: {fileID: 248702795}
   m_Layer: 0
-  m_Name: Wall (3)
+  m_Name: Wall behind
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1959,7 +1959,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 270, y: 180, z: 180}
 --- !u!114 &248702795
 MonoBehaviour:
@@ -2633,7 +2633,7 @@ GameObject:
   - component: {fileID: 338105576}
   - component: {fileID: 338105580}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: Wall left
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2712,7 +2712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 90}
 --- !u!114 &338105580
 MonoBehaviour:
@@ -4306,7 +4306,7 @@ PrefabInstance:
     - target: {fileID: 5759569962967085357, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5759569962967085357, guid: a9383f0f3aa209a4eb0119d3ad1daa1d,
         type: 3}
@@ -5983,7 +5983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200168005}
   m_Layer: 0
-  m_Name: Calibration Light
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6003,7 +6003,7 @@ Transform:
   - {fileID: 275927334}
   - {fileID: 157396647}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1203670941
 GameObject:
@@ -7008,7 +7008,7 @@ GameObject:
   - component: {fileID: 1432055964}
   - component: {fileID: 1432055963}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Standing Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7515,7 +7515,7 @@ GameObject:
   - component: {fileID: 1566881881}
   - component: {fileID: 1566881885}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: Wall right
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7595,7 +7595,7 @@ Transform:
   m_Children:
   - {fileID: 102563521}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 270, y: 90, z: 180}
 --- !u!114 &1566881885
 MonoBehaviour:
@@ -7703,7 +7703,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1577329447
 MonoBehaviour:
@@ -7812,7 +7812,7 @@ Transform:
   m_Children:
   - {fileID: 1432055962}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588267328
 MonoBehaviour:
@@ -8732,7 +8732,7 @@ GameObject:
   - component: {fileID: 1804519114}
   - component: {fileID: 1804519113}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall Game
   m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8841,7 +8841,7 @@ Transform:
   - {fileID: 1384325391}
   - {fileID: 892110318}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 180}
 --- !u!1 &1838939954
 GameObject:
@@ -9916,7 +9916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146887888
 GameObject:
