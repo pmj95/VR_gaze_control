@@ -26,7 +26,7 @@ Die \autoref{fig:mixed-reality} zeigt die Abgrenzung zwischen \ac{VR}, \ac{AR} u
 	\label{fig:mixed-reality}
 \end{figure}
 
-\section{\acs{VR}-Headset}
+\section{\acs{VR}-System}
 \todo[inline]{VR-Headset oder VR-System?????}
 \todo[inline]{Systemvoraussetzungen mit rein nehmen????}
 Zur Umsetzung von \ac{VR} in der Praxis wird ein \ac{VR}-fähiges System benötigt, welches möglichst viele Sinne des Benutzers stimuliert \cite{Doerner2019}. Nach \citeauthor{DoernerWahrnehmung} sind die wichtigsten Sinne im \ac{VR} Umfeld der visuelle, der akustische sowie der haptische Sinn \cite{DoernerWahrnehmung}. Im Rahmen dieser Arbeit wird das \acs{VR} System HTC Vive verwendet. Das System wurde von HTC gemeinsam mit dem Spieleentwickler Valve entwickelt und wurde im April 2016 auf den Markt gebracht \cite{Fehrenbach.14.4.2016}. Das System setzt sich aus den Komponenten \ac{HMD}, Controller und Tracking System zusammen. Die einzelnen Komponenten werden nachfolgend erläutert.
@@ -75,8 +75,9 @@ In \autoref{fig:graphic-tracking-steamvr} ist die Funktionsweise von SteamVR-Tra
 \end{figure}
 
 \subsection{SteamVR}
-\todo[inline]{SteamVR wurde von Valve und HTC als Unterstützung für Entwickler – zusammen mit dem HTC Vive System – veröffentlicht. Es bietet eine Reihe von API-Aufrufen und vorgefertigten Spiele Objekten, welche die Entwicklung von VR-Anwendungen zugänglicher gestaltet. Die Nutzung von SteamVR ist frei unter ihrer Steamworks VR API Code Lizenz}
-\todo[inline]{Überhaupt was zu schreiben?? Oder erst in Unity?? Iwo muss der Zugriff für die Entwickler beschrieben werden.}
+SteamVR ist eine von Valve und HTC entwickelte API, welche zusammen mit dem HTC Vive System veröffentlicht wurde. 
+\todo[inline]{Muss noch geschrieben werden.}
+{\color{red} SteamVR wurde von Valve und HTC als Unterstützung für Entwickler – zusammen mit dem HTC Vive System – veröffentlicht. Es bietet eine Reihe von API-Aufrufen und vorgefertigten Spiele Objekten, welche die Entwicklung von VR-Anwendungen zugänglicher gestaltet. Die Nutzung von SteamVR ist frei unter ihrer Steamworks VR API Code Lizenz}
 
 \section{Eye-Tracking}
 Eye-Tracking ist eine Technologie, welche zur Erfassung von Augenbewegungen eingesetzt wird. \citeauthor{BartlPokorny.2013} definieren Eye-Tracking wie folgt: 
@@ -130,9 +131,22 @@ Im Gegensatz zu einem Eyetracker mit Umgebungskamera, müssen die erfassten 2D-B
 \section{Unity}
 Standardmäßig entspricht 1 Einheit 1 Meter (siehe \cite{BrentAllard.2017} \& \cite{AVividLight.2010}) --> Aussage ist plausibel, da standardmäßig in den Projekteinstellungen bei Physics die Gravitation auf -9,81 gesetzt ist.
 
-\subsection{steamVR}
+\subsection{Plugins}
 
-\subsection{hmd\_eyes}
+\subsubsection{steamVR}
+
+\subsubsection{hmd\_eyes}
 
 \section{Fitts' Law}
 \todo[inline]{Fitts's Law muss hier noch rein}
+
+\section{Systemvoraussetzung}
+
+Verwendete Hardware: i5 8600k, gtx 1060 6gb, 16gb ddr4
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{Systemauslastung}
+	\caption[Systemauslastung]{Systemauslastung}
+	\label{fig:Systemauslastung}
+\end{figure}
