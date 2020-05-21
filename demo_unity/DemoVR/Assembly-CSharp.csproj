@@ -72,7 +72,6 @@
     <Compile Include="Assets\Scripts\ButtonCanvas.cs" />
     <Compile Include="Assets\Scripts\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\ButtonNumber.cs" />
-    <Compile Include="Assets\Scripts\ColorMenu\ButtonColor.cs" />
     <Compile Include="Assets\Scripts\CylinderCollider\CylinderCollider.cs" />
     <Compile Include="Assets\Scripts\CylinderCollider\CylinderColliderEditor.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\GameFittsLaw.cs" />
@@ -80,9 +79,6 @@
     <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />
     <Compile Include="Assets\Scripts\GeneralButton.cs" />
     <Compile Include="Assets\Scripts\LaserInput.cs" />
-    <Compile Include="Assets\Scripts\Level1\GameLevel1.cs" />
-    <Compile Include="Assets\Scripts\Level1\MeasurementLevel1.cs" />
-    <Compile Include="Assets\Scripts\Level1\PlayerLevel1.cs" />
     <Compile Include="Assets\Scripts\Measurement.cs" />
     <Compile Include="Assets\Scripts\ScalingProperty.cs" />
     <Compile Include="Assets\Scripts\TriggerState.cs" />
@@ -91,61 +87,61 @@
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\AutoSave\ReadMe.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -325,22 +321,22 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="AsyncIO">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/AsyncIO.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/Plugins/Pupil/3rd-party/NetMQ.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/Studiarbeit/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
