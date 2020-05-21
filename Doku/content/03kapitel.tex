@@ -2,32 +2,7 @@
 
 \chapter{Stand der Technik}
 In diesem Kapitel werden bisherige Forschungsarbeiten mit ähnlichen Ansätzen vorgestellt und mit dieser Arbeit in den Kontext gestellt. Es wurden bereits mehrere alternative Steuermöglichkeiten zu den herkömmlichen VR-Controllern erforscht und erprobt. 
-\section{Fitts' Gesetz}
-Fitts' Gesetz (im englischen Fitts's Law) ist eine vom US-Amerikanischen Psychologe Paul Morris Fitts im Jahre 1954 veröffentlichte Metrik, welche die Schwierigkeit des Bewegens eines Objektes an eine bestimmte Stelle numerisch beschreibt. \citeauthor{Fitts.1992} hat in seiner Veröffentlichung ein Experiment beschrieben, in dem Probanden einen Gegenstand entlang einer Linie in einen Zielbereich bewegen sollennumerischi Parameter zur Bestimmung des "Index of Difficulty" (Index der Schwierigkeit) sind zum einen die Distanz D zum Zielbereich dem auszuwählen die Breite dies Zielbereiches Objekts W. Die Brechnung erfolgt dann nach folgender ForFitts.1992}:
-\begin{equation}
-ID = log_2 \left ( \frac{2D}{W} \right )
-\end{equation}
-Eine Erhöhung der Distanz hat eine Erhöhung der Schwierigkeit zur Folge, wohingegen eine Erhöhung der Breite das Senken des Schwierigkeitsindex ID zur Folge hat. Ein niedriger Wert für ID bedeutet, dass das Objekt leicht zu treffen ist, ein hoher Wert bedeutet, dass das Objekt schwer zu treffen ist\cite{Fitts.1992}. 
-Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer (Movement Time) MT zu berechnen. Die Berechnung von MT ist nach \citeauthor{Graham.1996} mit folgender Formel möglich\cite{Graham.1996} \todo{vlt gibts die Quelle iwo anders besser... so is nur mittelmäßig nice}:
-\begin{equation}
-MT = a + b * ID = a + b * log_2 \left ( \frac{2D}{W} \right )
-\end{equation}
-Die Konstanten a und b sind Zeitkonstanten, die von dem verwendeten Eingabegerät abhängig sind. Dabei beschreibt a die Zeit, bis eine Bewegung beginnt und b kann als Beschleunigungskonstante gesehen werden. Daher wird mit einer erhöhten Distanz die Zeit, bis das Objekt ausgewählt wird, ebenfalls höher\cite{Graham.1996}.
 
-Mittlerweile wird sich vor allem in der Erstellung von Benutzeroberflächen auf Computerbildschirmen (User Interfaces, kurz UIs) an den Erkenntnissen von Fitts orientiere, um Schaltflächen für Nutzereingaben möglichst so zu gestalten, dass sie schnell und einfach getroffen werden können. Durch die begrenzte Fläche auf einem Computerbildschirm bietet sich hier ebenfalls die Möglichkeit, an den Rändern des Bildschirms wichtige Bedienelemente zu platzieren, um eine schnellere Bedienung des Programms vornehmen zu können. Im Betriebssystem Windows 10 ist zum Beispiel der Startknopf in der unteren linken Ecke platziert. Dadurch hat dieser Knopf eine "unendliche" Höhe und Tiefe, da der Nutzer die Maus unendlich weit nach unten links bewegen kann und immer den Startknopf treffen wird. Dadurch wird die Zeit, bis ein Nutzer den Knopf getroffen hat und aktivieren kann deutlich reduziert\cite{Soukoreff.2004}.
-
-Bei Experimenten mit Fitts' Gesetz werden sowohl die Breite W und die Distanz D variiert, jedoch sollten die beiden Parameter nicht gleichzeitig variiert werden, um eine genauere Aussagekraft zu erlangen. 
-
-Da Fitts das Ursprungsexperiment ausschließlich in einer Dimension durchgeführt hat, war es ausreichend, ausschließlich die Breite des Zielbereichs als Breite W zu nutzen. Da aber ein Computerbildschirm zweidimensional ist, muss der Parameter angepasst werden, um die zweite Dimension ebenfalls in W darzustellen. Ansätze hierfür sind beispielsweise die Fläche des Objekts als W zu nutzen, oder die Breite mit der Höhe zu addieren. Da diese Ansätze aber nicht die Bewegungsrichtung beachten, wird in den meisten Fällen die Länge des Objekts in Bewegungsrichtung verwendet. Deshalb werden in den meisten Untersuchungen zu dem Thema Kreise verwendet, da hier W unabhängig von der Bewegungsrichtung konstant ist\cite{Soukoreff.2004}. 
-
-\subsection{Fitts' Gesetz und Eye-Tracking}
-Bei Eye-Tracking Steuerung wird weiterhin diskutiert, ob, und wenn dann wie, Fitts' Gesetz weiterhin einsetzbar ist. Eine weite Bewegung mit dem Auge zeichnet sich, im Gegensatz zu einer weiten Bewegung mit der Maus, nicht über die zurückgelegte Distanz, sondern über den Winkel zwischen zwei Objekten aus. Unter Berücksichtigung dieses Aspekts ist es aber möglich, Fitts' Gesetz anzuwenden, allerdings können hier Ungenauigkeiten auftreten, die z.b. bei der Steuerung mit einer Maus nicht auftreten können. Dies kann zum Beispiel durch Bewegungen des gesamten Kopfes und nicht nur der Augen geschehen. Allgemein hat \citeauthor{Miniotas.2000} belegt, dass eine Übertragung von Fitts' Gesetz zu Eye-Tracking möglich ist. \cite{Miniotas.2000}
-
-\subsection{Fitts' Gesetz und Virual Reality}
-Bei der Erstellung einer Nutzeroberfläche in der virtuellen Realität ist Fitts' Gesetz grundsätzlich weiterhin anwendbar. Dies haben \citeauthor{Hansen.2018} in einem Vergleich von Maussteuerung, Kopfsteuerung und Blicksteuerung gezeigt.\cite{Hansen.2018} Allerdings ist hier die Distanz zwischen zwei Punkten durch die komplette Immersion des Nutzers in der virtuellen Welt besser durch die Verwendung von Winklen, als der Verwendung von Pixeln als Maßeinheit anzugeben\cite{Hansen.2018}. Für ein vergleichbares Ergebnis ist es hier jedoch wichtig, dass die Kopfposition möglichst fixiert ist. Durch eine festgesetzte Position des Nutzers ist der Winkel zwischen zwei Objekten immer der Selbe und somit die Bewegung eines Zeigers in Form eines Laserpointers oder des Blicks immer mit der gleichen Bewegungslänge verbunden. Dies gilt auch für die Breite eines Objektes. Allerdings können sich diese Werte durch unbeabsichtigt/intuitiv stattfindende Kopfbewegungen ebenfalls wieder verändern. Dies ist nur bedingt kontrollierbar und muss kann deswegen zu Verzerrungen in den Ergebnissen führen. 
-
-\subsection{Fitts' Gesetz mit Eye-Tracking in Virtual Reality}
-Wenn man die Erkenntnisse der beiden vorherigen Kapitel zusammeführt, ergibt sich eine Situation, in der Fitts' Gesetz in VR mit Eye-Tracking durchaus überprüft werden kann, allerdings müssen einige Parameter, wie beispielsweise die Distanz zu den Objekten fest definiert sein. \citeauthor{Hansen.2018} haben in ihrer Untersuchung bereits VR und Eye-Tracking verbunden und sind zu dem Schluss gekommen, dass es als Steuermöglichkeit durchaus Potential hat, allerdings immer noch der herkömmlichen Computermaus unterlegen ist. \cite{Hansen.2018}
 
 \section{Interaction techniques using head gaze for virtual reality}
 \label{paper1}
