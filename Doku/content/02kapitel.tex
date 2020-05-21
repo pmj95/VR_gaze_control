@@ -99,6 +99,7 @@ Im Rahmen dieser Arbeit wird die Eye-Tracking Plattform von Pupil Labs verwendet
 \end{figure}
 
 \subsection{Kalibrierung}
+\todo[inline]{Evtl. Überarbeiten wie Formulierung von \cite[S. 5]{Clay_Koenig_Koenig_2019}}
 Vor der Verwendung von Eye-Tracking ist eine Kalibrierung erforderlich. Die Durchführung findet durch Betrachtung einer vordefinierten Anzahl visueller Stimuli statt. Während des Anvisierens des Kalibrierungsziels, werden die Pupillenposition im Augenbild, die physische Orientierung des Auges und die Lage des Ziels auf der Kalibrierungsebene abgetastet. Das Kalibrieren ist ein individueller Prozess, weshalb das Eye-Tracking vor der Anwendung für jeden Benutzer neu kalibriert werden muss. Der Grund sind unter anderem die humanspezifischen Parameter (zum Beispiel Hornhautverkrümmung), und geometrischen Informationen (zum Beispiel relative Lage und Orientierung zwischen den Kameras). \cite{Lander.2018}
 
 Pupil Capture bietet hauptsächlich zwei verschiedene Methoden zur Kalibrierung an. Die erste Methode eignet sich für Eye-Tracking im Nahbereich in einem engen Sichtfeld. In \autoref{fig:CalibrationMarker-2D} ist die erste Möglichkeit abgebildet. Eine Zielscheibe befindet sich in der Mitte, die anderen vier je in der Ecke des Bildschirmes. Wenn ein Stimulus angezeigt wird, werden die anderen Stimuli ausgeblendet. Diese Methode wird standardmäßig verwendet. Die zweite Möglichkeit eignet sich für mittlere Entfernungen und einem breiten Sichtfeld. Hier wird der Stimulus auf zum Beispiel einem Blattpapier vor den Benutzer gehalten. Pupil Capture erkennt den Stimulus über die Umgebungskamera. Hierfür ist es notwendig, dass der Stimulus dem Kalibrierungsmarker in Form der Zielscheibe entspricht. Beide Möglichkeiten können zudem nur mit einem Stimulus durchgeführt werden. \cite{PupilLabsCalib}
@@ -115,9 +116,7 @@ Nach \citeauthor{Lander.2018} wird die Genauigkeit von Eye-Tracking aufgrund von
 \end{figure}
 
 \subsection{Eye-Tracking in VR}
-Da in dieser Arbeit das Eyetracking innerhalb einer \ac{VR}-Umgebung untersucht werden soll, wird ein speziell für die HTC Vive entwickelter Eyetracker von Pupil Labs verwendet. Dies ist ein Add-on von Pupil Labs, welches in das HTC Vive Headset eingebaut wird und während dem Tragen des Headsets verwendet werden kann. In \autoref{fig:pupil_labs_addon} ist das Add-on von Pupil Labs und das \ac{VR}-Headset HTC Vive dargestellt. Das Add-on wird in die Innenseite um die Linsen des Headsets angebracht. 
-
-\todo[inline]{Probleme mit Kalibrierung in VR \cite[S. 5]{Clay_Koenig_Koenig_2019}}
+Da in dieser Arbeit das Eyetracking innerhalb einer \ac{VR}-Umgebung untersucht wird, wird ein speziell für die HTC Vive entwickelter Eyetracker von Pupil Labs verwendet. Dies ist ein Add-on von Pupil Labs, welches in das \ac{VR}-Headset HTC Vive eingebaut wird. In \autoref{fig:pupil_labs_addon} ist das Add-on von Pupil Labs und das \ac{VR}-Headset HTC Vive dargestellt. Das Add-on wird in die Innenseite um die Linsen des Headsets angebracht. Das Add-on ist im Vergleich zu dem Eyetracker-Headset fast identisch. Die Genauigkeit ist jedoch schlechter als beim Eyetracker-Headset. Sie beträgt beim Add-on ca. 1° \cite{PupilLabsAddOnSpecs}. Zudem entfällt die Umgebungskamera beim Eyetracker komplett. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -125,6 +124,9 @@ Da in dieser Arbeit das Eyetracking innerhalb einer \ac{VR}-Umgebung untersucht 
 	\caption[Pupil Core Add-on für HTC Vive]{Pupil Core Add-on für HTC Vive \cite{PupilLabsAddOn}}
 	\label{fig:pupil_labs_addon}
 \end{figure}
+
+Die Funktionsweise des Eye-Trackings anhand der realen Welt ist nicht komplett auf die virtuelle Welt übertragbar. Nach \citeauthor{Clay_Koenig_Koenig_2019} ist es daher wichtig die Fixierungspunkte bei der Kalibrierung im Bildschirmraum und nicht im \ac{VR}-Weltraum darzustellen. Die Fixierungspunkte bewegen sich zusammen mit dem Kopf des Benutzers, weshalb der Benutzer die Fixierungspunkte nicht durch Kopfbewegungen ins Zentrum des Gesichtsfeldes bekommt. Alle Ziele bleiben daher an ihrer vorgesehenen Position und das gesamte Gesichtsfeld wird für das Eye-Tracking kalibriert. Da die Auflösung von der Mitte bis zum Rand des Gesichtfeldes verschlechter \cite{Kreylos.2017}, sollte bei der Kalibrierung der Fokus auf die Mitte des Gesichtsfeldes liegen. Der Benutzer muss seine Augen nicht zu weiten Exzentrizitäten bewegen, sondern kann sein Kopf dem Objekt zuwenden, welches dieser beobachten möchte. Deshalb ist es sinnvoll eine höhere Genauigkeit in Bereichen des stärksten Sehens des Gesichtfeldes zu gewährleisten. \cite{Clay_Koenig_Koenig_2019} \\
+Im Gegensatz zu einem Eyetracker mit Umgebungskamera, müssen die erfassten 2D-Blickdaten in 3D-Blickdaten für \ac{VR}-Umgebung konvertiert werden. Bei einem Eyetracker bewegt sich die Umgebungskamera mit der Bewegung des Kopfes mit. Das bedeutet, dass die Umgebungskamera immer in der selben Position in Relation zu den Augen steht. Die 2D-Blickdaten können daher in das aktuelle Umgebungsbild hinzugefügt werden. In \ac{VR} muss ein 3D-Blickvektor berechnet werden. Dieser setzt sich aus den 2D-Blickdaten und der Position des Kopfes zusammen. \cite{Clay_Koenig_Koenig_2019}
 
 \section{Unity}
 Standardmäßig entspricht 1 Einheit 1 Meter (siehe \cite{BrentAllard.2017} \& \cite{AVividLight.2010}) --> Aussage ist plausibel, da standardmäßig in den Projekteinstellungen bei Physics die Gravitation auf -9,81 gesetzt ist.
