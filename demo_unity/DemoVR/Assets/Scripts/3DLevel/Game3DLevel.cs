@@ -28,7 +28,7 @@ public class Game3DLevel : BaseGame
         base.resetGame();
     }
 
-    protected override Measurement createMeasurement(TriggerState currentState)
+    protected override Measurement createMeasurement(ControlState currentState)
     {
         return new Measurement3DLevel(this.buttonPositionLabel, this.buttonPosition, ScalingProperty.currentScaling, this.level, currentState);
     }

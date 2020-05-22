@@ -12,7 +12,7 @@ public class GameFittsLaw : BaseGame
         ScalingProperty.PropertyChanged += ScalingProperty_PropertyChanged;
     }
 
-    protected override Measurement createMeasurement(TriggerState currentState)
+    protected override Measurement createMeasurement(ControlState currentState)
     {
         return new MeasurementFittsLaw(ScalingProperty.currentScaling, this.level, currentState);
     }

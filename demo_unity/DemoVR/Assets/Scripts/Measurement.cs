@@ -10,12 +10,14 @@ public abstract class Measurement
     public long stopTime;
     public List<string> gazePoints;
     public List<string> action;
+    public string scaling;
 
-    public Measurement(string level, TriggerState currentState)
+    public Measurement(string level, ControlState currentState, Scaling scaling)
     {
         this.gazePoints = new List<string>();
         this.action = new List<string>();
         this.currentState = currentState.ToString();
+        this.scaling = scaling.ToString();
         this.level = level;
     }
 

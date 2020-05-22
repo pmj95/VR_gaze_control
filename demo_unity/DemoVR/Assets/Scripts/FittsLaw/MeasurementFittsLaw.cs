@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class MeasurementFittsLaw : Measurement
 {
-    public string scaling;
-
-    public MeasurementFittsLaw(Scaling scaling, string level, TriggerState currentState) : base(level, currentState)
+    public MeasurementFittsLaw(Scaling scaling, string level, ControlState currentState) : base(level, currentState, scaling)
     {
-        this.scaling = scaling.ToString();
     }
 }

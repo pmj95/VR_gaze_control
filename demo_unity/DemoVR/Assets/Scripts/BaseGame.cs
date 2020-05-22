@@ -20,7 +20,7 @@ public abstract class BaseGame : BaseMono
 
     protected virtual void resetGame()
     {
-        this.measurement = this.createMeasurement(StateTrigger.currentState);
+        this.measurement = this.createMeasurement(ControlStateProperty.currentState);
         this.searchValues = this.getRandomSearchValues();
 
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Level1Button"))
@@ -101,8 +101,8 @@ public abstract class BaseGame : BaseMono
 
     private void subscribeEyetracking()
     {
-        if (StateTrigger.currentState == TriggerState.BlinkingEye
-            || StateTrigger.currentState == TriggerState.EyeTrigger)
+        if (ControlStateProperty.currentState == ControlState.BlinkingEye
+            || ControlStateProperty.currentState == ControlState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze += GazeController_OnReceive3dGaze;
         }
@@ -127,15 +127,6 @@ public abstract class BaseGame : BaseMono
             Vector3 origin = this.gazeOrigin.position;
             String res = "(" + origin.x.ToString() + ", " + origin.y.ToString() + ", " + origin.z.ToString() + ")";
             this.measurement.addGazePoint(res); 
-            Debug.Log(res);
-            //Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
-
-            //if (Physics.Raycast(origin, direction, out RaycastHit hit))
-            //{
-            //    Vector3 point = hit.point;
-            //    this.measurement.addGazePoint(point.ToString());
-            //    Debug.Log(point.ToString());
-            //}
         }
         
         this.logCounter++;
@@ -168,11 +159,11 @@ public abstract class BaseGame : BaseMono
 
     protected abstract string getLevelDir();
 
-    protected abstract Measurement createMeasurement(TriggerState currentState);
+    protected abstract Measurement createMeasurement(ControlState currentState);
 
     protected override void DoStart()
     {
-        StateTrigger.PropertyChanged += StateTrigger_PropertyChanged;
+        ControlStateProperty.PropertyChanged += StateTrigger_PropertyChanged;
         this.searchValues = new List<int>();
     }
 
