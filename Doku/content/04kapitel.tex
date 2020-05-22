@@ -48,7 +48,7 @@ Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf de
 	\label{fig:FittsLawFurther}
 \end{figure}
 
-Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläche befindet sich an der Wand und die Bedienelemente befinden sich auf der gleichen Ebene an der Wand. In der vierten und letzten Szene\glqq 3D-Level\grqq (siehe \todo{Verweis auf Abbildung}) wird untersucht, welche Auswirkungen eine dreidimensionale Spielfläche auf das Eye-Tracking hat. Die Bedienelemente befinden sich nicht mehr auf der gleichen Ebene, sondern schweben im Raum. Die Entfernung zwischen dem Benutzer und den Bedienelementen variiert von 4,5 bis 9,5 Einheiten. Der interessante Aspekt an dieser Szene ist, dass gegebenenfalls ein Bedienelement zum Teil ein anderes Bedienelement verdeckt. Hierbei wird insbesondere die Zuverlässigkeit des Eye-Trackings auf die Probe gestellt. 
+Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläche befindet sich an der Wand und die Bedienelemente befinden sich auf der gleichen Ebene an der Wand. In der vierten und letzten Szene\glqq 3D-Level\grqq{} (siehe \autoref{fig:3D-Level}) wird untersucht, welche Auswirkungen eine dreidimensionale Spielfläche auf das Eye-Tracking hat. Die Bedienelemente befinden sich nicht mehr auf der gleichen Ebene, sondern schweben im Raum. Die Entfernung zwischen dem Benutzer und den Bedienelementen variiert von 4,5 bis 9,5 Einheiten. Der interessante Aspekt an dieser Szene ist, dass gegebenenfalls ein Bedienelement zum Teil ein anderes Bedienelement verdeckt. Hierbei wird insbesondere die Zuverlässigkeit des Eye-Trackings auf die Probe gestellt. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -58,8 +58,8 @@ Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläch
 \end{figure}
 
 \section{Steuerung}
-Um beurteilen zu können, ob sich Eye-Tracking zur Steuerung von Bedienelementen in \ac{VR} eignet, werden verschiedene Steuerungsmöglichkeiten getestet. Die Steuerung innerhalb der \ac{VR}-Umgebung kann mit den Controllern erfolgen und mit dem Eye-Tracking. Die Steuerung lässt sich in Anvisieren und Interagieren unterteilen. Damit beim Anvisieren von Elementen mit dem Controller für den Benutzer klar wird, in welche Richtung der Controller zeigt, wird für das Anvisieren der Controller mit einem Laser versehen. Beim Eye-Tracking wird der Punkt durch eine kleine schwarze Kugel gekennzeichnet, welcher durch den Benutzer anvisiert wird. Das Interagieren mit dem Controller erfolgt durch den Trigger \todo{Abzug statt Trigger} auf der Unterseite des Controllers. Beim Eye-Tracking erfolgt dies durch Blinzeln.\\
-Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppen aufteilen. Die erste Gruppe ist die Steuerung mit den \ac{VR}-Headset Controllern. Die Controllervariante ist die klassische Steuerungsmöglichkeit. In der Regel benötigt der Benutzer zum Interagieren mit der \ac{VR}-Umgebung mindestens einen Controller. Die zweite Gruppe ist die Steuerung mithilfe des Eye-Trackers. Bei Eye-Tracking wird der Blick zum Anvisieren verwendet und das Blinzeln zum Interagieren mit der \ac{VR}-Umgebung verwendet. Die letzte Möglichkeit ist der Mix aus der klassischen Steuerung sowie der Steuerung mithilfe des Eye-Trackings. Hier übernimmt jeweils eine Steuerungsmöglichkeit das Anvisieren und die andere das Interagieren. Daraus ergeben sich die folgenden vier Versuchskombinationen (Anvisieren - Bestätigen\todo{?}):
+Um beurteilen zu können, ob sich Eye-Tracking zur Steuerung von Bedienelementen in \ac{VR} eignet, werden verschiedene Steuerungsmöglichkeiten getestet. Die Steuerung innerhalb der \ac{VR}-Umgebung kann mit den Controllern erfolgen und mit dem Eye-Tracking. Die Steuerung lässt sich in Anvisieren und Interagieren unterteilen. Damit beim Anvisieren von Elementen mit dem Controller für den Benutzer klar wird, in welche Richtung der Controller zeigt, wird für das Anvisieren der Controller mit einem Laser versehen. Beim Eye-Tracking wird der Punkt durch eine kleine schwarze Kugel gekennzeichnet, welcher durch den Benutzer anvisiert wird. Das Interagieren mit dem Controller erfolgt durch den Abzug auf der Unterseite des Controllers. Beim Eye-Tracking erfolgt dies durch Blinzeln.\\
+Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppen aufteilen. Die erste Gruppe ist die Steuerung mit den \ac{VR}-Headset Controllern. Die Controllervariante ist die klassische Steuerungsmöglichkeit. In der Regel benötigt der Benutzer zum Interagieren mit der \ac{VR}-Umgebung mindestens einen Controller. Die zweite Gruppe ist die Steuerung mithilfe des Eye-Trackers. Bei Eye-Tracking wird der Blick zum Anvisieren verwendet und das Blinzeln zum Interagieren mit der \ac{VR}-Umgebung verwendet. Die letzte Möglichkeit ist der Mix aus der klassischen Steuerung sowie der Steuerung mithilfe des Eye-Trackings. Hier übernimmt jeweils eine Steuerungsmöglichkeit das Anvisieren und die andere das Interagieren. Daraus ergeben sich die folgenden vier Versuchskombinationen:
 
 \begin{enumerate}
 	\item \textbf{Laser - Trigger}: Diese Versuchskombination verwendet die klassische Steuerelemente in \ac{VR}. Um einschätzen zu können, wie gut Eye-Tracking im Vergleich zu der klassischen Steuerungsvariante funktioniert, wird diese Versuchskombination benötigt. 
@@ -69,12 +69,20 @@ Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppe
 \end{enumerate}
 
 \section{Implementierung}
+\missingfigure{Szenenaufbau}
+Über 
+
 \missingfigure{Klassendiagramm}
 wichtigste Klassen erklären \\
 
 4 Wände: komplett Beleuchtet; nur nach vorne Beleuchtet \\
 
+\subsection{Game}
+
+\subsection{Measurement}
 Measurement (die Daten die aufgezeichnet werden sowie die gaze daten --> Probleme beim aufzeichenen)\\
+
+\subsection{UIElements}
 Auswahl: Laser oder Trigger; EyeTrigger / Blink Detection; Größe Verstellbar \\
 
 \begin{figure}[!htbp]
