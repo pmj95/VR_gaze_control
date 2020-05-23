@@ -15,7 +15,7 @@ public class GameFittsLaw : BaseGame
     /// <returns>new created Measurement</returns>
     protected override Measurement createMeasurement(ControlState currentState)
     {
-        return new MeasurementFittsLaw(ScalingProperty.currentScaling, this.level, currentState);
+        return new MeasurementFittsLaw(this.level, currentState, ScalingProperty.currentScaling);
     }
 
     /// <summary>
