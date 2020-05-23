@@ -3,14 +3,14 @@
   <Class Name="Player3DLevel">
     <Position X="4" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\3DLevel\Player3DLevel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerFittsLaw">
     <Position X="6.25" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\FittsLaw\PlayerFittsLaw.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -20,7 +20,7 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>FCIAAGQYCAACEAB4QQFBAADgAIAYBABAEQQAEAAAAAI=</HashCode>
+      <HashCode>FCIAAGQYCAECEABYQQFAAADgAIAYBABAEQUEEAAAAAI=</HashCode>
       <FileName>Assets\Scripts\BasePlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
