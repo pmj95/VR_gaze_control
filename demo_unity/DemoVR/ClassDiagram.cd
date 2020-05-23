@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BaseGame" Collapsed="true">
-    <Position X="9.5" Y="4.5" Width="1.5" />
+    <Position X="10.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>NAiAAEQQAAQQAQAQCCFBAAAEQAEQAjAUEBAAAEAAAAA=</HashCode>
       <FileName>Assets\Scripts\BaseGame.cs</FileName>
@@ -15,14 +15,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="BasePlayer" Collapsed="true">
-    <Position X="5.75" Y="4.5" Width="1.5" />
+    <Position X="6.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>FCIAAGQYCAECEABYQQFAAADgAIAYBABAEQUEEAAAAAI=</HashCode>
       <FileName>Assets\Scripts\BasePlayer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ButtonCanvas" Collapsed="true">
-    <Position X="4" Y="4.5" Width="1.5" />
+    <Position X="4.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAQAAAAAAgAAAFgAAAAAAAQACACAAAABAAAAQA=</HashCode>
       <FileName>Assets\Scripts\ButtonCanvas.cs</FileName>
@@ -30,6 +30,10 @@
   </Class>
   <Class Name="ButtonGo" Collapsed="true">
     <Position X="1" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>EAAAAAAQAAAAAAAAAABAAAAAAAAYAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\ButtonGo.cs</FileName>
@@ -75,14 +79,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Wall" Collapsed="true">
-    <Position X="7.75" Y="4.5" Width="1.5" />
+    <Position X="8.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAQAAAAAAAAEgFAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameFittsLaw" Collapsed="true">
-    <Position X="8.75" Y="5.75" Width="1.5" />
+    <Position X="9.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\FittsLaw\GameFittsLaw.cs</FileName>
@@ -96,14 +100,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerFittsLaw" Collapsed="true">
-    <Position X="4.75" Y="5.75" Width="1.5" />
+    <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\FittsLaw\PlayerFittsLaw.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Game3DLevel" Collapsed="true">
-    <Position X="10.5" Y="5.75" Width="1.5" />
+    <Position X="11.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAQAIAAAAABAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\3DLevel\Game3DLevel.cs</FileName>
@@ -117,7 +121,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Player3DLevel" Collapsed="true">
-    <Position X="6.75" Y="5.75" Width="1.5" />
+    <Position X="7.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\3DLevel\Player3DLevel.cs</FileName>

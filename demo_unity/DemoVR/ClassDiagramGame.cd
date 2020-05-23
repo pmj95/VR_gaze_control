@@ -12,6 +12,9 @@
   </Class>
   <Class Name="Game3DLevel">
     <Position X="7.25" Y="6.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAQAIAAAAABAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\3DLevel\Game3DLevel.cs</FileName>
