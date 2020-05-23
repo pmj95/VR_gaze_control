@@ -91,6 +91,7 @@
     <None Include="ClassDiagramGame.cd" />
     <None Include="ClassDiagramMeasurement.cd" />
     <None Include="ClassDiagramPlayer.cd" />
+    <None Include="ClassDiagramProperties.cd" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
