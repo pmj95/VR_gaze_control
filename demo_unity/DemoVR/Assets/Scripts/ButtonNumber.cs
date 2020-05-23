@@ -53,7 +53,7 @@ public class ButtonNumber: GeneralButton
         if (!this.isCalibrationRunning)
         {
             // Do relevant stuff
-            if (game.ButtonClicked(this.number))
+            if (game.objectClicked(this.number))
             {
                 buttonColor = Color.green;
             }

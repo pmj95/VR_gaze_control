@@ -34,6 +34,6 @@ public class Wall : BaseMono
     public void onTigger()
     {
         // do a fake button click
-        this.gameobject.ButtonClicked(-1);
+        this.gameobject.objectClicked(-1);
     }
 }

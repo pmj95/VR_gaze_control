@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// class for the game in FittsLaw
+/// </summary>
 public class GameFittsLaw : BaseGame
 {
-    public string level;
-
-    public GameFittsLaw()
-    {
-        ScalingProperty.PropertyChanged += ScalingProperty_PropertyChanged;
-    }
-
+    /// <summary>
+    /// creates a new measurement with the needed information
+    /// </summary>
+    /// <param name="currentState">current control state</param>
+    /// <returns>new created Measurement</returns>
     protected override Measurement createMeasurement(ControlState currentState)
     {
         return new MeasurementFittsLaw(ScalingProperty.currentScaling, this.level, currentState);
     }
 
-    protected override string getLevelDir()
-    {
-        return this.level + "\\" + ScalingProperty.currentScaling.ToString() + "\\";
-    }
-
-    protected override List<int> getRandomSearchValues()
+    /// <summary>
+    /// returns a list with search values.
+    /// There are existing 5 testcases with predefined order of search values
+    /// </summary>
+    /// <returns>List with the serach values</returns>
+    protected override List<int> getSearchValues()
     {
         List<int[]> searchValues = new List<int[]>();
         int[] testcase1 = { 2, 1, 16, 12, 10 };
@@ -38,10 +39,5 @@ public class GameFittsLaw : BaseGame
 
         searchValues = searchValues.OrderBy(x => UnityEngine.Random.value).ToList<int[]>();
         return searchValues.First<int[]>().ToList<int>();
-    }
-
-    private void ScalingProperty_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-    {
-        this.envChanged();
     }
 }

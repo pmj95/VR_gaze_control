@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 [Serializable]
 public abstract class Measurement
@@ -34,8 +35,9 @@ public abstract class Measurement
         this.action.Add(measure);
     }
 
-    public void addGazePoint(string point)
+    public void addGazePoint(float x, float y, float z)
     {
+        String point = "(" + x.ToString() + ", " + y.ToString() + ", " + z.ToString() + ")";
         this.gazePoints.Add(point);
     }
 
