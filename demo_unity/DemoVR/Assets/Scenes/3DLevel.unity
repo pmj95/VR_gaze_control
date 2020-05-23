@@ -9902,7 +9902,7 @@ MonoBehaviour:
   instructionField: {fileID: 917521570}
   gazeController: {fileID: 419471038}
   gazeOrigin: {fileID: 79200458}
-  gazeLogDistance: 0
+  gazeLogDistance: 20
   level: 3D
 --- !u!4 &2078468671
 Transform:
