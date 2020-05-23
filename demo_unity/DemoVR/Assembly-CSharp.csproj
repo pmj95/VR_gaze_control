@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{4021146B-C2CF-796B-16EF-E910B22CDF8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -72,20 +73,25 @@
     <Compile Include="Assets\Scripts\ButtonCanvas.cs" />
     <Compile Include="Assets\Scripts\ButtonGo.cs" />
     <Compile Include="Assets\Scripts\ButtonNumber.cs" />
+    <Compile Include="Assets\Scripts\ControlState.cs" />
     <Compile Include="Assets\Scripts\CylinderCollider\CylinderCollider.cs" />
     <Compile Include="Assets\Scripts\CylinderCollider\CylinderColliderEditor.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\GameFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />
     <Compile Include="Assets\Scripts\GeneralButton.cs" />
-    <Compile Include="Assets\Scripts\LaserInput.cs" />
     <Compile Include="Assets\Scripts\Measurement.cs" />
     <Compile Include="Assets\Scripts\ScalingProperty.cs" />
-    <Compile Include="Assets\Scripts\TriggerState.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />
     <Compile Include="Assets\rocket\ViveGameController.cs" />
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\AutoSave\ReadMe.txt" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagramButton.cd" />
+    <None Include="ClassDiagramGame.cd" />
+    <None Include="ClassDiagramMeasurement.cd" />
+    <None Include="ClassDiagramPlayer.cd" />
+    <None Include="ClassDiagramProperties.cd" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/VR_Gaze_Control/Documents/GitHub/VR_gaze_control/demo_unity/DemoVR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

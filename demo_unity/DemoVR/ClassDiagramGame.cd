@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseGame">
+    <Position X="5.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>NAiAAEQQAAQQAQAQCCFBAAAEQAEQAjAUEBAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BaseGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game3DLevel">
+    <Position X="7.25" Y="6.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQAIAAAAABAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Game3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFittsLaw">
+    <Position X="4" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\GameFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

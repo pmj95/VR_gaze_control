@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Player3DLevel">
+    <Position X="4" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Player3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFittsLaw">
+    <Position X="6.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\PlayerFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasePlayer">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>FCIAAGQYCAECEABYQQFAAADgAIAYBABAEQUEEAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\BasePlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

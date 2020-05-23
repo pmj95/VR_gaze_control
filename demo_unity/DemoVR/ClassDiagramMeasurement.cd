@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="MeasurementFittsLaw">
+    <Position X="4.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Measurement3DLevel">
+    <Position X="7.25" Y="5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Measurement3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Measurement">
+    <Position X="4.75" Y="1.25" Width="4.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABIAAAIAAAAApIAggAAAAAAEgAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Measurement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

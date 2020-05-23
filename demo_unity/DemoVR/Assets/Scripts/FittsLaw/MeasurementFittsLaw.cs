@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// class for the measurements in the fitts law environments
+/// </summary>
 public class MeasurementFittsLaw : Measurement
 {
-    public string scaling;
-
-    public MeasurementFittsLaw(Scaling scaling, string level, TriggerState currentState) : base(level, currentState)
+    /// <summary>
+    /// constructor for measurement fitts law
+    /// </summary>
+    /// <param name="level">name of the current level</param>
+    /// <param name="currentState">current control state</param>
+    /// <param name="scaling">current scaling</param>
+    public MeasurementFittsLaw(string level, ControlState currentState, Scaling scaling) : base(level, currentState, scaling)
     {
-        this.scaling = scaling.ToString();
     }
 }

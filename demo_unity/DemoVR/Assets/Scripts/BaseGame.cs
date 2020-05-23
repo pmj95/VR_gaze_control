@@ -7,6 +7,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// base game class
+/// </summary>
 public abstract class BaseGame : BaseMono
 {
     private Measurement measurement;
@@ -17,20 +20,19 @@ public abstract class BaseGame : BaseMono
     public GazeController gazeController;
     public Transform gazeOrigin;
     public int gazeLogDistance;
+    public string level;
 
-    protected virtual void resetGame()
+    /// <summary>
+    /// constructor add PropertyChanged-Listener for the ScalingProperty
+    /// </summary>
+    public BaseGame()
     {
-        this.measurement = this.createMeasurement(StateTrigger.currentState);
-        this.searchValues = this.getRandomSearchValues();
-
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Level1Button"))
-        {
-            ColorBlock colors = go.GetComponent<Button>().colors;
-            colors.normalColor = Color.white;
-            go.GetComponent<Button>().colors = colors;
-        }
+        ScalingProperty.PropertyChanged += ScalingProperty_PropertyChanged;
     }
 
+    /// <summary>
+    /// set the instructions text of the game
+    /// </summary>
     private void setInstruction()
     {
         string instruction = string.Empty;
@@ -48,6 +50,11 @@ public abstract class BaseGame : BaseMono
         this.instructionField.text = instruction;
     }
 
+    /// <summary>
+    /// starts the game
+    /// For this the game data need a reset, the instruction needs to be set,
+    /// the Flag isplaying will be set to true and the measurement starts.
+    /// </summary>
     public void startGame()
     {
         this.resetGame();
@@ -56,6 +63,10 @@ public abstract class BaseGame : BaseMono
         this.measurement.start();
     }
 
+    /// <summary>
+    /// Ends the game only if the the flag is playing is true
+    /// stops and save the measurement
+    /// </summary>
     public void endGame()
     {
         if (this.isplaying)
@@ -66,7 +77,13 @@ public abstract class BaseGame : BaseMono
         }
     }
 
-    public bool ButtonClicked(int number)
+    /// <summary>
+    /// Checks if the clicked object is the searched one.
+    /// Adds the result to the measurement.
+    /// </summary>
+    /// <param name="number">number of the clicked object</param>
+    /// <returns>true: correct objetc; false: wrong object</returns>
+    public bool objectClicked(int number)
     {
         bool retVal;
 
@@ -83,13 +100,34 @@ public abstract class BaseGame : BaseMono
             {
                 this.measurement.addMeasurement(number, false);
             }
+
             retVal = false;
         }
 
         return retVal;
     }
 
-    protected void envChanged()
+    /// <summary>
+    /// Resets the whole game data
+    /// creates a new Measurement; create new searchValues; Resets the color of the buttons
+    /// </summary>
+    protected virtual void resetGame()
+    {
+        this.measurement = this.createMeasurement(ControlStateProperty.currentState);
+        this.searchValues = this.getSearchValues();
+
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Level1Button"))
+        {
+            ColorBlock colors = go.GetComponent<Button>().colors;
+            colors.normalColor = Color.white;
+            go.GetComponent<Button>().colors = colors;
+        }
+    }
+
+    /// <summary>
+    /// performs a game reset when the game is already started and something of the game environment changed
+    /// </summary>
+    private void envChanged()
     {
         if (isplaying)
         {
@@ -99,15 +137,21 @@ public abstract class BaseGame : BaseMono
         }
     }
 
+    /// <summary>
+    /// subscribes the eyetracking data. Only when the correct ControlState is set.
+    /// </summary>
     private void subscribeEyetracking()
     {
-        if (StateTrigger.currentState == TriggerState.BlinkingEye
-            || StateTrigger.currentState == TriggerState.EyeTrigger)
+        if (ControlStateProperty.currentState == ControlState.BlinkingEye
+            || ControlStateProperty.currentState == ControlState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze += GazeController_OnReceive3dGaze;
         }
     }
 
+    /// <summary>
+    /// unsubscribes the eyetracking data
+    /// </summary>
     private void unsubscribeEyetracking()
     {
         try
@@ -120,35 +164,39 @@ public abstract class BaseGame : BaseMono
         }
     }
 
+    /// <summary>
+    /// Method which receives the GazeData from the eyetracking.
+    /// 
+    /// Logs the gaze data in the local variable gazeLogDistance defined log distance
+    /// </summary>
+    /// <param name="obj">gaze data</param>
     private void GazeController_OnReceive3dGaze(GazeData obj)
     {
         if (this.isplaying == true && this.logCounter == 0)
         {
             Vector3 origin = this.gazeOrigin.position;
-            String res = "(" + origin.x.ToString() + ", " + origin.y.ToString() + ", " + origin.z.ToString() + ")";
-            this.measurement.addGazePoint(res); 
-            Debug.Log(res);
-            //Vector3 direction = this.gazeOrigin.TransformDirection(obj.GazeDirection);
-
-            //if (Physics.Raycast(origin, direction, out RaycastHit hit))
-            //{
-            //    Vector3 point = hit.point;
-            //    this.measurement.addGazePoint(point.ToString());
-            //    Debug.Log(point.ToString());
-            //}
+            this.measurement.addGazePoint(origin.x, origin.y, origin.z); 
         }
         
         this.logCounter++;
         this.logCounter %= this.gazeLogDistance;
     }
 
-    private void StateTrigger_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    /// <summary>
+    /// Will be called when the control state will be changed
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ControlState_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
         this.unsubscribeEyetracking();
         this.envChanged();
         this.subscribeEyetracking();
     }
 
+    /// <summary>
+    /// saves the measurement and stores it with the current timestamp in the level directory
+    /// </summary>
     private void saveMeasurement()
     {
         DateTime date = DateTime.Now;
@@ -164,35 +212,76 @@ public abstract class BaseGame : BaseMono
         File.WriteAllText(levelFolder + filename, jsonstring);
     }
 
-    protected abstract List<int> getRandomSearchValues();
+    /// <summary>
+    /// gets all the search values
+    /// </summary>
+    /// <returns>list with search values</returns>
+    protected abstract List<int> getSearchValues();
 
-    protected abstract string getLevelDir();
+    /// <summary>
+    /// gets the dirname of the level
+    /// </summary>
+    /// <returns>dirname of the level</returns>
+    protected string getLevelDir()
+    {
+        return this.level + "\\" + ScalingProperty.currentScaling.ToString() + "\\";
+    }
 
-    protected abstract Measurement createMeasurement(TriggerState currentState);
+    /// <summary>
+    /// creates a new measurement with the needed information
+    /// </summary>
+    /// <param name="currentState">current control state</param>
+    /// <returns>new created Measurement</returns>
+    protected abstract Measurement createMeasurement(ControlState currentState);
 
+    /// <summary>
+    /// Sets the property changed event handler for the control state property 
+    /// </summary>
     protected override void DoStart()
     {
-        StateTrigger.PropertyChanged += StateTrigger_PropertyChanged;
+        ControlStateProperty.PropertyChanged += ControlState_PropertyChanged;
         this.searchValues = new List<int>();
     }
 
+    /// <summary>
+    /// nothing to do when object will be awaked
+    /// </summary>
     protected override void DoAwake()
     {
         // nothing todo
     }
 
+    /// <summary>
+    /// nothing to do when object will be destroyed
+    /// </summary>
     protected override void DoDestroy()
     {
         // nothing todo
     }
 
+    /// <summary>
+    /// unsubscribes from eyetracking while calibration
+    /// </summary>
     protected override void OnCalibrationStarted()
     {
         this.unsubscribeEyetracking();
     }
 
+    /// <summary>
+    /// subscribes to eyetracking after calibration
+    /// </summary>
     protected override void OnCalibrationRoutineDone()
     {
         this.subscribeEyetracking();
+    }
+
+    /// <summary>
+    /// Will be called when the scaling changes
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ScalingProperty_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        this.envChanged();
     }
 }

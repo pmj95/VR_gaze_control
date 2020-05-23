@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseGame" Collapsed="true">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>NAiAAEQQAAQQAQAQCCFBAAAEQAEQAjAUEBAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BaseGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseMono" Collapsed="true">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAAAQACAAAAAAAAFAAAAAAAEQAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\BaseMono.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasePlayer" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FCIAAGQYCAECEABYQQFAAADgAIAYBABAEQUEEAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\BasePlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonCanvas" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAAAAAAgAAAFgAAAAAAAQACACAAAABAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\ButtonCanvas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonGo" Collapsed="true">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAAAAAAAAAABAAAAAAAAYAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ButtonGo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonNumber" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAAAAQAAAAAFAAAACgAAYAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ButtonNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GeneralButton" Collapsed="true">
+    <Position X="2" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="BaseMono" ManuallyRouted="true">
+      <Path>
+        <Point X="6.25" Y="3.691" />
+        <Point X="6.25" Y="4.235" />
+        <Point X="2.75" Y="4.235" />
+        <Point X="2.75" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GeneralButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Measurement" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Members" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAABIAAAIAAAAApIAggAAAAAAEgAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Measurement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScalingProperty" Collapsed="true">
+    <Position X="9.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAgAEAAAAAAIAAAAAAEgQAAAIEAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\ScalingProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Wall" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAQAAAAAAAAEgFAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Wall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameFittsLaw" Collapsed="true">
+    <Position X="9.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\GameFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MeasurementFittsLaw" Collapsed="true">
+    <Position X="1" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFittsLaw" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FittsLaw\PlayerFittsLaw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game3DLevel" Collapsed="true">
+    <Position X="11.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQAIAAAAABAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Game3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Measurement3DLevel" Collapsed="true">
+    <Position X="3" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Measurement3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player3DLevel" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\3DLevel\Player3DLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CylinderColliderEditor" Collapsed="true">
+    <Position X="9.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CylinderCollider\CylinderColliderEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CylinderCollider" Collapsed="true">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBQEAAAACAICAAwQAgAAAgAAAAAACAAAgAIAEAFAAEA=</HashCode>
+      <FileName>Assets\Scripts\CylinderCollider\CylinderCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="ControlStateProperty" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ControlState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Scaling" Collapsed="true">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\ScalingProperty.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ControlState" Collapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAACAAAAEAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ControlState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

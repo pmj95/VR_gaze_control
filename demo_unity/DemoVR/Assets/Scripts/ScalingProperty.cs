@@ -1,6 +1,13 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+/// <summary>
+/// Enumeration scaling.
+/// avalable values:
+/// Large = 0
+/// Medium = 1
+/// Small = 2
+/// </summary>
 public enum Scaling
 {
     Large = 0,
@@ -8,6 +15,9 @@ public enum Scaling
     Small = 2
 }
 
+/// <summary>
+/// scaling property
+/// </summary>
 public class ScalingProperty
 {
     public static event PropertyChangedEventHandler PropertyChanged;
@@ -16,7 +26,10 @@ public class ScalingProperty
     private static float sw;
     private static float sh;
     private static float sd;
-
+    
+    /// <summary>
+    /// getter and setter for the scale width
+    /// </summary>
     public static float scaleWidth
     {
         get { return sw; }
@@ -26,6 +39,9 @@ public class ScalingProperty
         }
     }
 
+    /// <summary>
+    /// getter and setter for the scale height
+    /// </summary>
     public static float scaleHeight
     {
         get { return sh; }
@@ -35,6 +51,9 @@ public class ScalingProperty
         }
     }
 
+    /// <summary>
+    /// getter and setter for the scale depth
+    /// </summary>
     public static float scaleDepth
     {
         get { return sd; }
@@ -44,6 +63,9 @@ public class ScalingProperty
         }
     }
 
+    /// <summary>
+    /// getter and setter for the current scaling
+    /// </summary>
     public static Scaling currentScaling
     {
         get { return sc; }
@@ -75,6 +97,10 @@ public class ScalingProperty
         }
     }
 
+    /// <summary>
+    /// invokes a property changed event for scalingProperty
+    /// </summary>
+    /// <param name="name"></param>
     private static void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(null, new PropertyChangedEventArgs(name));
