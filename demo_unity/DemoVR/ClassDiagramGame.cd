@@ -6,21 +6,21 @@
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>NAiAAEQQJAQQAAAQCCFBAAAEAAEQAhAUEBAAAAAAAgA=</HashCode>
+      <HashCode>NAiAAEQQAAQQAQAQCCFBAAAEQAEQAjAUEBAAAEAAAAA=</HashCode>
       <FileName>Assets\Scripts\BaseGame.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Game3DLevel">
     <Position X="7.25" Y="6.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAJAAQAIAAAAABAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAAAQAIAAAAABAAAAQQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\3DLevel\Game3DLevel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameFittsLaw">
     <Position X="4" Y="6.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AACAAAAABAAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\FittsLaw\GameFittsLaw.cs</FileName>
     </TypeIdentifier>
   </Class>

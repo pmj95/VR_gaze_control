@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\FittsLaw\MeasurementFittsLaw.cs" />
     <Compile Include="Assets\Scripts\FittsLaw\PlayerFittsLaw.cs" />
     <Compile Include="Assets\Scripts\GeneralButton.cs" />
-    <Compile Include="Assets\Scripts\LaserInput.cs" />
     <Compile Include="Assets\Scripts\Measurement.cs" />
     <Compile Include="Assets\Scripts\ScalingProperty.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />

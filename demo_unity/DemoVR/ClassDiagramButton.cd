@@ -10,7 +10,7 @@
   <Class Name="ButtonGo">
     <Position X="4.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAAAAQAAAAAAAAAAFAAAAAAAAYAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAQAAAAAAAAAABAAAAAAAAYAAAIAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\ButtonGo.cs</FileName>
     </TypeIdentifier>
   </Class>
