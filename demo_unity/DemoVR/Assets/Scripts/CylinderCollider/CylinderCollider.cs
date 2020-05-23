@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+
+/// <summary>
+/// Cylinder Collider; copied from https://github.com/kode80/UnityTools/tree/develop
+/// </summary>
 public class CylinderCollider : MonoBehaviour
 {
     public float radius = 0.5f;
