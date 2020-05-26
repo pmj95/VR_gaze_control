@@ -146,7 +146,22 @@ public void LaserEyeTrackingSliderChanged()
 \end{lstlisting}
 
 \subsection{Buttons}
-\blindtext
+Zur Untersuchung von Fitts Law werden runde Buttons auf der Spielfläche verwendet. Buttons, die von Unity als GameObject zur Verfügung gestellt werden, sind nicht rund, sondern rechteckig. Daher wird für die Spielbuttons das von Unity bereitgestellte GameObject \glqq Cyllinder\grqq{} verwendet. Ein Problem ist, dass ein Cyllinder standardmäßig keinen Collider beinhaltet. Der Entwickler \citeauthor{kode80.2016} stellt in seinem Repository UnityTools auf Github (siehe \cite{kode80.2016}) eine Lösung für dieses Problem bereit. Er stellt das Asset \glqq CyllinderCollider\grqq{} inklusive Editor zur Verfügung, welches einen fast runden Collider um einen Cyllinder legt. Der Collider besteht aus einer Anzahl definierter rechteckiger Boxen, welche in dem Winkel (180°) / (Anzahl der Boxen) an dem Cyllinder angebracht sind. Die Anzahl der Boxen lässt sich zwischen vier und 64 variieren.\\
+In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem CyllinderCollider zu sehen. Gut zu sehen sind die fünf rechteckigen Boxen, welche jeweils im Winkel von 36° angebracht sind. Der Collider ist hierbei nicht rund und ist daher minimal größer als der Cyllinder. In der Abbildung\autoref{fig:CylinderCollider-63} wurde die Anzahl der Boxen auf 63 erhöht. Hier passt sich der Collider um einiges besser der Form des Cyllinders an. Während der Implementierung der CyllinderCollider ist aufgefallen, dass eine höhere Anzahl an Boxen eine signifikant schlechtere Performance verursacht. Für die Versuche wird daher der CyllinderCollider mit fünf Boxen (Abbildung\autoref{fig:CylinderCollider-5}) verwendet. Dies reicht für die Versuche aus, da der Fokus auf der Eignung von Eye-Tracking zur Steuerung in \ac{VR} liegt. Zudem steht der Benutzer bei den Versuchen in einer gewissen Entfernung, weshalb eine minimale Abweichung des Colliders zur Form keine Auswirkungen auf den Versuch haben. Da das System, aufgrund der Anforderungen der verwendeten Hardware, bereits stark ausgelastet ist, wird zudem eine noch höhere Auslastung des Systems vermieden.
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[5 Rechtecke\label{fig:CylinderCollider-5}]{%
+		\includegraphics[height=0.45\linewidth]{CylinderCollider_5}
+	}
+	\qquad      
+	\subfloat[63 Rechtecke\label{fig:CylinderCollider-63}]{%
+		\includegraphics[height=0.45\linewidth]{CylinderCollider_63}
+	}
+	\caption{CyllinderCollider}
+	\label{fig:CylinderCollider}
+\end{figure}  
+
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\linewidth]{ClassDiagramButton}
