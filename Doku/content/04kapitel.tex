@@ -106,14 +106,6 @@ Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Sze
 
 In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
 
-\subsection{Player}
-\todo{Player}
-
-\subsection{Gaze Tracker}
-\todo{Gaze Tracker}
-Gaze Visualizer??? --> Wird in Subkapitel Measurement benötigt.
-BaseMono???
-
 \subsection{UIElements}
 Damit für jede Versuchskombination nicht eine eigene Umgebung erstellt werden muss, erhält jede Umgebung eine Einstellungsmöglichkeit für die verschiedenen Versuchskombinationen. In \autoref{fig:switch-different-options} ist die Einstellungsoberfläche für die Versuchskombinationen dargestellt. Für die Versuche können sowohl die Steuerungskombinationen als auch die Durchmesser der Buttons verändert werden. Zur Fixierung eines Objektes kann entweder der Laser oder das Eye-Tracking verwendet werden. Die Bestätigung kann entweder über den Trigger am Controller oder Blink Detection erfolgen. Mit dem unteren Slider lässt sich der Durchmesser der Buttons verändern. 
 
@@ -146,6 +138,16 @@ public void LaserEyeTrackingSliderChanged()
 \end{lstlisting}
 
 \subsection{Buttons}
+In den Szenen wird zwischen zwei Arten von Buttons unterschieden. Die erste Art ist der GO-Button, welcher bei Betätigen das Spiel startet. Die zweite Art sind die Spielbuttons, welche mit den Zahlen für das Spiel beschriftet sind. Wie in \autoref{fig:ClassDiagramButton} zu sehen, existieren für beide Arten der Buttons eine Klasse, welche wiederum von der Basisklasse \glqq GeneralButton\grqq{} abgeleitet sind. Diese Klassen sind den jeweiligen GameObject-Buttons als Komponente zugeordnet. Die Basisklasse stellt die abstrakte Methode DoAction bereit. Diese Methode wird aufgerufen, wenn der Button angeklickt wurde. In der DoStart wird die DoAction als Listener für das Event onClick eines Buttons hinzugefügt. Die beiden Kindklassen ButtonNumber und ButtonGo implementieren die DoAction Methode. Für alle Buttons soll nur eine Aktion passieren, wenn keine Kalibrierung des Eyetrackers läuft. In der DoAction des GO-Buttons wird das Spiel gestartet. Bei der Auswahl eines Spielbuttons, teilt der Button dem Spiel mit, dass dieser Button betätigt wurde. Hierfür wird dem Spiel die Nummer des betätigten Buttons mitgeteilt. Wenn der betätigte Button der gesuchte Button ist, wird die Hintergrundfarbe des Buttons auf grün gesetzt, ansonsten auf rot. Hiermit wird dem Benutzer visuell mitgeteilt, ob der betätigte Button der gesuchte wahr oder nicht. \\
+Mithilfe der Klasse \glqq ButtonCanvas\grqq{} wird die Größe der Spielbuttons verändert. Hierfür wird das PropertyChanged-Event der ScalingProperty abonniert. Bei einer Änderung des Skalierungsfaktors wird die neue Skalierung auf die Buttons angewandt. In ButtonCanvas werden zudem die Buttons zu Beginn und am Ende des 3DLevel an der Wand positioniert. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\linewidth]{ClassDiagramButton}
+	\caption[Klassendiagramm Button]{Klassendiagramm Button}
+	\label{fig:ClassDiagramButton}
+\end{figure}
+
 Zur Untersuchung von Fitts Law werden runde Buttons auf der Spielfläche verwendet. Buttons, die von Unity als GameObject zur Verfügung gestellt werden, sind nicht rund, sondern rechteckig. Daher wird für die Spielbuttons das von Unity bereitgestellte GameObject \glqq Cyllinder\grqq{} verwendet. Ein Problem ist, dass ein Cyllinder standardmäßig keinen Collider beinhaltet. Der Entwickler \citeauthor{kode80.2016} stellt in seinem Repository UnityTools auf Github (siehe \cite{kode80.2016}) eine Lösung für dieses Problem bereit. Er stellt das Asset \glqq CyllinderCollider\grqq{} inklusive Editor zur Verfügung, welches einen fast runden Collider um einen Cyllinder legt. Der Collider besteht aus einer Anzahl definierter rechteckiger Boxen, welche in dem Winkel (180°) / (Anzahl der Boxen) an dem Cyllinder angebracht sind. Die Anzahl der Boxen lässt sich zwischen vier und 64 variieren.\\
 In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem CyllinderCollider zu sehen. Gut zu sehen sind die fünf rechteckigen Boxen, welche jeweils im Winkel von 36° angebracht sind. Der Collider ist hierbei nicht rund und ist daher minimal größer als der Cyllinder. In der Abbildung\autoref{fig:CylinderCollider-63} wurde die Anzahl der Boxen auf 63 erhöht. Hier passt sich der Collider um einiges besser der Form des Cyllinders an. Während der Implementierung der CyllinderCollider ist aufgefallen, dass eine höhere Anzahl an Boxen eine signifikant schlechtere Performance verursacht. Für die Versuche wird daher der CyllinderCollider mit fünf Boxen (Abbildung\autoref{fig:CylinderCollider-5}) verwendet. Dies reicht für die Versuche aus, da der Fokus auf der Eignung von Eye-Tracking zur Steuerung in \ac{VR} liegt. Zudem steht der Benutzer bei den Versuchen in einer gewissen Entfernung, weshalb eine minimale Abweichung des Colliders zur Form keine Auswirkungen auf den Versuch haben. Da das System, aufgrund der Anforderungen der verwendeten Hardware, bereits stark ausgelastet ist, wird zudem eine noch höhere Auslastung des Systems vermieden.
 
@@ -162,12 +164,20 @@ In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem Cyl
 	\label{fig:CylinderCollider}
 \end{figure}  
 
+\subsection{Player}
+Das GameObject \glqq Player\grqq{} ist ein zentrales Objekt in den Szenen. Das Objekt beschreibt den Benutzer in Unity und ist über die SteamVR-Bibliothek mit SteamVR verbunden. Das Objekt beinhaltet unter anderem die VR-Kamera und Objekte, welche die rechte beziehungsweise linke Hand beschreiben. In den Versuchen wird ein Laserpointer und das Betätigen des Abzuges am Controller verwendet. Hierfür wird der rechten Hand die von SteamVR bereitgestellte Komponente \glqq SteamVR\_LaserPointer\grqq{} hinzugefügt. Mithilfe dieser Komponente wird der rechten Hand der Laserpointer hinzugefügt. Zudem ist es über diese Komponente möglich das Event PointerClick zu abonnieren, welches beim Betätigen des Abzuges ausgelöst wird. 
+
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1\linewidth]{ClassDiagramButton}
-	\caption[Klassendiagramm Button]{Klassendiagramm Button}
-	\label{fig:ClassDiagramButton}
+	\includegraphics[width=0.5\linewidth]{ClassDiagramPlayer}
+	\caption[Klassendiagramm Player]{Klassendiagramm Player}
+	\label{fig:ClassDiagramPlayer}
 \end{figure}
+
+\subsection{Gaze Tracker}
+\todo{Gaze Tracker}
+Gaze Visualizer??? --> Wird in Subkapitel Measurement benötigt.
+BaseMono???
 
 \subsection{Game}
 %\begin{figure}[!htbp]

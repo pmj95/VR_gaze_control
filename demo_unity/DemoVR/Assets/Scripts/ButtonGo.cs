@@ -8,13 +8,17 @@ using UnityEngine;
 public class ButtonGo : GeneralButton
 {
     public BaseGame game;
+    private bool isCalibrationRunning = false;
 
     /// <summary>
-    /// starts the game when button will be clicked
+    /// starts the game when button will be clicked and the calibration routine is not running
     /// </summary>
     public override void DoAction()
     {
-        game.startGame();
+        if (!this.isCalibrationRunning)
+        {
+            game.startGame();
+        }
     }
 
     /// <summary>
@@ -34,18 +38,18 @@ public class ButtonGo : GeneralButton
     }
 
     /// <summary>
-    /// nothing to do when eyetracking calibration is done
+    /// set flag isCalibrationRunning to false when eyetracking calibration is stopped
     /// </summary>
     protected override void OnCalibrationRoutineDone()
     {
-        // Nothing todo
+        this.isCalibrationRunning = false;
     }
 
     /// <summary>
-    /// nothing to do while eyetracking calibration
+    /// set flag isCalibrationRunning to true while eyetracking calibration is running
     /// </summary>
     protected override void OnCalibrationStarted()
     {
-        // Nothing todo
+        this.isCalibrationRunning = true;
     }
 }
