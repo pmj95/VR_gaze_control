@@ -81,9 +81,9 @@ public class ScalingProperty
             }
             else if (sc == Scaling.Medium)
             {
-                scaleHeight = 0.707f;
-                scaleWidth = 0.707f;
-                scaleDepth = 0.707f;
+                scaleHeight = 0.75f;
+                scaleWidth = 0.75f;
+                scaleDepth = 0.75f;
             }
             else
             {
