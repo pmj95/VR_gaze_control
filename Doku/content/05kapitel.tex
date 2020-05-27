@@ -54,10 +54,71 @@ Zu jeder Steuermöglichkeit wird gefragt, :
 Am Ende der Befragung wird der Proband gebeten, ein begründetes Ranking der Steuermöglichkeiten abzugeben. Hier können auch offene Punkte angemerkt werden, die nicht im restlichen Teil des Fragebogens abgefragt werden.
 
 
-\section{Ergebnisse}
-\subsection{Eye-Tracking im Vergleich}
-\subsection{Kombinationen der Steuermöglichkeiten}
+\section{Ergebnisse der Versuche}
+Im Folgenden werden die gemessenen Ergebnisse der Probandenversuche dargestellt. 
+\todo{das is hier ein bisschen komisch, das sollte vermutlich iwie in kapitel 4 oder so. Ich nehm jetzt hier die Maßeinheit, weil ich damit alles leichter berechnen kann.}Für die Auswertung der Ergebnisse werden die Knopfgrößen und Abstände zwischen den Knöpfen als ein Vielfaches des größten Knopfgröße k angegeben. 
+\subsection{Vergleich der Steuermöglichkeiten}
+Zuerst werden die Gesamtzeiten und die Fehlerquote der Steuermethoden miteinander verglichen. Anschließend wird überprüft, welche Auswirkung eine Verkleinerung der Knöpfe auf diese beiden Werte hat. 
+\subsubsection{Gesamtdauer}
+In Abbildung \ref{fig:totalTimesBig} ist die Dauer eines Versuches von jedem Probanden und die durchschnittliche Dauer pro Steuermöglichkeit zu sehen. Hier lässt sich erkennen, dass mit der Kombination Laserpointer und Trigger die Versuche am schnellsten abgeschlossen wurden. Diese haben im Durchschnitt 7.724 Sekunden in Anspruch genommen. Der schnellste Versuch hat 6.432 Sekunden gedauert und der langsamste Versuch hat 10.954 Sekunden benötigt.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1.0\linewidth]{plot_big}
+	\caption[Gesamtdauer eines Versuchdurchlaufs pro Steuerart pro Proband und im Durchschnitt]{Gesamtdauer eines Versuchdurchlaufs pro Steuerart pro Proband und im Durchschnitt}
+	\label{fig:totalTimesBig}
+\end{figure}
+
+Die Kombination Laserpointer und Blinzeln hat die zweitschnellsten Ergebnisse geliefert. Hier haben die Probanden im Durchschnitt 9.305 Sekunden benötigt. Der schnellste Versuch lag bei 6.674 Sekunden und der langsamste bei 15.748 Sekunden. 
+
+Beim Einsatz von Eye-Tracking mit dem Trigger des Controllers zur Bestätigung lag die durchschnittliche Zeit, bis ein Versuch beendet wurde, bei 10.877 Sekunden. Hier hat der schnellste Versuch nur 9.026 Sekunden benötigt, der langsamste Versuch lag bei 12.924 Sekunden.
+
+Bei der Kombination von Eye-Tracking mit Blinzeln haben Versuche deutlich länger gedauert. Im Schnitt lagen die Probanden hier bei 66.549 Sekunden um die fünf richtigen Knöpfe auszuwählen. Ein Proband schaffte es deutlich schneller mit 22.116 Sekunden, zwei Probanden haben deutlich länger gebraucht, mit Zeiten von 85.063 und 94.761 Sekunden
+
+\subsubsection{Genauigkeit}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1.0\linewidth]{plot_acc_big}
+	\caption[Anteil der richtigen Angaben pro Steuerart pro Proband und im Durchschnitt]{Anteil der richtigen Angaben pro Steuerart pro Proband und im Durchschnitt}
+	\label{fig:totalACCBig}
+\end{figure}
+In Abbildung \ref{fig:totalACCBig} ist die Genauigkeit der Eingaben der Probanden zu sehen. Die Werte stellen den Anteil der Eingaben dar, bei denen der richtige Knopf getroffen wurde. Hier ist zu erkennen, dass  für den Laserpointer sowohl beim Blinzeln zum Bestätigen, als auch beim Trigger eine sehr hohe Genauigkeit vorliegt. Im Durchschnitt haben die Probanden eine Genauigkeit von 95,83\% erreicht, wobei bei beiden Steuermethoden die schlechteste Genauigkeit 83,3\% beträgt. Das entspricht einer falschen Eingabe auf fünf richtige Eingaben.
+
+Bei der Steuerung mit Eye-Tracking in Verbindung mit dem Trigger des Vive Controllers ist die durchschnittliche Genauigkeit nur noch 75,35\%. Hier hat Proband 2 als einziger noch 100\% Genauigkeit bewerkstelligen können, Proband 1 ist mit einer Genauigkeit von 55,55\% am ungenausten. 
+
+Beim Einsatz von Eye-Tracking mit Blinzeln zum Bestätigen betrug die durchschnittliche Genauigkeit nur noch 35,15\%. Proband 2 hat auch hier wieder die höchste Genauigkeit mit 71,42\%. Bei den anderen Probanden ist die Genauigkeit auf bis zu 15,63\% gefallen. 
+
+
+
 \subsection{Einfluss der Veränderung der Knopfgröße}
+In diesem Abschnitt wird zuerst auf die Veränderung der Gesamtzeit mit einer Verkleinerung der Knöpfe auf 50\% der ursprünglichen Breite und danach die Auswirkung auf die Genauigkeit betrachtet. 
+\subsubsection{Gesamtdauer}
+In Abbildung \ref{fig:timesIncrease} sind die Veränderungen der Gesamtzeiten der Versuche pro Steuermethode und pro Proband und dem Mittelwert bei einer Verkleinerung der Breite des Knopfes um 50\% als Faktor dargestellt. Ein Faktor größer eins bedeutet folglich eine längere Dauer, ein Faktor unter eins bedeutet eine kürzere Dauer. Im Durchschnitt ist bei jeder Steuermethode ein Faktor größer eins, also eine erhöhte Dauer pro Versuch, zu sehen. Bei der Steuermethode Laserpointer mit Trigger kam es zu einem Anstieg von 22\%. Proband 2 war hier als einziger schneller (um 5\%), als in dem selben Versuch mit größeren Knöpfen. Er hat im Versuch mit kleinen Knöpfen nur 6.714 Sekunden benötigt. Proband 4 hat mit einem Anstieg von 92,7\% fast doppelt so lange gebraucht, wie im selben Versuch mit großen Knöpfen. Bei Proband 1 ist ein Anstieg von 35\% zu einer Gesamtzeit von 9.494 Sekunden aufgetreten.
+
+In den Hybrid-Steuermethoden (Laserpointer/Blinzeln und Eye-Tracking/Trigger) ist die durchschnittliche Dauer um 49,76\%, bzw 121,4\% angestiegen. Im Durchschnitt lagen die Zeit für die beiden Steuermethoden somit bei 13.936  und 24.091 Sekunden. Probanden 2 und 3 haben hier jeweils einen Wert besser als 1,0 erzielt, waren also schneller, als mit großen Knöpfen. Proband 3 war im Versuch Laserpointer/Blinzeln 11\% (Gesamtzeit 6.794 Sekunden) schneller und im Versuch Eye-Tracker/Trigger 15\%(Gesamtzeit 11.069 Sekunden) als im selben Verscuh mit größeren Knöpfen. Proband 4 hat auch in diesen beiden Steuermethoden einen starken Anstieg der Gesamtzeit im Vergleich zum selben Versuch mit größeren Knöpfen. Hier lagen die Werte bei 447\% und 457\%, was in Gesamtzeiten von 33.996 und 59.160 Sekunden resultierte. Die Gesamtdauer ist damit auch deutlich über den anderen Probanden, die hier im Durchschnitt nur 7.249 und 12.401 Sekunden benötigt haben. Proband 1 hat in beiden Steuermethoden rund 6,3\% länger gebraucht, als im selben Versuch mit größeren Knöpfen. Dies resultierte in Gesamtdauern von 8.077 und 13.75 Sekunden. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1.0\linewidth]{plot_time_increase}
+	\caption[Anteil der richtigen Angaben pro Steuerart pro Proband und im Durchschnitt bei kleineren Knöpfen]{Anteil der richtigen Angaben pro Steuerart pro Proband und im Durchschnitt bei kleineren Knöpfen}
+	\label{fig:timesIncrease}
+\end{figure}
+Bei der Steuermethode Eye-Tracking/Blinzeln kam es im Durchschnitt zu einem Anstieg der Gesamtdauer von 89\%. Die Gesamtdauer für diese Steuermethode stieg somit auf 125.952 Sekunden. Der einzige Proband, der eine Verbesserung im Vergleich zu großen Knöpfen erreicht hat, war Proband 2. Dieser hat das Level 23\% schneller erledigt, als mit großen Knöpfen. Das entspricht einer Zeit von 49.559 Sekunden. Proband 1 hat eine Änderung von 160\% auf 167.622 Sekunden verzeichnet. Bei Proband 3 stieg die Zeit um 93,97\% auf 124.641 Sekunden und bei Proband 4 betrug der Anstieg 152\% auf 161.987 Sekunden. 
+
+\subsubsection{Genauigkeit}
+In Abbildung \ref{fig:totalACCsmall} ist die Genauigkeit der Steuermethoden pro Proband und um Durchschnitt bei einer Verkleinerung der Knöpfe zu sehen. Für die Steuermethode Laserpointer/Trigger ist die durchschnittliche Genauigkeit von rund 96\% bei den großen Knöpfen auf nur noch 74\% abgesunken. Proband 2 hat als einziges eine Genauigkeit von 100\%, bei allen anderen Probanden sind Fehler aufgetreten. Proband 1 ist von 100\% Genauigkeit im Versuch mit großen Knöpfen auf nur noch 62,5\% abgerutscht. Die schlechteste Genauigkeit hatte Proband 4 mit 50\%. Dieser hatte zuvor noch eine Genauigkeit von 83,33\%. Die durchschnittliche Genauigkeit ist bei der nächsten Steuermethode wieder gestiegen und hat hier den Wert 84,7\% erreicht. Bei großen Knöpfen wurde im Schnitt eine Genauigkeit von knapp 96\% erreicht. Proband 2 und 3 konnten, wie schon im Versuch mit den großen Knöpfen, 100\% Genauigkeit erreichen. Die schlechteste Präzision hatte Proband 1 mit 55,5\%, zuvor hatte er 83,3\%. Beim Einsatz von Eye-Tracking und dem Trigger zum Bestätigen wurde bei den kleinen Knöpfen eine durchschnittliche Trefferquote von 60,3\% erreicht. Zuvor lag dieser Wert bei 75,34\%. Die höchste Genauigkeit hatte in diesem Versuchsaufbau Proband 3, der seine Quote von 83,3\% von den großen Knöpfen halten konnte. Bei allen anderen Probanden ist die Genauigkeit gesunken. Proband 1 ist von 55\% auf 45\% abgerutscht, Proband 2 sogar von 100\% auf 62,5\%. Proband 4 ist von 62,5\% auf 50\% gesunken.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1.0\linewidth]{plot_acc_small}
+	\caption[Gesamtdauer eines Versuchdurchlaufs pro Steuerart pro Proband und im Durchschnitt mit kleinen Knöpfen]{Gesamtdauer eines Versuchdurchlaufs pro Steuerart pro Proband und im Durchschnitt mit kleinen Knöpfen}
+	\label{fig:totalACCsmall}
+\end{figure}
+
+Bei der Steuermethode Eye-Tracking mit Blinzeln sind die eh schon niedrigeren Werte der großen Knöpfe (35,15\% im Durchschnitt) noch weiter gesunken. Hier wurde im Durchschnitt nur noch bei 14\% der Eingaben der gewünschte Knopf getroffen. Besonders hervorstechend ist hier der Wert von Proband 1. Dieser hatte nur noch eine Trefferquote von 6,75\%, zuvor waren es noch 17,86\%. Proband 2 konnte mit 27,78\% die höchste Trefferquote aufweisen, zuvor hatte er jedoch noch eine Trefferquote von 71,42\%. Proband 3 und 4 konnten exakt die gleiche Genauigkeit von 10,86\% erreichen. Zuvor hatte Proband 3 15,625\% und Proband 4 35,71\% erreicht. 
+
+
+
 \subsection{Einfluss der Veränderung der Distanz}
 \section{Ergebnisse des Fragebogens}
 Im Folgenden werden die Ergebnisse des Fragebogens dargestellt. Da jedoch eine Veränderung der Distanz aufgrund der COVID-19-Pandemie nicht untersucht wurde, wurde diese Frage im Fragebogen übergangen. 
