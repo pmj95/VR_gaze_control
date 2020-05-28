@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from dict_getters import get_dicts
+from heatmaps import create_heatmaps
 from time_analysis import *
 from accuracy_analysis import *
 from actions_analyzer import get_acts_per_sec
@@ -18,11 +19,9 @@ z = get_acts_per_sec(all_dicts, (x[1], x[3]))
 # create_bar_graph(x)
 # create_bar_graph_accuracy(y)
 # create_bar_graph_increase_time(x)
-calc_time_between(all_dicts)
-print(y[0])
-print(y[1])
-print(y[2])
-print(y[3])
+# calc_time_between(all_dicts)
+create_heatmaps(all_dicts)
+
 
 
 
