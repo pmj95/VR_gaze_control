@@ -1,8 +1,8 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Grundlagen}
-\todo[inline]{Grundlagen-Einleitung überarbeiten }
-In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst wird das in dieser Arbeit verwendete \acs{VR}-Headset vorgestellt. Nach dem \acs{VR}-System folgt der Eye Tracker und zum Schluss die Laufzeit- und Entwicklungsumgebung Unity.
+\todo[inline]{Also schön ist was anderes :D}
+In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst wird der Begriff virtuelle Realität definiert und erläutert. Darauf folgt das in dieser Arbeit verwendetet \ac{VR}-System. Da in dieser Arbeit neben \ac{VR} auch Eye-Tracking verwendet, wird die Technologie erläutert und der verwendetet Eyetracker vorgestellt. Die \ac{VR}-Umgebung werden für die Versuche selbst erstellt, weshalb die verwendete Entwicklungsumgebung Unity vorgestellt wird. Da in dieser Arbeit Fitts' Gesetz Anwendung findet, wird zusätzlich dieses Gesetzt erklärt und in Zusammenhang mit \ac{VR} gebracht. Abgeschlossen wir das Kapitel mit den Systemvoraussetzungen, welche aufgrund der verwendeten Hardware für die Versuche benötigt werden.
 
 \section{Virtuelle Realität}
 Die Grundidee der virtuellen Realität existiert bereits seit dem 19. Jahrhundert. David Brewester entwickelte 1848 ein linsenförmiges Stereoskop, welches das Gefühlt von Tiefe und Immersion hervorbrachte. Nennenswerte Entwicklungen im Bereich der virtuellen Realität wurden zu Beginn des 20. Jahrhunderts getätigt. \cite{Singh.2017} 1987 gebrauchte der Informatiker Jaron Lanier als erster Wissenschaftler den Begriff \ac{VR} \cite{Doerner2019}. 
@@ -34,7 +34,7 @@ Zur Umsetzung von \ac{VR} in der Praxis wird ein \ac{VR}-fähiges System benöti
 Da der visuelle Sinn \glqq sicherlich die wichtigste Informationsquelle bei der Wahrnehmung\grqq \cite{DoernerWahrnehmung} von \ac{VR}-Umgebungen ist, werden \ac{HMD} zum Eintauchen in eine \ac{VR}-Umgebung verwendet. Die Übersetzung von \ac{HMD} lautet \glqq ein am Kopf montiertes Display\grqq. Wie die Übersetzung nahelegt, wird ein Display am Kopf des Benutzers montiert. Ein \ac{HMD} ist ein immersives Display, welches den Sichtbereich des Benutzers von der kompletten Umgebung abschirmt. Die Immersion bei einem \ac{HMD} hängt von der Größe des Sichtfeldes ab. Während ein großes Sichtfeld als immersiv gilt, ist ein kleines weniger immersiv. \cite{Doerner2019} Jedes Auge hat sein eigenes Display. Da ein \ac{HMD} wie eine Brille vor den Augen angebracht ist und komplett am Kopf befestigt wird, wird ein \ac{VR}-System auch als \ac{VR}-Brille oder \ac{VR}-Headset bezeichnet.
 
 In \autoref{fig:vive-hardware-hmd-1} ist das \ac{HMD} der HTC Vive abgebildet. Das Headset wird mittels Klettverschluss am Kopf befestigt. Die HTC Vive verwendet AMOLED Displays mit einer Auflösung von insgesamt \mbox{2160 x 1200} Pixel, dies entspricht einer Auflösung von \mbox{1080 x 1200} Pixel pro Auge. Für jedes Auge sind Linsen eingebaut, welche die Distanz zum Display größer erscheinen lassen. Der Sichtbereich beträgt 110°, die Bildwiederholfrequenz 90 Hz. Es ist möglich Einstellungen bei der Pupillendistanz und des Objektivabstands vorzunehmen. Das Headset ist über Kabel mit dem Computer verbunden. \cite{ViveProduct}
-\todo{erwähnen dass die Brille Trackingpunkte für die Base Stations hat, um Pos.bestimmung zu erlauben; Das macht an der Stelle noch nicht wirklich Sinn. Das wird erst später bei Tracking-System beschrieben}
+\todo{erwähnen dass die Brille Trackingpunkte für die Base Stations hat, um Pos.bestimmung zu erlauben; @Clemens: Das macht an der Stelle noch nicht wirklich Sinn. Das wird erst später bei Tracking-System beschrieben}
 
 \begin{figure}[!htbp]
 	\centering
@@ -153,7 +153,7 @@ Fitts' Gesetz (im englischen Fitts's Law) ist eine vom US-Amerikanischen Psychol
 ID = log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
 Eine Erhöhung der Distanz hat eine Erhöhung der Schwierigkeit zur Folge, wohingegen eine Erhöhung der Breite das Senken des Schwierigkeitsindex ID zur Folge hat. Ein niedriger Wert für ID bedeutet, dass das Objekt leicht zu treffen ist, ein hoher Wert bedeutet, dass das Objekt schwer zu treffen ist \cite{Fitts.1992}. 
-Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer MT (Movement Time) zu berechnen. Die Berechnung von MT ist nach \citeauthor{Graham.1996} mit folgender Formel möglich \cite{Graham.1996} \todo{vlt gibts die Quelle iwo anders besser... so is nur mittelmäßig nice}:
+Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer \ac{MT} zu berechnen. Die Berechnung von \ac{MT} ist nach \citeauthor{Graham.1996} mit folgender Formel möglich \cite{Graham.1996} \todo{vlt gibts die Quelle iwo anders besser... so is nur mittelmäßig nice}:
 \begin{equation}
 MT = a + b * ID = a + b * log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
