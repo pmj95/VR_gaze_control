@@ -20,8 +20,15 @@ z = get_acts_per_sec(all_dicts, (x[1], x[3]))
 # create_bar_graph_accuracy(y)
 # create_bar_graph_increase_time(x)
 # calc_time_between(all_dicts)
-create_heatmaps(all_dicts)
-
+# create_heatmaps(all_dicts)
+print(x[0])
+print(x[1])
+print(x[2])
+print(x[3])
+print(y[0])
+print(y[1])
+print(y[2])
+print(y[3])
 
 
 
