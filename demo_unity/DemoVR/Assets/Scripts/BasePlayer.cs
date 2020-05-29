@@ -15,8 +15,6 @@ public abstract class BasePlayer : BaseMono
      * Unity
      */
     public Transform gazeOrigin;
-    public Slider laserEyeTrackingSlider;
-    public Slider triggerBlinkDetectionSlider;
 
     /**
      * SteamVR
@@ -55,7 +53,8 @@ public abstract class BasePlayer : BaseMono
     protected override void DoAwake()
     {
         this.requestCtrl = this.subscriptionsController.requestCtrl;
-        this.setInitialControlState();
+        ControlStateProperty.PropertyChanged += ControlStateProperty_PropertyChanged;
+        this.subscribeAll(ControlStateProperty.currentState);
     }
 
     /// <summary>
@@ -63,7 +62,7 @@ public abstract class BasePlayer : BaseMono
     /// </summary>
     protected override void DoDestroy()
     {
-        this.unsubscribeAll();
+        this.unsubscribeAll(ControlStateProperty.currentState);
     }
 
     /// <summary>
@@ -71,7 +70,7 @@ public abstract class BasePlayer : BaseMono
     /// </summary>
     protected override void OnCalibrationStarted()
     {
-        this.unsubscribeAll();
+        this.unsubscribeAll(ControlStateProperty.currentState);
     }
 
     /// <summary>
@@ -79,7 +78,7 @@ public abstract class BasePlayer : BaseMono
     /// </summary>
     protected override void OnCalibrationRoutineDone()
     {
-        this.subscribeAll();
+        this.subscribeAll(ControlStateProperty.currentState);
     }
 
     #endregion
@@ -89,21 +88,23 @@ public abstract class BasePlayer : BaseMono
     /// <summary>
     /// subscribes to blink detection, eyetracking and laserpointer
     /// </summary>
-    private void subscribeAll()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void subscribeAll(ControlState controlState)
     {
-        this.subscribeBlink();
-        this.subscribeEyetracking();
-        this.subscribeLaserPointer();
+        this.subscribeBlink(controlState);
+        this.subscribeEyetracking(controlState);
+        this.subscribeLaserPointer(controlState);
     }
 
     /// <summary>
     /// unsubscribes from blink detection, eyetracking and laserpointer
     /// </summary>
-    private void unsubscribeAll()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void unsubscribeAll(ControlState controlState)
     {
-        this.unsubscribeBlink();
-        this.unsubscribeEyetracking();
-        this.unsubscribeLaserPointer();
+        this.unsubscribeBlink(controlState);
+        this.unsubscribeEyetracking(controlState);
+        this.unsubscribeLaserPointer(controlState);
     }
 
     /// <summary>
@@ -111,23 +112,24 @@ public abstract class BasePlayer : BaseMono
     /// registers the pointclick event handler
     /// changes thickness of laserpointer 
     /// </summary>
-    private void subscribeLaserPointer()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void subscribeLaserPointer(ControlState controlState)
     {
         if (this.laserPointer != null
-            && (ControlStateProperty.currentState == ControlState.LaserTrigger
-            || ControlStateProperty.currentState == ControlState.EyeTrigger
-            || ControlStateProperty.currentState == ControlState.LaserBlinking))
+            && (controlState == ControlState.LaserTrigger
+            || controlState == ControlState.EyeTrigger
+            || controlState == ControlState.LaserBlinking))
         {
             this.laserPointer.PointerClick += this.SteamVR_LaserPointer_PointerClick;
         }
 
-        if (ControlStateProperty.currentState == ControlState.EyeTrigger 
-            || ControlStateProperty.currentState == ControlState.BlinkingEye)
+        if (controlState == ControlState.EyeTrigger
+            || controlState == ControlState.BlinkingEye)
         {
             this.laserPointer.thickness = 0f;
         }
-        else if (ControlStateProperty.currentState == ControlState.LaserTrigger 
-            || ControlStateProperty.currentState == ControlState.LaserBlinking)
+        else if (controlState == ControlState.LaserTrigger
+            || controlState == ControlState.LaserBlinking)
         {
             this.laserPointer.thickness = 0.002f;
         }
@@ -138,12 +140,13 @@ public abstract class BasePlayer : BaseMono
     /// unregister point click event handler
     /// set the thickness of the laserpointer to zero
     /// </summary>
-    private void unsubscribeLaserPointer()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void unsubscribeLaserPointer(ControlState controlState)
     {
         if (this.laserPointer != null
-            && (ControlStateProperty.currentState == ControlState.LaserTrigger
-            || ControlStateProperty.currentState == ControlState.EyeTrigger
-            || ControlStateProperty.currentState == ControlState.LaserBlinking))
+            && (controlState == ControlState.LaserTrigger
+            || controlState == ControlState.EyeTrigger
+            || controlState == ControlState.LaserBlinking))
         {
             this.laserPointer.PointerClick -= this.SteamVR_LaserPointer_PointerClick;
         }
@@ -156,19 +159,22 @@ public abstract class BasePlayer : BaseMono
     /// registers on receive 3d gaze event handler
     /// set the visibility of the gazevisualizer in dependence of control state
     /// </summary>
-    private void subscribeEyetracking()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void subscribeEyetracking(ControlState controlState)
     {
-        if (ControlStateProperty.currentState == ControlState.BlinkingEye
-            || ControlStateProperty.currentState == ControlState.EyeTrigger)
+        if (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
         }
 
-        if (ControlStateProperty.currentState == ControlState.EyeTrigger || ControlStateProperty.currentState == ControlState.BlinkingEye)
+        if (controlState == ControlState.EyeTrigger
+            || controlState == ControlState.BlinkingEye)
         {
             this.gazeVisualizer.gameObject.SetActive(true);
         }
-        else if (ControlStateProperty.currentState == ControlState.LaserTrigger || ControlStateProperty.currentState == ControlState.LaserBlinking)
+        else if (controlState == ControlState.LaserTrigger
+            || controlState == ControlState.LaserBlinking)
         {
             this.gazeVisualizer.gameObject.SetActive(false);
         }
@@ -178,10 +184,11 @@ public abstract class BasePlayer : BaseMono
     /// unsubscribes from eyetracking
     /// unregisters on receive 3d gaze event handler
     /// </summary>
-    private void unsubscribeEyetracking()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void unsubscribeEyetracking(ControlState controlState)
     {
-        if (ControlStateProperty.currentState == ControlState.BlinkingEye
-            || ControlStateProperty.currentState == ControlState.EyeTrigger)
+        if (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
         }
@@ -190,11 +197,12 @@ public abstract class BasePlayer : BaseMono
     /// <summary>
     /// subscribes to blink detection
     /// </summary>
-    private void subscribeBlink()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void subscribeBlink(ControlState controlState)
     {
         if (requestCtrl != null
-            && (ControlStateProperty.currentState == ControlState.BlinkingEye
-            || ControlStateProperty.currentState == ControlState.LaserBlinking))
+            && (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.LaserBlinking))
         {
             requestCtrl.OnConnected += StartBlinkSubscription;
 
@@ -208,11 +216,12 @@ public abstract class BasePlayer : BaseMono
     /// <summary>
     /// unsubscribes from blink detection
     /// </summary>
-    private void unsubscribeBlink()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void unsubscribeBlink(ControlState controlState)
     {
         if (requestCtrl != null
-            && (ControlStateProperty.currentState == ControlState.BlinkingEye
-            || ControlStateProperty.currentState == ControlState.LaserBlinking))
+            && (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.LaserBlinking))
         {
             requestCtrl.OnConnected -= StartBlinkSubscription;
 
@@ -406,77 +415,15 @@ public abstract class BasePlayer : BaseMono
     }
 
     /// <summary>
-    /// sets the control state
+    /// Will be called when the controlstate changes. 
+    /// unsubscribes all by old control state 
+    /// subscribes all by new control state
     /// </summary>
-    /// <param name="state"></param>
-    private void setControlState(ControlState state)
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void ControlStateProperty_PropertyChanged(object sender, ControlStatePropertyChangedEventArgs e)
     {
-        this.unsubscribeAll();
-        ControlStateProperty.currentState = state;
-        this.subscribeAll();
+        this.unsubscribeAll(e.oldValue);
+        this.subscribeAll(e.newValue);
     }
-
-    /// <summary>
-    /// sets the initial control state
-    /// </summary>
-    private void setInitialControlState()
-    {
-        if (this.laserEyeTrackingSlider.value == 0)
-        {
-            if (this.triggerBlinkDetectionSlider.value == 0)
-            {
-                ControlStateProperty.currentState = ControlState.LaserTrigger;
-            }
-            else if (this.triggerBlinkDetectionSlider.value == 1)
-            {
-                ControlStateProperty.currentState = ControlState.LaserBlinking;
-            }
-        }
-        else if (this.laserEyeTrackingSlider.value == 1)
-        {
-            if (this.triggerBlinkDetectionSlider.value == 0)
-            {
-                ControlStateProperty.currentState = ControlState.EyeTrigger;
-            }
-            else if (this.triggerBlinkDetectionSlider.value == 1)
-            {
-                ControlStateProperty.currentState = ControlState.BlinkingEye;
-            }
-        }
-
-        this.subscribeAll();
-    }
-
-    #region Sliderchanged
-
-    /// <summary>
-    /// event handler for laser eyetracking slider changed 
-    /// </summary>
-    public void LaserEyeTrackingSliderChanged()
-    {
-        int state = (int)ControlStateProperty.currentState;
-        state = state ^ 0b01;
-        this.setControlState((ControlState)state);
-    }
-
-    /// <summary>
-    /// event handler for trigger blink detection slider changed 
-    /// </summary>
-    public void TriggerBlinkDetectionSliderChanged()
-    {
-        int state = (int)ControlStateProperty.currentState;
-        state = state ^ 0b10;
-        this.setControlState((ControlState)state);
-    }
-
-    /// <summary>
-    /// event handler for the scale slider changed
-    /// </summary>
-    /// <param name="number">number of slider position</param>
-    public void ScaleSliderChanged(float number)
-    {
-        ScalingProperty.currentScaling = (Scaling)number;
-    }
-
-    #endregion
 }

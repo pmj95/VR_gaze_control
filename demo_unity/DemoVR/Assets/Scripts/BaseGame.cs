@@ -21,13 +21,17 @@ public abstract class BaseGame : BaseMono
     public Transform gazeOrigin;
     public int gazeLogDistance;
     public string level;
+    public Slider laserEyeTrackingSlider;
+    public Slider triggerBlinkDetectionSlider;
 
     /// <summary>
     /// constructor add PropertyChanged-Listener for the ScalingProperty
     /// </summary>
     public BaseGame()
     {
+        this.searchValues = new List<int>();
         ScalingProperty.PropertyChanged += ScalingProperty_PropertyChanged;
+        ControlStateProperty.PropertyChanged += ControlStateProperty_PropertyChanged;
     }
 
     /// <summary>
@@ -140,27 +144,26 @@ public abstract class BaseGame : BaseMono
     /// <summary>
     /// subscribes the eyetracking data. Only when the correct ControlState is set.
     /// </summary>
-    private void subscribeEyetracking()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void subscribeEyetracking(ControlState controlState)
     {
-        if (ControlStateProperty.currentState == ControlState.BlinkingEye
-            || ControlStateProperty.currentState == ControlState.EyeTrigger)
+        if (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.EyeTrigger)
         {
-            this.gazeController.OnReceive3dGaze += GazeController_OnReceive3dGaze;
+            this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
         }
     }
 
     /// <summary>
     /// unsubscribes the eyetracking data
     /// </summary>
-    private void unsubscribeEyetracking()
+    /// <param name="controlState">ControlState, according to which the subscription is to be carried out/param>
+    private void unsubscribeEyetracking(ControlState controlState)
     {
-        try
+        if (controlState == ControlState.BlinkingEye
+            || controlState == ControlState.EyeTrigger)
         {
             this.gazeController.OnReceive3dGaze -= this.GazeController_OnReceive3dGaze;
-        }
-        catch (Exception ex)
-        {
-            // nothing to do
         }
     }
 
@@ -187,11 +190,11 @@ public abstract class BaseGame : BaseMono
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ControlState_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    private void ControlStateProperty_PropertyChanged(object sender, ControlStatePropertyChangedEventArgs e)
     {
-        this.unsubscribeEyetracking();
+        this.unsubscribeEyetracking(e.oldValue);
         this.envChanged();
-        this.subscribeEyetracking();
+        this.subscribeEyetracking(e.newValue);
     }
 
     /// <summary>
@@ -235,20 +238,19 @@ public abstract class BaseGame : BaseMono
     protected abstract Measurement createMeasurement(ControlState currentState);
 
     /// <summary>
-    /// Sets the property changed event handler for the control state property 
+    /// nothing to do when object will be start
     /// </summary>
     protected override void DoStart()
     {
-        ControlStateProperty.PropertyChanged += ControlState_PropertyChanged;
-        this.searchValues = new List<int>();
+        // nothing todo
     }
 
     /// <summary>
-    /// nothing to do when object will be awaked
+    /// set initial control state
     /// </summary>
     protected override void DoAwake()
     {
-        // nothing todo
+        this.setInitialControlState();
     }
 
     /// <summary>
@@ -264,7 +266,7 @@ public abstract class BaseGame : BaseMono
     /// </summary>
     protected override void OnCalibrationStarted()
     {
-        this.unsubscribeEyetracking();
+        this.unsubscribeEyetracking(ControlStateProperty.currentState);
     }
 
     /// <summary>
@@ -272,7 +274,7 @@ public abstract class BaseGame : BaseMono
     /// </summary>
     protected override void OnCalibrationRoutineDone()
     {
-        this.subscribeEyetracking();
+        this.subscribeEyetracking(ControlStateProperty.currentState);
     }
 
     /// <summary>
@@ -284,4 +286,66 @@ public abstract class BaseGame : BaseMono
     {
         this.envChanged();
     }
+
+    /// <summary>
+    /// sets the initial control state
+    /// </summary>
+    private void setInitialControlState()
+    {
+        if (this.laserEyeTrackingSlider.value == 0)
+        {
+            if (this.triggerBlinkDetectionSlider.value == 0)
+            {
+                ControlStateProperty.currentState = ControlState.LaserTrigger;
+            }
+            else if (this.triggerBlinkDetectionSlider.value == 1)
+            {
+                ControlStateProperty.currentState = ControlState.LaserBlinking;
+            }
+        }
+        else if (this.laserEyeTrackingSlider.value == 1)
+        {
+            if (this.triggerBlinkDetectionSlider.value == 0)
+            {
+                ControlStateProperty.currentState = ControlState.EyeTrigger;
+            }
+            else if (this.triggerBlinkDetectionSlider.value == 1)
+            {
+                ControlStateProperty.currentState = ControlState.BlinkingEye;
+            }
+        }
+    }
+
+    #region Sliderchanged
+
+    /// <summary>
+    /// event handler for laser eyetracking slider changed 
+    /// </summary>
+    public void LaserEyeTrackingSliderChanged()
+    {
+        int state = (int)ControlStateProperty.currentState;
+        state = state ^ 0b01;
+        ControlStateProperty.currentState = (ControlState)state;
+    }
+
+    /// <summary>
+    /// event handler for trigger blink detection slider changed 
+    /// </summary>
+    public void TriggerBlinkDetectionSliderChanged()
+    {
+        int state = (int)ControlStateProperty.currentState;
+        state = state ^ 0b10;
+        ControlStateProperty.currentState = (ControlState)state;
+    }
+
+    /// <summary>
+    /// event handler for the scale slider changed
+    /// </summary>
+    /// <param name="number">number of slider position</param>
+    public void ScaleSliderChanged(float number)
+    {
+        ScalingProperty.currentScaling = (Scaling)number;
+    }
+
+    #endregion
 }
