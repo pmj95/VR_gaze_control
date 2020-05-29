@@ -492,7 +492,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1844083062}
+      - m_Target: {fileID: 2078468670}
         m_MethodName: LaserEyeTrackingSliderChanged
         m_Mode: 1
         m_Arguments:
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1844083062}
+      - m_Target: {fileID: 2078468670}
         m_MethodName: ScaleSliderChanged
         m_Mode: 0
         m_Arguments:
@@ -8801,8 +8801,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gazeOrigin: {fileID: 1912739688}
-  laserEyeTrackingSlider: {fileID: 99674728}
-  triggerBlinkDetectionSlider: {fileID: 2063271402}
   laserPointer: {fileID: 102445502}
   subscriptionsController: {fileID: 103432182}
   gazeController: {fileID: 419471038}
@@ -9701,7 +9699,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1844083062}
+      - m_Target: {fileID: 2078468670}
         m_MethodName: TriggerBlinkDetectionSliderChanged
         m_Mode: 1
         m_Arguments:
@@ -9823,6 +9821,8 @@ MonoBehaviour:
   gazeOrigin: {fileID: 209140027}
   gazeLogDistance: 20
   level: Fitts Law far
+  laserEyeTrackingSlider: {fileID: 99674728}
+  triggerBlinkDetectionSlider: {fileID: 2063271402}
 --- !u!4 &2078468671
 Transform:
   m_ObjectHideFlags: 0

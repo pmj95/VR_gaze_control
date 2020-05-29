@@ -168,15 +168,18 @@ public abstract class BasePlayer : BaseMono
             this.gazeController.OnReceive3dGaze += this.GazeController_OnReceive3dGaze;
         }
 
-        if (controlState == ControlState.EyeTrigger
-            || controlState == ControlState.BlinkingEye)
+        if (this.gazeVisualizer != null)
         {
-            this.gazeVisualizer.gameObject.SetActive(true);
-        }
-        else if (controlState == ControlState.LaserTrigger
-            || controlState == ControlState.LaserBlinking)
-        {
-            this.gazeVisualizer.gameObject.SetActive(false);
+            if (controlState == ControlState.EyeTrigger
+                || controlState == ControlState.BlinkingEye)
+            {
+                this.gazeVisualizer.gameObject.SetActive(true);
+            }
+            else if (controlState == ControlState.LaserTrigger
+                || controlState == ControlState.LaserBlinking)
+            {
+                this.gazeVisualizer.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -292,28 +292,8 @@ public abstract class BaseGame : BaseMono
     /// </summary>
     private void setInitialControlState()
     {
-        if (this.laserEyeTrackingSlider.value == 0)
-        {
-            if (this.triggerBlinkDetectionSlider.value == 0)
-            {
-                ControlStateProperty.currentState = ControlState.LaserTrigger;
-            }
-            else if (this.triggerBlinkDetectionSlider.value == 1)
-            {
-                ControlStateProperty.currentState = ControlState.LaserBlinking;
-            }
-        }
-        else if (this.laserEyeTrackingSlider.value == 1)
-        {
-            if (this.triggerBlinkDetectionSlider.value == 0)
-            {
-                ControlStateProperty.currentState = ControlState.EyeTrigger;
-            }
-            else if (this.triggerBlinkDetectionSlider.value == 1)
-            {
-                ControlStateProperty.currentState = ControlState.BlinkingEye;
-            }
-        }
+        int state = (int)(this.laserEyeTrackingSlider.value + 2 * this.triggerBlinkDetectionSlider.value);
+        ControlStateProperty.currentState = (ControlState)state;
     }
 
     #region Sliderchanged
