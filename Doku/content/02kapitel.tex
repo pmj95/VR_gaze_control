@@ -101,6 +101,7 @@ Im Rahmen dieser Arbeit wird die Eye-Tracking Plattform von Pupil Labs verwendet
 \end{figure}
 
 \subsection{Kalibrierung}
+\label{section:calibration}
 Die Kalibrierung ist ein Verfahren, um die Genauigkeit von Eye-Tracking zu gewährleisten \cite{Clay_Koenig_Koenig_2019}. Die Durchführung findet durch Betrachtung einer vordefinierten Anzahl visueller Stimuli statt, welcher der Benutzer während der Kalibrierung anvisieren muss. Während des Anvisierens der Zielpunkte werden die Pupillenposition im Augenbild, die physische Orientierung des Auges und die Lage des Ziels auf der Kalibrierungsebene abgetastet. \cite{Lander.2018} Aus diesen Informationen wird der Blick an die Stelle angepasst, an die der Benutzer schaut \cite{Clay_Koenig_Koenig_2019}. Das Kalibrieren ist ein individueller Prozess, weshalb das Eye-Tracking vor der Anwendung für jeden Benutzer neu kalibriert werden muss. Der Grund sind unter anderem die humanspezifischen Parameter (zum Beispiel Hornhautverkrümmung), und geometrischen Informationen (zum Beispiel relative Lage und Orientierung zwischen den Kameras). \cite{Lander.2018}
 
 Während der Kalibrierung verwendet der Eye-Tracker diese Zielpunkte als Referenzpunkte, um seine Berechnung des Blicks an die Stelle anzupassen, auf die die Testperson schaut. 
@@ -178,8 +179,10 @@ Bei der Erstellung einer Nutzeroberfläche in der virtuellen Realität ist Fitts
 Wenn man die Erkenntnisse der beiden vorherigen Abschnitten zusammenführt, ergibt sich eine Situation, in der Fitts' Gesetz in VR mit Eye-Tracking durchaus überprüft werden kann. Allerdings müssen einige Parameter, wie beispielsweise die Distanz zu den Objekten fest definiert sein. \citeauthor{Hansen.2018} haben in ihrer Untersuchung bereits VR und Eye-Tracking verbunden und sind zu dem Schluss gekommen, dass es als Steuermöglichkeit durchaus Potential hat, allerdings immer noch der herkömmlichen Computermaus unterlegen ist. \cite{Hansen.2018}
 
 \section{Systemvoraussetzung}
-\todo[inline]{Systemvoraussetzungen mit rein nehmen???? -> wie besprochen, auch die min specs von der Vive Seite mit rein nehmen \& Pupil Labs}
-Verwendete Hardware: i5 8600k, gtx 1060 6gb, 16gb ddr4
+Für das Betreiben einer HTC Vive wird von HTC empfohlen, mindestens einen Intel i5 4590 Prozessor und eine Nvidia GeForce GTX 1060 Grafikkarte zu verwenden. Außerdem sollen mindestens 4GB Arbeitsspeicher verbaut sein \cite{sys.requirements.2020}. Pupil Labs spricht auf der eigenen Website lediglich von \glqq Intel i5 or greater\grqq{} und mindestens 8GB RAM \cite{Pupil.Labs.reqs}. Da die höheren Anforderungen bei der HTC Vive liegen, sollten diese Mindestanforderungen erfüllt sein, um die hier beschriebene Software und Hardware betreiben zu können. 
+
+Bei der Erstellung der Umgebung und der Durchführung der Probandenversuche wurde ein Computer mit einem Intel i5 8600k, einer Nvidia GeForce GTX 1060 6GB und 16GB DDR4 Arbeitsspeicher verwendet. Dabei war vor allem die CPU starken Belastungen, einerseits von Unity, andererseits von Pupil Labs. Die genaue Systemauslastung kann in \autoref{fig:Systemauslastung} gesehen werden.
+\todo[inline]{CM: evtl Bild in Anhang? aber länge dürfte so ausreichend sein oder? }
 
 \begin{figure}[!htbp]
 	\centering
