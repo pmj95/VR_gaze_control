@@ -145,7 +145,7 @@
 %% Programmiersprachen Highlighting (Listings)
 \newcommand{\listingsettings}{%
 	\lstset{%
-		language=C++,			% Standardsprache des Quellcodes
+		language=csh,			% Standardsprache des Quellcodes
 		%numbers=left,			% Zeilennummern links
 		%stepnumber=1,			% Jede Zeile nummerieren.
 		%numbersep=5pt,			% 5pt Abstand zum Quellcode
@@ -169,8 +169,72 @@
 		keywordstyle=\color[rgb]{0.133,0.133,0.6},
 		commentstyle=\color[rgb]{0.133,0.545,0.133},
 		stringstyle=\color[rgb]{0.627,0.126,0.941},
-    aboveskip=1.5em,
+    	aboveskip=1.5em,
+    	morekeywords={  abstract, event, new, struct,
+    					as, explicit, null, switch,
+    					base, extern, object, this,
+    					bool, false, operator, throw,
+    					break, finally, out, true,
+    					byte, fixed, override, try,
+    					case, float, params, typeof,
+    					catch, for, private, uint,
+    					char, foreach, protected, ulong,
+    					checked, goto, public, unchecked,
+    					class, if, readonly, unsafe,
+    					const, implicit, ref, ushort,
+    					continue, in, return, using,
+    					decimal, int, sbyte, virtual,
+    					default, interface, sealed, volatile,
+    					delegate, internal, short, void,
+    					do, is, sizeof, while,
+    					double, lock, stackalloc,
+    					else, long, static,
+    					enum, namespace, string},
 	}
+%	\lstset{%
+%		language=csh,
+%		basicstyle=\footnotesize\ttfamily, 
+%		numbers=left, 
+%		numberstyle=\tiny, 
+%		numbersep=5pt, 
+%		tabsize=2, 
+%		extendedchars=true, 
+%		breaklines=true, 
+%		frame=b,
+%		stringstyle=\color{blue}\ttfamily, 
+%		showspaces=false, 
+%		showtabs=true, 
+%		xleftmargin=17pt,
+%		framexleftmargin=17pt,
+%		framexrightmargin=5pt,
+%		framexbottommargin=4pt,
+%		commentstyle=\color{green},
+%		morecomment=[l]{//}, %use comment-line-style!
+%		morecomment=[s]{/*}{*/}, %for multiline comments
+%		showstringspaces=false, 
+%		morekeywords={  abstract, event, new, struct,
+%			as, explicit, null, switch,
+%			base, extern, object, this,
+%			bool, false, operator, throw,
+%			break, finally, out, true,
+%			byte, fixed, override, try,
+%			case, float, params, typeof,
+%			catch, for, private, uint,
+%			char, foreach, protected, ulong,
+%			checked, goto, public, unchecked,
+%			class, if, readonly, unsafe,
+%			const, implicit, ref, ushort,
+%			continue, in, return, using,
+%			decimal, int, sbyte, virtual,
+%			default, interface, sealed, volatile,
+%			delegate, internal, short, void,
+%			do, is, sizeof, while,
+%			double, lock, stackalloc,
+%			else, long, static,
+%			enum, namespace, string},
+%		keywordstyle=\color{cyan},
+%		identifierstyle=\color{red},
+%	}
 }
 
 

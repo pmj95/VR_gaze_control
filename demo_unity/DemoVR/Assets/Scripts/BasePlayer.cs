@@ -267,7 +267,7 @@ public abstract class BasePlayer : BaseMono
     /// <param name="thirdFrame"></param>
     private void ReceiveBlinkData(string topic, Dictionary<string, object> dictionary, byte[] thirdFrame = null)
     {
-        if (dictionary.ContainsKey("timestamp") && !this.onBlinking)
+        if (!this.onBlinking)
         {
             this.StartCoroutine(this.Blink(this.blinkDuration));
         }

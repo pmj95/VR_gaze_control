@@ -3,6 +3,7 @@
 \chapter{Versuchsumgebung}
 \label{section:versuchsumgebung}
 \todo[inline]{Gaze Data Logging hier und Kap 5}
+\todo[inline]{Button oder Knopf; bestätigen oder betätigen}
 
 Im folgenden Kapitel wird die Versuchsumgebung erläutert. Um einen Überblick über die Versuchsumgebung zu bekommen, wird zu Beginn der Aufbau der Umgebungen beschrieben. Danach werden die einzelnen Szenen vorgestellt, welche für die Versuchsdurchführung erstellt wurden. In dem Kapitel werden zudem die verschiedenen Steuerungsmöglichkeiten für die Versuche vorgestellt. Als letztes wird die Implementierung erläutert. 
 
@@ -45,7 +46,7 @@ Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf de
 	\label{fig:FittsLawFurther}
 \end{figure}
 
-Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläche befindet sich an der Wand und die Bedienelemente befinden sich auf der gleichen Ebene an der Wand. In der vierten und letzten Szene \glqq 3D-Level\grqq{} (siehe \autoref{fig:3D-Level})\todo{Komma um 3D Level? bin mir aber nicht sicher; @Clemens: gute Frage. Kommasetzung ist überhaupt nicht meins xD} wird untersucht, welche Auswirkungen eine dreidimensionale Spielfläche auf das Eye-Tracking hat. Die Bedienelemente befinden sich nicht mehr auf der gleichen Ebene, sondern schweben im Raum. Die Entfernung zwischen dem Benutzer und den Bedienelementen variiert von 4,5 bis 9,5 Einheiten. Der interessante Aspekt an dieser Szene ist, dass gegebenenfalls ein Bedienelement zum Teil ein anderes Bedienelement verdeckt. Hierbei wird insbesondere die Zuverlässigkeit des Eye-Trackings auf die Probe gestellt. 
+Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläche befindet sich an der Wand und die Bedienelemente befinden sich auf der gleichen Ebene an der Wand. In der vierten und letzten Szene \glqq 3D-Level\grqq{} (siehe \autoref{fig:3D-Level}) \todo{Komma um 3D Level? bin mir aber nicht sicher; @Clemens: gute Frage. Kommasetzung ist überhaupt nicht meins xD} wird untersucht, welche Auswirkungen eine dreidimensionale Spielfläche auf das Eye-Tracking hat. Die Bedienelemente befinden sich nicht mehr auf der gleichen Ebene, sondern schweben im Raum. Die Entfernung zwischen dem Benutzer und den Bedienelementen variiert von 4,5 bis 9,5 Einheiten. Der interessante Aspekt an dieser Szene ist, dass gegebenenfalls ein Bedienelement zum Teil ein anderes Bedienelement verdeckt. Hierbei wird insbesondere die Zuverlässigkeit des Eye-Trackings auf die Probe gestellt. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -55,7 +56,7 @@ Bei den ersten drei Szenen ist die Spielfläche zweidimensional. Die Spielfläch
 \end{figure}
 
 \section{Steuerung}
-\todo{WICHTIG: Klären wie die Steuerungsarten benannt und geschrieben werden. Gilt insbesondere für Kapitel 5}
+\todo{WICHTIG: Klären wie die Steuerungsarten benannt und geschrieben werden. Gilt insbesondere für Kapitel 5 \& 6}
 Um beurteilen zu können, ob sich Eye-Tracking zur Steuerung von Bedienelementen in \ac{VR} eignet, werden verschiedene Steuerungsmöglichkeiten getestet. Die Steuerung innerhalb der \ac{VR}-Umgebung kann mit den Controllern erfolgen und mit dem Eye-Tracking. Die Steuerung lässt sich in Anvisieren und Interagieren unterteilen. Damit beim Anvisieren von Elementen mit dem Controller für den Benutzer klar wird, in welche Richtung der Controller zeigt, wird für das Anvisieren der Controller mit einem Laser versehen. Beim Eye-Tracking wird der anvisierte Punkt durch eine kleine schwarze Kugel gekennzeichnet. Das Interagieren mit dem Controller erfolgt durch den Abzug auf der Unterseite des Controllers. Beim Eye-Tracking erfolgt dies durch Blinzeln.\\
 Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppen aufteilen. Die erste Gruppe ist die Steuerung mit den \ac{VR}-Headset Controllern. Die Controllervariante ist die klassische Steuerungsmöglichkeit. In der Regel benötigt der Benutzer zum Interagieren mit der \ac{VR}-Umgebung mindestens einen Controller. Die zweite Gruppe ist die Steuerung mithilfe des Eye-Trackers. Bei Eye-Tracking wird der Blick zum Anvisieren verwendet und das Blinzeln zum Interagieren mit der \ac{VR}-Umgebung verwendet. Die letzte Möglichkeit ist der Mix aus der klassischen Steuerung sowie der Steuerung mithilfe des Eye-Trackings. Hier übernimmt jeweils eine Steuerungsmöglichkeit das Anvisieren und die andere das Interagieren. Daraus ergeben sich die folgenden vier Versuchskombinationen:
 
@@ -100,7 +101,7 @@ Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Sze
 	\item \textbf{UIElements}: Diesem Objekt sind die graphischen Elemente für die verschiedenen Einstellungen für die Versuche zugeordnet. Diese Elemente sind nur in der Unity-Übersicht sichtbar. 
 \end{description}
 
-In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
+In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. \todo{JH: BaseMono kurz erklären} Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
 
 \subsection{UIElements}
 Damit für jede Versuchskombination nicht eine eigene Umgebung erstellt werden muss, erhält jede Umgebung eine Einstellungsmöglichkeit für die verschiedenen Versuchskombinationen. In \autoref{fig:switch-different-options} ist die Einstellungsoberfläche für die Versuchskombinationen dargestellt. Für die Versuche können sowohl die Steuerungskombinationen als auch die Durchmesser der Buttons verändert werden. Zur Fixierung eines Objektes kann entweder der Laser oder das Eye-Tracking verwendet werden. Die Bestätigung kann entweder über den Trigger am Controller oder Blink Detection erfolgen. Mit dem unteren Slider lässt sich der Durchmesser der Buttons in drei Stufen verändern.
@@ -122,9 +123,9 @@ Wie in \autoref{fig:ClassDiagrammProperties} zu sehen gibt es die Enumerationen 
 	\label{fig:ClassDiagrammProperties}
 \end{figure}
 
-Ein Slider feuert ein On Value Changed Event, sobald sich der Wert des Sliders ändert. In \autoref{LaserEyeTracking} ist die Methode LaserEyeTrackingSliderChanged, welche Änderungen des ersten Sliders zwischen Laser und EyeTracking abfängt. Obwohl in der Methode der neue Wert nicht mitgeliefert werden kann, kann der neue Wert gesetzt werden. Hier wird sich der Eigenschaft einer Enumeration zunutze gemacht, in der der Datentyp des Konstantenwerts der Enumerationsmember ein Integer ist \cite{BillWagner.2020}. Mithilfe von geschickter XOR Arithmetik kann der Status in ControlState gesetzt werden. Da vier Werte vorhanden sind, reichen zwei Bits aus um die Kombinationen zu erstellen. Für das Fokussieren auf ein Objekt wird die niederwertigste Bit-Stelle verwendet. Wenn das Bit 0 ist, wird der Laser zum fokussieren verwendet, bei einer 1 das Eye-Tracking. Bei der höherwertigen Bit-Stelle wird das Bestätigen der Auswahl gesetzt. Eine 0 ist das Verwenden des Abzuges, eine 1 des Blinzelns. Beim Slider für das Scaling werden dem Slider die Werte 0, 1 und 2 zugewiesen. Das aktuelle Scaling als Enumeration wird mittels Typumwandlung von Integer zur Enumeration erhalten.
+Ein Slider feuert ein On Value Changed Event, sobald sich der Wert des Sliders ändert. In \autoref{lstlisting:LaserEyeTracking} ist die Methode LaserEyeTrackingSliderChanged, welche Änderungen des ersten Sliders zwischen Laser und EyeTracking abfängt. Obwohl in der Methode der neue Wert nicht mitgeliefert werden kann, kann der neue Wert gesetzt werden. Hier wird sich der Eigenschaft einer Enumeration zunutze gemacht, in der der Datentyp des Konstantenwerts der Enumerationsmember ein Integer ist \cite{BillWagner.2020}. Mithilfe von geschickter XOR Arithmetik kann der Status in ControlState gesetzt werden. Da vier Werte vorhanden sind, reichen zwei Bits aus um die Kombinationen zu erstellen. Für das Fokussieren auf ein Objekt wird die niederwertigste Bit-Stelle verwendet. Wenn das Bit 0 ist, wird der Laser zum fokussieren verwendet, bei einer 1 das Eye-Tracking. Bei der höherwertigen Bit-Stelle wird das Bestätigen der Auswahl gesetzt. Eine 0 ist das Verwenden des Abzuges, eine 1 des Blinzelns. Beim Slider für das Scaling werden dem Slider die Werte 0, 1 und 2 zugewiesen. Das aktuelle Scaling als Enumeration wird mittels Typumwandlung von Integer zur Enumeration erhalten.
 
-\begin{lstlisting}[caption=Method LaserEyeTrackingSliderChanged,label=LaserEyeTracking]
+\begin{lstlisting}[caption=Method LaserEyeTrackingSliderChanged,label=lstlisting:LaserEyeTracking]
 public void LaserEyeTrackingSliderChanged()
 {
     int state = (int)ControlStateProperty.currentState;
@@ -147,7 +148,6 @@ Mithilfe der Klasse {\ttfamily ButtonCanvas} wird die Größe der Spielbuttons v
 Zur Untersuchung von Fitts' Gesetz werden runde Buttons auf der Spielfläche verwendet. Buttons, die von Unity als GameObject zur Verfügung gestellt werden, sind nicht rund, sondern rechteckig. Daher wird für die Spielbuttons das von Unity bereitgestellte GameObject {\ttfamily Cyllinder} verwendet. Ein Problem ist, dass ein Cyllinder standardmäßig keinen Collider beinhaltet. Der Entwickler \citeauthor{kode80.2016} stellt in seinem Repository UnityTools auf Github (siehe \cite{kode80.2016}) eine Lösung für dieses Problem bereit. Er stellt das Asset {\ttfamily CyllinderCollider} inklusive Editor zur Verfügung, welches einen fast runden Collider um einen Cyllinder legt. Der Collider besteht aus einer Anzahl definierter rechteckiger Boxen (n), welche in dem Winkel $\acs{a} = \frac{180^\circ}{n}$ an dem Cyllinder angebracht sind. Die Anzahl der Boxen lässt sich zwischen vier und 64 variieren.\\
 In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem CyllinderCollider zu sehen. Gut zu sehen sind die fünf rechteckigen Boxen, welche jeweils im Winkel von 36° angebracht sind. Der Collider ist hierbei nicht rund und ist daher minimal größer als der Cyllinder. In der Abbildung\autoref{fig:CylinderCollider-63} wurde die Anzahl der Boxen auf 63 erhöht. Hier passt sich der Collider um einiges besser der Form des Cyllinders an. Während der Implementierung der CyllinderCollider ist aufgefallen, dass eine höhere Anzahl an Boxen eine schlechtere Performance verursacht. Für die Versuche wird daher der CyllinderCollider mit fünf Boxen (Abbildung\autoref{fig:CylinderCollider-5}) verwendet. Für die Versuche ist der Collider mit fünf Boxen ausreichend, da der Benutzer bei den Versuchen in einer gewissen Entfernung steht, weshalb eine minimale Abweichung des Colliders zur Form keine Auswirkungen auf den Versuch haben. Da das System, aufgrund der Anforderungen der verwendeten Hardware, bereits stark ausgelastet ist, wird zudem eine noch höhere Auslastung des Systems vermieden.
 
-
 \begin{figure}[!htbp]
 	\centering
 	\subfloat[5 Rechtecke\label{fig:CylinderCollider-5}]{%
@@ -161,23 +161,61 @@ In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem Cyl
 	\label{fig:CylinderCollider}
 \end{figure}  
 
-\subsection{Player}
-Das GameObject \glqq Player\grqq{} ist ein zentrales Objekt in den Szenen. Das Objekt beschreibt den Benutzer in Unity und ist über die SteamVR-Bibliothek mit SteamVR verbunden. Das Objekt beinhaltet unter anderem die VR-Kamera und Objekte, welche die rechte, beziehungsweise linke Hand, beschreiben. In den Versuchen wird ein Laserpointer und das Betätigen des Abzuges am Controller verwendet. Hierfür wird der rechten Hand die von SteamVR bereitgestellte Komponente {\ttfamily SteamVR\_LaserPointer} hinzugefügt. Mithilfe dieser Komponente wird der rechten Hand der Laserpointer hinzugefügt. Zudem ist es über diese Komponente möglich das Event PointerClick zu abonnieren, welches beim Betätigen des Abzuges ausgelöst wird. 
-
-Dem Player ist die Klasse {\ttfamily BasePlayer} als Komponente zugeordnet, welche die Steuerungslogik enthält. 
-\todo[inline]{Erklärung über ControlState, Scaling, bis hin zu Subscription und Auswahl welche der Daten wann genommen werden.}
-
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=0.5\linewidth]{ClassDiagramPlayer}
-	\caption[Klassendiagramm Player]{Klassendiagramm Player}
-	\label{fig:ClassDiagramPlayer}
-\end{figure}
-
 \subsection{Gaze Tracker}
 \todo{Gaze Tracker}
 Gaze Visualizer??? --> Wird in Subkapitel Measurement benötigt.
 BaseMono???
+
+\subsection{Player}
+Das GameObject \glqq Player\grqq{} ist ein zentrales Objekt in den Szenen. Das Objekt beschreibt den Benutzer in Unity und ist über die SteamVR-Bibliothek mit SteamVR verbunden. Das Objekt beinhaltet unter anderem die VR-Kamera und Objekte, welche die rechte, beziehungsweise linke Hand, beschreiben. In den Versuchen wird ein Laserpointer und das Betätigen des Abzuges am Controller verwendet. Hierfür wird der rechten Hand die von SteamVR bereitgestellte Komponente {\ttfamily SteamVR\_LaserPointer} hinzugefügt. Mithilfe dieser Komponente wird der rechten Hand der Laserpointer hinzugefügt. Zudem ist es über diese Komponente möglich das Event PointerClick zu abonnieren, welches beim Betätigen des Abzuges ausgelöst wird. 
+
+Dem Player ist die Klasse {\ttfamily BasePlayer} als Komponente zugeordnet, welche die komplette Steuerungslogik enthält. In Abhängigkeit der ausgewählten Steuerungsvariante werden verschiedene Events abonniert. Bei einem Wechsel der Steuerungsvariante werden die Abonnements wieder entfernt. Bei der Verwendung des Laserpointers zum Anvisieren eines Punktes muss kein Event verwendet. Stattdessen wird die Dicke des Laserstrahls angepasst, sodass der Laserstrahl nur bei den Kombinationen Laserpointer/Trigger und Laserpointer/Blinzeln sichtbar ist. Von der Laserpointer Komponente kann das Event PointerClick abonniert werden, um eine Aktion des Triggers mitzubekommen. Das Event wird bei den Steuerungsvarianten Laserpointer/Trigger und Eye-Tracking/Trigger verwendet. Für die Verwendung des Eye-Trackings werden die Blickdaten abonniert und der GazeVisualizer sichtbar gemacht. Die Blickdaten und der GazeVisualizer werden für die Steuerungsvariante Eye-Tracking/Trigger und Eye-Tracking/Blinzeln benötigt. Als letztes abonniert die Komponente die Blinzel-Erkennung\todo{JH: Wie nennen das es sich nicht blöd anhört?}. Das Abonnieren der Blinzel-Erkennung erfolgt über den RequestController und SubscriptionController. Mithilfe des RequestControllers wird das Blinzel-Erkennungs-Plugin von Pupil Capture beziehungsweise Pupil Service gestartet. Dem SubscriptionsController wird mitgeteilt, dass die Eventdaten \glqq blinks\grqq{} an die Methode ReceiveBlinkData gesendet werden sollen. Die Blinzelerkennung wird sowohl für Laserpointer/Blinzeln als auch Eye-Tracking/Blinzeln zur Bestätigung der Auswahl benötigt.
+
+Beim Bestätigen der Auswahl über den Abzug oder das Blinzeln wird anhand des Laserpointers oder des Eye-Trackings überprüft, ob und welches Objekt anvisiert ist. Wird der Laserpointer zum Anvisieren verwendet, dann wird aus der Position des Laserpointers und der Richtung, in die der Laserpointer zeigt, das anvisierte Objekt bestimmt. Bei Eye-Tracking wird stattdessen das anvisierte Objekt mithilfe der \ac{VR}-Kamera beziehungsweise der Position des \ac{HMD} in Kombination mit der vom Eyetracker berechneten Blickrichtung verwendet. Um die \ac{VR}-Weltraumkoordinaten für die Blickdaten zu erhalten muss die Blickrichtung in den Weltraum transformiert werden. In \autoref{lstlisting:CheckCollision} ist ein Ausschnitt der Methode checkColision, in der anhand der Position und der Richtung das anvisierte Objekt herausgefunden wird. Unity stellt die Funktion Raycast bereit, welche das erste getroffene Objekt in der Variablen hit speichert. Der Rückgabewert der Funktion ist vom Datentyp bool. Bei einem erfolgreichen Treffer gibt die Funktion true, ansonsten false zurück. Anhand des GameObjects kann ein Klick eines Buttons durchgeführt werden\todo{JH: nicht so schön}.
+
+\begin{lstlisting}[caption=Ausschnitt aus Methode checkCollision,label=lstlisting:CheckCollision]
+private void checkCollision(Vector3 origin, Vector3 direction)
+{
+	if (Physics.Raycast(origin, direction, out RaycastHit hit))
+	{
+		GameObject currObject = hit.collider.gameObject;
+		
+		// do triggering
+		// ...
+	}
+}
+\end{lstlisting}
+
+Das Verwenden von Blinzeln als Bestätigung ist eine Herausforderung. In \autoref{lstlisting:ReceiveBlinkData} ist die Methode ReceiveBlinkData zu sehen, welche aufgerufen wird, sobald ein Blinzeln erfasst wurde. Da beim Blinzeln sowohl das auf und zugehen der Augen als Blinzeln erkannt wird, werden zwei Events an die Methode ReceiveBlinkData pro Blinzeln geschickt. Damit daher nur ein Event eines Blinzelns verarbeitet wird, wird eine Coroutine verwendet. Hierfür wird die Mehode Blink in einer Coroutine ausgeführt. In \autoref{lstlisting:Blink} ist die Methode zu sehen, welche das Bestätigen durch Blinzeln durchführt. Nach dem der Kollisionscheck durchgeführt wurde, muss die Coroutine eine definierte Dauer von 250ms warten, bis sie sich beendet und den nachfolgenden Code ausführt. Die Flags {\ttfamily onBlinking} und {\ttfamily blinking} unterbinden, dass aufgrund des Blinzelns mehrere Coroutinen ausgeführt werden und die Blink-Methode mehrfach ausgeführt wird.
+
+\begin{lstlisting}[caption=Methode ReceiveBlinkData,label=lstlisting:ReceiveBlinkData]
+private void ReceiveBlinkData(string topic, Dictionary<string, object> dictionary, byte[] thirdFrame = null)
+{
+	if (!this.onBlinking)
+	{
+		this.StartCoroutine(this.Blink(this.blinkDuration));
+	}
+}
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Ausschnitt aus Methode Blink,label=lstlisting:Blink]
+public IEnumerator Blink(float duration)
+{
+	if (!this.blinking)
+	{
+		this.onBlinking = true;
+		this.blinking = true;
+		
+		// do check collision
+		
+		yield return new WaitForSecondsRealtime(duration);
+		this.onBlinking = false;
+		this.blinking = false;
+	}
+	
+	yield break;
+}
+\end{lstlisting}
 
 \subsection{Game}
 \label{section:game}
@@ -189,6 +227,7 @@ BaseMono???
 %\end{figure}
 
 Wände haben -1; Buttons die entsprechende Zahl
+Wände können auch getriggert werden --> Verweis auf Player Kapitel wo es um das triggern geht
 
 3DLevel Buttons verschieben
 
