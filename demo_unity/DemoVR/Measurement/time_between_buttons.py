@@ -51,7 +51,7 @@ def plot_avg_times(times):
     plt.subplots_adjust(wspace=0.2)
     plt.subplots_adjust(hspace=0.4)
     axs[0, 0].plot(times[0][0], times[0][1], label='Big Buttons')
-    axs[0, 0].plot(times[1][0], times[1][1], label='Small Buttons')
+    axs[0, 0].plot(times[1][0], times[1][1], 'y', label='Small Buttons')
     m, b = np.polyfit(times[0][0], times[0][1], 1)
     axs[0, 0].plot(times[0][0], m * np.array(times[0][0]) + b, 'b--', label='LOBF Big Buttons', linewidth=1)
     m, b = np.polyfit(times[1][0], times[1][1], 1)
@@ -63,7 +63,7 @@ def plot_avg_times(times):
     axs[0, 0].legend(loc='upper right', fontsize=6)
 
     axs[0, 1].plot(times[2][0], times[2][1], label='Big Buttons')
-    axs[0, 1].plot(times[3][0], times[3][1], label='Small Buttons')
+    axs[0, 1].plot(times[3][0], times[3][1], 'y', label='Small Buttons')
     m, b = np.polyfit(times[2][0], times[2][1], 1)
     axs[0, 1].plot(times[2][0], m * np.array(times[2][0]) + b, 'b--', label='LOBF Big Buttons', linewidth=1)
     m, b = np.polyfit(times[3][0], times[3][1], 1)
@@ -75,7 +75,7 @@ def plot_avg_times(times):
     axs[0, 1].legend(loc='upper left', fontsize=6)
 
     axs[1, 0].plot(times[4][0], times[4][1], label='Big Buttons')
-    axs[1, 0].plot(times[5][0], times[5][1], label='Small Buttons')
+    axs[1, 0].plot(times[5][0], times[5][1], 'y', label='Small Buttons')
     m, b = np.polyfit(times[4][0], times[4][1], 1)
     axs[1, 0].plot(times[4][0], m * np.array(times[4][0]) + b, 'b--', label='LOBF Big Buttons', linewidth=1)
     m, b = np.polyfit(times[5][0], times[5][1], 1)
@@ -87,7 +87,7 @@ def plot_avg_times(times):
     axs[1, 0].legend(loc='upper left', fontsize=6)
 
     axs[1, 1].plot(times[6][0], times[6][1], label='Big Buttons')
-    axs[1, 1].plot(times[7][0], times[7][1], label='Small Buttons')
+    axs[1, 1].plot(times[7][0], times[7][1], 'y', label='Small Buttons')
     m, b = np.polyfit(times[6][0], times[6][1], 1)
     axs[1, 1].plot(times[6][0], m * np.array(times[6][0]) + b, 'b--', label='LOBF Big Buttons', linewidth=1)
     m, b = np.polyfit(times[7][0], times[7][1], 1)

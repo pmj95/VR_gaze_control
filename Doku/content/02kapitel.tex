@@ -1,8 +1,8 @@
 %!TEX root = ../dokumentation.tex
 
 \chapter{Grundlagen}
-\todo[inline]{Also schön ist was anderes :D}
-In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst wird der Begriff virtuelle Realität definiert und erläutert. Darauf folgt das in dieser Arbeit verwendetet \ac{VR}-System. Da in dieser Arbeit neben \ac{VR} auch Eye-Tracking verwendet, wird die Technologie erläutert und der verwendetet Eyetracker vorgestellt. Die \ac{VR}-Umgebung werden für die Versuche selbst erstellt, weshalb die verwendete Entwicklungsumgebung Unity vorgestellt wird. Da in dieser Arbeit Fitts' Gesetz Anwendung findet, wird zusätzlich dieses Gesetzt erklärt und in Zusammenhang mit \ac{VR} gebracht. Abgeschlossen wir das Kapitel mit den Systemvoraussetzungen, welche aufgrund der verwendeten Hardware für die Versuche benötigt werden.
+\todo[inline]{Also schön ist was anderes :D CM: Meiner meinung nach so i.O.}
+In dem folgenden Kapitel werden die Grundlagen dieser Arbeit beschrieben. Zuerst wird der Begriff virtuelle Realität definiert und erläutert. Darauf folgt das in dieser Arbeit verwendetet \ac{VR}-System. Da in dieser Arbeit neben \ac{VR} auch Eye-Tracking verwendet, wird die Technologie erläutert und der verwendetet Eyetracker vorgestellt. Die \ac{VR}-Umgebung werden für die Versuche selbst erstellt, weshalb die verwendete Entwicklungsumgebung Unity vorgestellt wird. Da in dieser Arbeit Fitts' Gesetz Anwendung findet, wird zusätzlich dieses Gesetz erklärt und in Zusammenhang mit \ac{VR} gebracht. Abgeschlossen wir das Kapitel mit den Systemvoraussetzungen, welche aufgrund der verwendeten Hardware für die Versuche benötigt werden.
 
 \section{Virtuelle Realität}
 Die Grundidee der virtuellen Realität existiert bereits seit dem 19. Jahrhundert. David Brewester entwickelte 1848 ein linsenförmiges Stereoskop, welches das Gefühlt von Tiefe und Immersion hervorbrachte. Nennenswerte Entwicklungen im Bereich der virtuellen Realität wurden zu Beginn des 20. Jahrhunderts getätigt. \cite{Singh.2017} 1987 gebrauchte der Informatiker Jaron Lanier als erster Wissenschaftler den Begriff \ac{VR} \cite{Doerner2019}. 
@@ -87,7 +87,7 @@ Eye-Tracking ist eine Technologie, welche zur Erfassung von Augenbewegungen eing
 \end{quote}
 
 Die wichtigsten Parameter, die durch das Eyetracking erfasst werden, sind Fixiationen, Sakkaden und Regression \cite{BartlPokorny.2013}. \glqq Fixationen sind Phasen des relativen Stillstandes der Augen.\grqq \cite{Blake.2013} Als Sakkaden werden schnelle Augenbewegungen bei der Erfassung eines neuen Fixpunktes bezeichnet. Regressionen bezeichnen Richtungsänderungen und Rücksprünge zu vorherigen Fixpunkte. Die verfügbaren Systeme lassen sich in drei Gruppen unterteilen: Fixierung am Kopf (tower-mounted) \todo{head-mounted klingt für mich auch nach fixierung am kopf, hier vlt ein wenig klarer formulieren}, berührungslose Messung (remote) und sowie mobiles Eye-Tracking (head-mounted). \cite{BartlPokorny.2013}
-\todo[inline]{Noch darauf eingehen, wie Eye-Tracking technisch funktioniert???}
+\todo[inline]{Noch darauf eingehen, wie Eye-Tracking technisch funktioniert??? CM: Wenn du motiviert bis, is ja aber grundsätzlich für uns nich allzu relevant. Vlt in ner halben Seite oder so}
 
 \subsection{Eyetracker}
 \todo{Blink Detection fehlt noch komplett. Zumindest das Erwähnen}
@@ -157,11 +157,11 @@ Fitts' Gesetz (im englischen Fitts's Law) ist eine vom US-Amerikanischen Psychol
 ID = log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
 Eine Erhöhung der Distanz hat eine Erhöhung der Schwierigkeit zur Folge, wohingegen eine Erhöhung der Breite das Senken des Schwierigkeitsindex ID zur Folge hat. Ein niedriger Wert für ID bedeutet, dass das Objekt leicht zu treffen ist, ein hoher Wert bedeutet, dass das Objekt schwer zu treffen ist \cite{Fitts.1992}. 
-Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer \ac{MT} zu berechnen. Die Berechnung von \ac{MT} ist nach \citeauthor{Graham.1996} mit folgender Formel möglich \cite{Graham.1996} \todo{vlt gibts die Quelle iwo anders besser... so is nur mittelmäßig nice}:
+Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer \ac{MT} zu berechnen. Die Berechnung von \ac{MT} ist nach \citeauthor{Graham.1996} mit folgender Formel möglich \cite{Graham.1996}:
 \begin{equation}
 MT = a + b * ID = a + b * log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
-Die Konstanten a und b sind Zeitkonstanten, die von dem verwendeten Eingabegerät abhängig sind. Dabei beschreibt a die Zeit, bis eine Bewegung beginnt und b die Beschleunigungskonstante. Daher wird mit einer erhöhten Distanz die Zeit, bis das Objekt ausgewählt wird, ebenfalls höher \cite{Graham.1996}. {\color{red} Daher erhöht sich die Zeit, bis das Objekt ausgewählt wird, sobald sich die Distanz erhöht \todo{Alternative zum Satz davor}}
+Die Konstanten a und b sind Zeitkonstanten, die von dem verwendeten Eingabegerät abhängig sind. Dabei beschreibt a die Zeit, bis eine Bewegung beginnt und b die Beschleunigungskonstante. Daher erhöht sich die Zeit, bis das Objekt ausgewählt wird, sobald sich die Distanz erhöht \cite{Graham.1996}.
 
 Mittlerweile wird sich vor allem in der Erstellung von Benutzeroberflächen auf Computerbildschirmen (User Interfaces, kurz UIs) an den Erkenntnissen von Fitts  orientiert, um Schaltflächen für Nutzereingaben möglichst so zu gestalten, dass sie schnell und einfach getroffen werden können \cite{Kexugit.2006}. Durch die begrenzte Fläche auf einem Computerbildschirm bietet sich hier ebenfalls die Möglichkeit, an den Rändern des Bildschirms wichtige Bedienelemente zu platzieren, um eine schnellere Bedienung des Programms vornehmen zu können. Im Betriebssystem Windows 10 ist zum Beispiel der Startknopf in der unteren linken Ecke, der sogenannten \glqq Magic Corner \grqq{} platziert \cite{Kexugit.2006}. Dadurch hat dieser Knopf eine \glqq unendliche\grqq{} Höhe und Tiefe, da der Nutzer die Maus unendlich weit nach unten links bewegen kann und immer den Startknopf treffen wird \cite{Kexugit.2006}. Dadurch wird die Zeit, bis ein Nutzer den Knopf getroffen hat und aktivieren kann deutlich reduziert \cite{Soukoreff.2004}.
 
