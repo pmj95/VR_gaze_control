@@ -94,6 +94,17 @@ Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Sze
 
 In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
 
+\subsection{Gaze Tracker}
+\todo{Gaze Tracker}
+Das GameObject \glqq Gaze Tracker\grqq{} beinhaltet alle nötigen Informationen bezüglich des Eye-Trackings. Im Unterobjekt Connection sind die Komponenten RequestController und SubscriptionController enthalten. Zudem beinhaltet der GazeTracker das Unterobjekt Gaze Controller, welches die Komponente GazeController beinhaltet. Der Gaze Controller beinhaltet wiederum die Unterobjekte Gaze Visualizer und Calibration Controller. Der Calibration Controller beinhaltet den CalibrationController, mit dem die Kalibrierung durchgeführt wird. Zudem sind die Calibration Marker enthalten. Der Gaze Visualizer stellt die Visualisierung der aktuellen Blickposition in der \ac{VR}-Umgebung dar. Hierfür wird der in \autoref{fig:GazeVisualizer} dargestellte Marker verwendet. Die schwarze Kugel in der Mitte beschreibt die wahrscheinlichste Trefferposition, wohin der Blick gerichtet wird. Die gelbe Scheibe drumherum ist die mögliche Position des Blickes inklusive eines Fehlers.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics{GazeVisualizer}
+	\caption[GazeVisualizer Marker]{GazeVisualizer Marker}
+	\label{fig:GazeVisualizer}
+\end{figure}
+
 \subsection{BaseMono}
 Die eigens für den Versuchsaufbau erstellten Klassen, welche wiederum ein MonoBehaviour sind, wurde die Basisklasse {\ttfamily BaseMono} hinzugefügt. Diese Klasse stellt die abstrakten Methoden {\ttfamily OnCalibrationStarted} und {\ttfamily OnCalibrationRoutineDone} bereit. Die Methoden dienen als Event-Handler für die Kalibrierung. Zu Beginn der Kalibrierung wird die Methode OnCalibrationStarted aufgerufen, am Ende OnCalibrationRoutineDone. Mithilfe dieser Methoden können die Kindklassen auf den Kalibriervorgang reagieren und gegebenenfalls bestimmte Routinen ausschalten. Zusätzlich stellt BaseMono die abstrakten Methode {\ttfamily DoAwake}, {\ttfamily DoStart} und {\ttfamily DoDestroy} bereit. Diese Methoden werden von den MonoBehaviour-Funktionen {\ttfamily Awake}, {\ttfamily Start} und {\ttfamily OnDestroy} aufgerufen.
 
@@ -154,20 +165,6 @@ In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem Cyl
 	\caption{CyllinderCollider}
 	\label{fig:CylinderCollider}
 \end{figure}  
-
-\subsection{Gaze Tracker}
-\todo{Gaze Tracker}
-Das GameObject \glqq Gaze Tracker\grqq{} ist die Schnittstelle zwischen dem Eyetracker und der \ac{VR}-Umgebung. 
-
-\begin{figure}[!htbp]
-	\centering
-	\missingfigure{Bild nur von GazeVisualizer}
-	\caption[GazeVisualizer]{GazeVisualizer}
-	\label{fig:GazeVisualizer}
-\end{figure}
-
-
-Gaze Visualizer??? --> Wird in Subkapitel Measurement benötigt.
 
 \subsection{Player}
 Das GameObject \glqq Player\grqq{} ist ein zentrales Objekt in den Szenen. Das Objekt beschreibt den Benutzer in Unity und ist über die SteamVR-Bibliothek mit SteamVR verbunden. Das Objekt beinhaltet unter anderem die VR-Kamera und Objekte, welche die rechte, beziehungsweise linke Hand, beschreiben. In den Versuchen wird ein Laserpointer und das Betätigen des Abzuges am Controller verwendet. Hierfür wird der rechten Hand die von SteamVR bereitgestellte Komponente {\ttfamily SteamVR\_LaserPointer} hinzugefügt. Mithilfe dieser Komponente wird der rechten Hand der Laserpointer hinzugefügt. Zudem ist es über diese Komponente möglich das Event PointerClick zu abonnieren, welches beim Betätigen des Abzuges ausgelöst wird. 
