@@ -87,6 +87,7 @@
     <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
     <None Include="Assets\AutoSave\ReadMe.txt" />
     <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagramBaseMono.cd" />
     <None Include="ClassDiagramButton.cd" />
     <None Include="ClassDiagramGame.cd" />
     <None Include="ClassDiagramMeasurement.cd" />

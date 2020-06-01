@@ -3,7 +3,7 @@
 \chapter{Versuchsumgebung}
 \label{section:versuchsumgebung}
 \todo[inline]{Gaze Data Logging hier und Kap 5 CM: hier die aufzeichnung beschreiben, in 5 u 6 die auswertung und interpretation}
-\todo[inline]{Button oder Knopf; bestätigen oder betätigen CM:ich rede von betätigten Knöpfen}
+\todo[inline,color=red]{JH: Button oder Knopf; bestätigen oder betätigen CM:ich rede von betätigten Knöpfen JH: dann sollten wir da noch einmal drüber reden}
 
 Im folgenden Kapitel wird die Versuchsumgebung erläutert. Um einen Überblick über die Versuchsumgebung zu bekommen, wird zu Beginn der Aufbau der Umgebungen beschrieben. Danach werden die einzelnen Szenen vorgestellt, welche für die Versuchsdurchführung erstellt wurden. In dem Kapitel werden zudem die verschiedenen Steuerungsmöglichkeiten für die Versuche vorgestellt. Als letztes wird die Implementierung erläutert. 
 
@@ -28,9 +28,9 @@ Für die Untersuchung von Fitts's Law in \ac{VR} sind die Bedienelemente im Durc
 \end{figure}
 
 \section{Szenen}
-\todo{@Clemens: Erklären wieso die Szenen so aufgebaut wurden? Z.B. warum verschiedene Entfernungen? Und wieso das 3D-Level? passt soweit?}
-\todo{@Clemens: Bezug auf Forschungsfrage! passt soweit?}
-Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf dem zuvor beschriebenen Aufbau. Jeder der Räume ist 2,5 Einheiten hoch und 5 Einheiten breit. Die Idee an den ersten drei Szenen ist zu untersuchen, welchen Einfluss die Entfernung der Bedienelemente auf die Zuverlässigkeit des Eye-Trackings hat\todo{und auf Fitts Law; @Clemens: die Frage ist doch ob es der nächste Satz nicht schon aussagt??}. Zudem wird in diesen drei Szenen Fitts' Gesetz in \ac{VR} mit Eye-Tracking untersucht. Die Namen der Szenen orientieren sich daher an Fitts's Law. In der ersten Szene \glqq FittsLaw\grqq (siehe \autoref{fig:game-view}) steht der Benutzer in einer Entfernung von 4,5 Einheiten zur Spielfläche. In der zweiten Szene \glqq FittsLawFar\grqq (siehe \autoref{fig:FittsLawFar}) und der dritten Szene \glqq FittsLawFurther\grqq (siehe \autoref{fig:FittsLawFurther}) vergrößert sich die Entfernung jeweils um 2,5 Einheiten zur vorherigen Szene. In der dritten Szene ist der Benutzer daher 9,5 Einheiten von der Spielfläche entfernt. 
+\todo{JH: @Clemens: Erklären wieso die Szenen so aufgebaut wurden? Z.B. warum verschiedene Entfernungen? Und wieso das 3D-Level? passt soweit?}
+\todo{JH: @Clemens: Bezug auf Forschungsfrage! passt soweit?}
+Für die Versuche existieren vier verschiedene Szenen. Jede Szene basiert auf dem zuvor beschriebenen Aufbau. Jeder der Räume ist 2,5 Einheiten hoch und 5 Einheiten breit. Die Idee an den ersten drei Szenen ist zu untersuchen, welchen Einfluss die Entfernung der Bedienelemente auf die Zuverlässigkeit des Eye-Trackings hat\todo{und auf Fitts Law; JH: @Clemens: die Frage ist doch ob es der nächste Satz nicht schon aussagt??}. Zudem wird in diesen drei Szenen Fitts' Gesetz in \ac{VR} mit Eye-Tracking untersucht. Die Namen der Szenen orientieren sich daher an Fitts's Law. In der ersten Szene \glqq FittsLaw\grqq (siehe \autoref{fig:game-view}) steht der Benutzer in einer Entfernung von 4,5 Einheiten zur Spielfläche. In der zweiten Szene \glqq FittsLawFar\grqq (siehe \autoref{fig:FittsLawFar}) und der dritten Szene \glqq FittsLawFurther\grqq (siehe \autoref{fig:FittsLawFurther}) vergrößert sich die Entfernung jeweils um 2,5 Einheiten zur vorherigen Szene. In der dritten Szene ist der Benutzer daher 9,5 Einheiten von der Spielfläche entfernt. 
 
 \begin{figure}[!htbp]
 	\centering
@@ -68,16 +68,7 @@ Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppe
 \end{enumerate}
 
 \section{Implementierung}
-%\begin{wrapfigure}{r}{0.4\textwidth}
-%	\vspace{-20pt}
-%	\centering
-%	\includegraphics{scenes-structure}
-%	\vspace{0pt}
-%	\caption[Aufbau der Szenen]{Aufbau der Szenen}
-%	\label{fig:scenes-structure}
-%	\vspace{-10pt}
-%\end{wrapfigure}
-
+\todo[inline,color=red]{JH: Jaaaaaanz wichtig!!!!!!!!!!!!!!!!!!!!!!!! Überarbeiten der Formatierung von GameObjects, Klassen, Methoden, und Variablen im Text. Stand jetzt ist des mal so und mal so umgesetzt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.4\linewidth]{scenes-structure}
@@ -85,7 +76,7 @@ Anhand dieser Kenntnisse lassen sich die Steuerungsmöglichkeiten in drei Gruppe
 	\label{fig:scenes-structure}
 \end{figure}
 
-Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Szenen in Unity. Jede Szene hat 11 Hauptobjekte, welchen teilweise wieder Unterobjekte zugeordnet sind. In der folgenden Aufzählung wird jedes dieser elf Hauptobjekte kurz beschrieben. \todo{macht glaube ich mehr Sinn nur die wichtigsten kurz zu beschreiben}
+Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Szenen in Unity. Jede Szene hat elf Hauptobjekte, welche teilweise wieder Unterobjekte zugeordnet sind. In der folgenden Aufzählung wird jedes dieser elf Hauptobjekte kurz beschrieben. \todo{macht glaube ich mehr Sinn nur die wichtigsten kurz zu beschreiben}
 
 \begin{description}
 	\item \textbf{Wall Game}: Das Objekt ist die Wand gegenüber des Spielers. Diese Wand ist die Spielfläche, der die Buttons der Wand als Unterobjekte zugeordnet sind.
@@ -101,7 +92,10 @@ Die \autoref{fig:scenes-structure} zeigt exemplarisch die Objektstruktur der Sze
 	\item \textbf{UIElements}: Diesem Objekt sind die graphischen Elemente für die verschiedenen Einstellungen für die Versuche zugeordnet. Diese Elemente sind nur in der Unity-Übersicht sichtbar. 
 \end{description}
 
-In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. \todo{JH: BaseMono kurz erklären} Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
+In \autoref{fig:ClassDiagram} ist ein Überblick der für dieses Projekt generierten Klassen und der Hierarchie dargestellt. Gut zu sehen ist, dass durch Vererbung der Großteil der Klassen die Unity eigene Klasse MonoBehaviour ist. Nachfolgend werden die wichtigsten Objekte beziehungsweise Strukturen erläutert. 
+
+\subsection{BaseMono}
+Die eigens für den Versuchsaufbau erstellten Klassen, welche wiederum ein MonoBehaviour sind, wurde die Basisklasse {\ttfamily BaseMono} hinzugefügt. Diese Klasse stellt die abstrakten Methoden {\ttfamily OnCalibrationStarted} und {\ttfamily OnCalibrationRoutineDone} bereit. Die Methoden dienen als Event-Handler für die Kalibrierung. Zu Beginn der Kalibrierung wird die Methode OnCalibrationStarted aufgerufen, am Ende OnCalibrationRoutineDone. Mithilfe dieser Methoden können die Kindklassen auf den Kalibriervorgang reagieren und gegebenenfalls bestimmte Routinen ausschalten. Zusätzlich stellt BaseMono die abstrakten Methode {\ttfamily DoAwake}, {\ttfamily DoStart} und {\ttfamily DoDestroy} bereit. Diese Methoden werden von den MonoBehaviour-Funktionen {\ttfamily Awake}, {\ttfamily Start} und {\ttfamily OnDestroy} aufgerufen.
 
 \subsection{UIElements}
 Damit für jede Versuchskombination nicht eine eigene Umgebung erstellt werden muss, erhält jede Umgebung eine Einstellungsmöglichkeit für die verschiedenen Versuchskombinationen. In \autoref{fig:switch-different-options} ist die Einstellungsoberfläche für die Versuchskombinationen dargestellt. Für die Versuche können sowohl die Steuerungskombinationen als auch die Durchmesser der Buttons verändert werden. Zur Fixierung eines Objektes kann entweder der Laser oder das Eye-Tracking verwendet werden. Die Bestätigung kann entweder über den Trigger am Controller oder Blink Detection erfolgen. Mit dem unteren Slider lässt sich der Durchmesser der Buttons in drei Stufen verändern.
@@ -163,8 +157,17 @@ In der Abbildung\autoref{fig:CylinderCollider-5} ist der Spielbutton mit dem Cyl
 
 \subsection{Gaze Tracker}
 \todo{Gaze Tracker}
+Das GameObject \glqq Gaze Tracker\grqq{} ist die Schnittstelle zwischen dem Eyetracker und der \ac{VR}-Umgebung. 
+
+\begin{figure}[!htbp]
+	\centering
+	\missingfigure{Bild nur von GazeVisualizer}
+	\caption[GazeVisualizer]{GazeVisualizer}
+	\label{fig:GazeVisualizer}
+\end{figure}
+
+
 Gaze Visualizer??? --> Wird in Subkapitel Measurement benötigt.
-BaseMono???
 
 \subsection{Player}
 Das GameObject \glqq Player\grqq{} ist ein zentrales Objekt in den Szenen. Das Objekt beschreibt den Benutzer in Unity und ist über die SteamVR-Bibliothek mit SteamVR verbunden. Das Objekt beinhaltet unter anderem die VR-Kamera und Objekte, welche die rechte, beziehungsweise linke Hand, beschreiben. In den Versuchen wird ein Laserpointer und das Betätigen des Abzuges am Controller verwendet. Hierfür wird der rechten Hand die von SteamVR bereitgestellte Komponente {\ttfamily SteamVR\_LaserPointer} hinzugefügt. Mithilfe dieser Komponente wird der rechten Hand der Laserpointer hinzugefügt. Zudem ist es über diese Komponente möglich das Event PointerClick zu abonnieren, welches beim Betätigen des Abzuges ausgelöst wird. 
@@ -217,25 +220,9 @@ public IEnumerator Blink(float duration)
 }
 \end{lstlisting}
 
-\subsection{Game}
-\label{section:game}
-%\begin{figure}[!htbp]
-%	\centering
-%	\includegraphics[width=1\linewidth]{ClassDiagramGame}
-%	\caption[Klassendiagramm Game]{Klassendiagramm Game}
-%	\label{fig:ClassDiagramGame}
-%\end{figure}
-
-Wände haben -1; Buttons die entsprechende Zahl
-Wände können auch getriggert werden --> Verweis auf Player Kapitel wo es um das triggern geht
-
-3DLevel Buttons verschieben
-
-\todo[inline]{Die Zahlen sind nicht zufällig sondern eine zufällige Auswahl von 6 vordefinierten mustern. Die Muster haben alle das gleiche Grundmuster, nur gespiegelt oder versetzt. }
-
 \subsection{Measurement}
 \label{section:measurement}
-Um einen Vergleich zwischen den Steuerungsmöglichkeiten ziehen zu können, werden die Versuche aufgezeichnet. In \autoref{fig:ClassDiagramMeasurement} ist der Ausschnitt der Klassen für die Measurements zu sehen. Zu jeder Messung wird das aktuelle Level, die verwendete Steuerungskombination sowie die Skalierung der Buttons eines Versuchs gespeichert. Am Anfang sowie am Ende der Messung wird jeweils der aktuelle Zeitpunkt gespeichert. Hierdurch ist es möglich die Dauer des Versuchs zu berechnen. Die Zeit wird in der Messung als Zeitstempel in Millisekunden gesichert. In dem Feld action werden die durch den Benutzer getätigten Bestätigungen durch den Abzug beziehungsweise mithilfe von Blinzeln erfasst. Hierbei wird der Zeitstempel, die Nummer des Buttons, sowie ob es der gesuchte Button war, gespeichert. \todo{Mal schauen wo ich das mit der -1 bei ner Wand erkläre. --> geht hier doch ohne probleme. sollte eine wand getroffen werden, wird als Nummer des Buttons -1 eingetragen. } Die Daten werden als String mit Komma getrennt in einer Liste gespeichert. Für Fitts' Gesetz ist bei der Verwendung von Eye-Tracking der Verlauf des Blickes interessant. Aus diesem Grund wird der Blickverlauf mit gemessen. Die Blickdaten werden ebenfalls in einer Liste bestehend aus Strings gespeichert. Da die Blickdaten als 3D-Vektor vorliegen, werden die Koordinaten des durch den Blick fixierten Punktes mit Komma getrennt aufgezeichnet. Alle 100 ms \todo{ist das sicher 100ms? Würde sagen. Der Eyetracker hat 200 Hz. Nur jede 20 Messung speichern wir ab. Müsste daher 100ms ergeben bzw. 10 Messungen pro Sekunde :D ich meine ich hab da iwas von 20 eingetragen gehabt, weis aber nich ob das jetzt heist alle 20ms oder 20 mal pro sek. Das sollte sich mit den erstellten messungen decken} werden die Blickdaten erfasst und gesichert. Als Datengrundlage für die Blickverfolgung dient der Gaze Visualizer vom Gaze Tracker. Für das 3D-Level werden zusätzlich die Positionen und der Buttons aufgezeichnet. Dies wird benötigt, da sich die Position der Buttons im Raum von Versuch zu Versuch unterscheiden. Für die Zuordnung, welcher Button auf welcher Position steht, werden zusätzlich die Nummern der Buttons mit gespeichert.
+Um einen Vergleich zwischen den Steuerungsmöglichkeiten ziehen zu können, werden die Versuche aufgezeichnet. In \autoref{fig:ClassDiagramMeasurement} ist der Ausschnitt der Klassen für die Measurements zu sehen. Zu jeder Messung wird das aktuelle Level, die verwendete Steuerungskombination sowie die Skalierung der Buttons eines Versuchs gespeichert. Am Anfang sowie am Ende der Messung wird jeweils der aktuelle Zeitpunkt gespeichert. Hierdurch ist es möglich die Dauer des Versuchs zu berechnen. Die Zeit wird in der Messung als Zeitstempel in Millisekunden gesichert. In dem Feld action werden die durch den Benutzer getätigten Bestätigungen durch den Abzug beziehungsweise mithilfe von Blinzeln erfasst. Hierbei wird der Zeitstempel, die Nummer des Buttons, sowie ob es der gesuchte Button war, gespeichert. Das Betätigen der Spielwand \todo{JH: Nur die Spielwand oder auch rechts und links?} wird wie das Betätigen eines Buttons behandelt und aufgezeichnet. Als Nummer erhält die Wand eine -1. Hierdurch wird in den Messungen hervorgehoben, dass das getroffene Objekt eine Wand war. \todo{JH: Passt das so rein? } Die Daten werden als String mit Komma getrennt in einer Liste gespeichert. Für Fitts' Gesetz ist bei der Verwendung von Eye-Tracking der Verlauf des Blickes interessant. Aus diesem Grund wird der Blickverlauf mit gemessen. Die Blickdaten werden ebenfalls in einer Liste bestehend aus Strings gespeichert. Da die Blickdaten als 3D-Vektor vorliegen, werden die Koordinaten des durch den Blick fixierten Punktes mit Komma getrennt aufgezeichnet. Alle 100 ms \todo[color=red]{CM: ist das sicher 100ms? ich meine ich hab da iwas von 20 eingetragen gehabt, weis aber nich ob das jetzt heist alle 20ms oder 20 mal pro sek. Das sollte sich mit den erstellten messungen decken JH: Würde sagen. Der Eyetracker hat 200 Hz. Nur jede 20 Messung speichern wir ab. Müsste daher 100ms ergeben bzw. 10 Messungen pro Sekunde :D} werden die Blickdaten erfasst und gesichert. Als Datengrundlage für die Blickverfolgung dient der Gaze Visualizer vom Gaze Tracker. Für das 3D-Level werden zusätzlich die Positionen der Buttons aufgezeichnet. Dies wird benötigt, da sich die Position der Buttons im Raum von Versuch zu Versuch unterscheiden. Für die Zuordnung, welcher Button auf welcher Position steht, werden zusätzlich die Nummern der Buttons mit gespeichert.
 
 \begin{figure}[!htbp]
 	\centering
@@ -245,3 +232,57 @@ Um einen Vergleich zwischen den Steuerungsmöglichkeiten ziehen zu können, werd
 \end{figure}
 
 Jede Messung wird am Ende eines Versuchs in einer JSON-Datei abgespeichert. Die Basisklasse Measurement ist mit dem Attribut Serializable gekennzeichnet. Dies ermöglicht das Serialisieren des kompletten Measurement-Objekts. Damit alle Messdaten mit dem Objekt serialisiert werden müssen die Felder als öffentlich gekennzeichnet sein. Das Serialisieren in ein JSON-String wird mithilfe von Unity bereitgestellten Klasse JsonUtility durchgeführt. Für eine Gliederung der Messungen werden die Messungen in unterschiedlichen Ordnern nach Level und verwendeter Skalierung getrennt gespeichert. Der Dateiname ist zudem der Zeitstempel zum Zeitpunkt des Speichervorganges der Messung.
+
+\subsection{Game}
+\label{section:game}
+Das GameObject \glqq Game\grqq{} beinhaltet die gesamte Spiellogik der Versuchsumgebungen. Das GameObject ist in der \ac{VR}-Umgebung für den Benutzer nicht sichtbar. Dem GameObject ist die Klasse {\ttfamily BaseGame} als Komponente zugeordnet, worin die Spiellogik implementiert ist. Sie stellt die öffentliche Methode {\ttfamily startGame} bereit, welche bei dem Betätigen des GO-Buttons aufgerufen wird. Beim Starten eines Spiels wird ein neues Measurement angelegt, die zu suchenden fünf Zahlen ausgewählt sowie die Farbe der Spielbuttons zurück auf weiß gesetzt. Zudem erhält der Nutzer auf der Anzeige die erste Aufforderung, welche Zahl ausgewählt werden soll. Als letztes wird beim Starten eines Spiels die zeitliche Messung gestartet. Über die öffentliche Methode {\ttfamily objectClicked} teilen die Spielbuttons sowie die Spielwand dem Spiel mit, dass sie betätigt wurden. Die Methode objectClicked ist in \autoref{lstlisting:objectClicked} dargestellt. Damit das Spiel bewerten kann, ob der richtige Button betätigt wurde, wird die Nummer mit übergeben. In der Liste mit den zu suchenden Zahlen wird überprüft, ob der Betätigte Button der gesuchte war oder nicht. Wenn ja, dann wird die Buttonnummer als erfolgreich in den Messungen mit aufgenommen. Zudem wird die Zahl auf der zu suchenden Zahlen entfernt und der Anzeigetext aktualisiert. Wenn der betätigte Button nicht der gesuchte Button ist, dann wird dies entsprechend in den Messungen dokumentiert. Da es vorkommen kann, dass der Benutzer vor dem Starten des Spiels einen Spielbutton betätigt, muss überprüft werden, dass ein Measurement-Objekt bereits erstellt wurde. Da die Liste mit den gesuchten Zahlen vor dem Spielstart leer ist, reicht die Überprüfung im Fehlerfall. Am Ende der Methode teilt das Spiel dem betätigten Objekt mit, ob es das gesuchte Objekt war oder nicht. Anhand des Rückgabewertes kann der Button seine Farbe ändern. Wenn die letzte Zahl erfolgreich ausgewählt wurde wird das Spiel beendet. Die Messung wird dabei gestoppt und gespeichert.\\
+
+
+\begin{lstlisting}[caption=Methode objectClicked,label=lstlisting:objectClicked,float=!htbp]
+public bool objectClicked(int number)
+{
+	bool retVal;
+	
+	if (this.searchValues.IndexOf(number) == 0)
+	{
+		this.measurement.addMeasurement(number, true);
+		this.searchValues.Remove(number);
+		this.setInstruction();
+		retVal = true;
+	}
+	else
+	{
+		if(this.measurement != null)
+		{
+			this.measurement.addMeasurement(number, false);
+		}
+	
+		retVal = false;
+	}
+	
+	return retVal;
+}
+\end{lstlisting}
+
+Die Komponente BaseGame abonniert die Blickdaten vom GazeController, um diese in die Messungen mit aufzunehmen. Zudem wird das ControlState Property changed Event abonniert, um bei Änderungen das laufende Spiel abzubrechen. Zudem wird dem Benutzer mitgeteilt, dass das Spiel abgebrochen wurde. Zusätzlich beinhaltet BaseGame die abstrakten Methoden {\ttfamily createMeasurement} und {\ttfamily getSearchValues}, welche von den Kindkomponenten {\ttfamily GameFittsLaw} und {\ttfamily Game3DLevel} implementiert wird. Mit der Methode createMeasurement werden die Versuchsumgebung-spezifischen Measurement-Objekte erzeugt. In der Methode getSearchValues werden die zu suchenden Zahlen ausgewählt. Während für das 3DLevel die zu suchenden Zahlen zufällig ausgewählt werden, sind diese für die FittsLaw-Umgebungen pseudozufällig. Hier wird zufällig ein vordefiniertes Muster ausgewählt. Die Muster haben alle das gleiche Grundmuster, nur gespiegelt oder versetzt. In \autoref{table:testcases} sind die Muster dargestellt. Die Reihenfolge der Zahlen entspricht der Suchreihenfolge. Das zweite Muster ist vertikal gespiegelt zum Muster ersten. 
+
+\begin{table}[!htbp]
+	\centering
+	\caption{vordefinierte Muster}
+	\label{table:testcases}
+	\begin{tabular}{|c ||c c c c c|} 
+		\hline
+		1. & 2 & 1 & 16 & 12 & 10 \\ 
+		\hline
+		2. & 3 & 4 & 13 & 9 & 11 \\
+		\hline
+		3. & 7 & 15 & 13 & 4 & 3 \\
+		\hline
+		4. & 8 & 16 & 1 & 4 & 13 \\
+		\hline
+		5. & 5 & 6 & 14 & 8 & 13 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Für das 3DLevel müssen die Buttons zufällig in der Tiefe variiert werden. Hierfür werden beim Initialisieren eines Spiels alle Buttons positioniert. Button 1 und 16 haben eine feste Position. Button 1 befindet sich fünf Einheiten vor der Spielwand, Button 16 direkt auf der Spielwand. Die restlichen Button werden zufällig zwischen null und fünf Einheiten positioniert.
