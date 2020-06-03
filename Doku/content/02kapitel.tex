@@ -133,7 +133,7 @@ Die Funktionsweise des Eye-Trackings in der realen Welt ist nicht komplett auf d
 Im Gegensatz zu einem Eyetracker mit Umgebungskamera müssen die erfassten 2D-Blickdaten in 3D-Blickdaten für \ac{VR}-Umgebung konvertiert werden. Bei einem Eyetracker bewegt sich die Umgebungskamera mit der Bewegung des Kopfes mit. Das bedeutet, dass die Umgebungskamera immer in der selben Position in Relation zu den Augen steht. Die 2D-Blickdaten können daher in das aktuelle Umgebungsbild hinzugefügt werden. In \ac{VR} muss ein 3D-Blickvektor berechnet werden. Dieser setzt sich aus den 2D-Blickdaten und der Position des Kopfes zusammen. \cite{Clay_Koenig_Koenig_2019}
 
 \section{Unity}
-
+Im Rahmen dieser Arbeit wird die Laufzeit- und Entwicklungsumgebung Unity verwendet. weit verbreitet, Spiele werden damit erstellt, 
 
 Die in dieser Arbeit verwendete Laufzeit- und Entwicklungsumgebung ist Unity. 
 Standardmäßig entspricht 1 Einheit 1 Meter (siehe \cite{BrentAllard.2017} \& \cite{AVividLight.2010}) --> Aussage ist plausibel, da standardmäßig in den Projekteinstellungen bei Physics die Gravitation auf -9,81 gesetzt ist.
@@ -149,9 +149,18 @@ Verweis auf Cities Skylines: \url{https://unity3d.com/showcase/case-stories/citi
 prefab??
 
 \subsection{Plugins}
-Hier eine Einführung in Plugins in Unity geben. Danach Überleitung zu den verwendeten Plugins steamVR und hmd\_eyes.
+Hier eine Einführung in Plugins in Unity geben. Danach Überleitung zu den verwendeten Plugins steamVR und hmd\_eyes. kostenlose und kostenpflichtige Plugins
 
-\subsubsection{steamVR}
+\subsubsection{SteamVR Unity Plugin}
+Das SteamVR Unity Plugin ist ein Opensource-Projekt, welches auf GitHub zur Verfügung steht. Das Plugin wird von \citeauthor{ValveSW.2020} entwickelt. \cite{ValveSW.2020} Das Plugin verbindet SteamVR mit Unity und übernimmt nach \citeauthor{ValveSW.2019} die drei folgenden Hauptaufgaben für Entwickler: \cite{ValveSW.2019} 
+
+\begin{enumerate}
+	\item Laden von 3D-Modellen für die \ac{VR}-Controller
+	\item Verarbeiten der Eingaben der Controller
+	\item Schätzen wie die Hand bei der Verwendung der Controller aussieht
+\end{enumerate}
+
+VR-Kamera, einfache Implementierung eines Laserpointers zur Verfügung
 
 \subsubsection{hmd\_eyes}
 SubscriptionController Low Level Access --> siehe Doku
