@@ -27,6 +27,11 @@ def get_mean_time_data(all_dicts):
 def create_bar_graph(data):
     new_data_big = [[], [], [], [], []]
     new_data_small = [[], [], [], [], []]
+    font = {'family': 'DejaVu Sans',
+            'color': 'black',
+            'weight': 'normal',
+            'size': 7,
+            }
     for i in range(4):
         new_data_big[0].append(data[0][i][0]/1000)
         new_data_big[1].append(data[0][i][1]/1000)
@@ -43,8 +48,22 @@ def create_bar_graph(data):
     df_big = pd.DataFrame({'Prob1': new_data_big[0], 'Prob2': new_data_big[1], 'Prob3': new_data_big[2], 'Prob4': new_data_big[3],
                             'Mean': new_data_big[4]}, index=data_labels)
     plot_big = df_big.plot.barh(fontsize=7.5)
+    offset_low = - 0.245
+    offset_high = 0.165
+    d = (offset_high - offset_low) / 4
+    for index, value in enumerate(new_data_big[0]):
+        plot_big.text(value, index + offset_low, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_big[1]):
+        plot_big.text(value, index + offset_low + d * 1, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_big[2]):
+        plot_big.text(value, index + offset_low + d * 2, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_big[3]):
+        plot_big.text(value, index + offset_low + d * 3, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_big[4]):
+        plot_big.text(value, index + offset_high, str(round(value, 3)), fontdict=font)
     plot_big.set_xlabel('Time')
     plot_big.set_ylabel('Control Method')
+    plot_big.set_title('Total Time Needed to Complete Test Run with Big Buttons')
     plot_big.figure.savefig("plot_big.png", format='png', dpi=200)
 
     df_small = pd.DataFrame(
@@ -54,13 +73,32 @@ def create_bar_graph(data):
          'Prob4': new_data_small[3],
          'Mean': new_data_small[4]}, index=data_labels)
     plot_small = df_small.plot.barh(fontsize=7.5)
+    offset_low = - 0.245
+    offset_high = 0.165
+    d = (offset_high - offset_low) / 4
+    for index, value in enumerate(new_data_small[0]):
+        plot_small.text(value, index + offset_low, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_small[1]):
+        plot_small.text(value, index + offset_low + d * 1, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_small[2]):
+        plot_small.text(value, index + offset_low + d * 2, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_small[3]):
+        plot_small.text(value, index + offset_low + d * 3, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_small[4]):
+        plot_small.text(value, index + offset_high, str(round(value, 3)), fontdict=font)
     plot_small.set_xlabel('Time')
     plot_small.set_ylabel('Control Method')
+    plot_small.set_title('Total Time Needed to Complete Test Run with Small Buttons')
     plot_small.figure.savefig("plot_small.png", format='png', dpi=200)
 
 
 def create_bar_graph_increase_time(data):
     new_data_increase = [[], [], [], [], []]
+    font = {'family': 'DejaVu Sans',
+            'color': 'black',
+            'weight': 'normal',
+            'size': 7,
+            }
     for i in range(4):
         new_data_increase[0].append(data[2][i][0] / data[0][i][0])
         new_data_increase[1].append(data[2][i][1] / data[0][i][0])
@@ -77,6 +115,19 @@ def create_bar_graph_increase_time(data):
          'Prob4': new_data_increase[3],
          'Mean': new_data_increase[4]}, index=data_labels)
     plot_big = df_big.plot.barh(fontsize=7.5)
+    offset_low = - 0.245
+    offset_high = 0.165
+    d = (offset_high - offset_low) / 4
+    for index, value in enumerate(new_data_increase[0]):
+        plot_big.text(value, index + offset_low, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_increase[1]):
+        plot_big.text(value, index + offset_low + d * 1, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_increase[2]):
+        plot_big.text(value, index + offset_low + d * 2, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_increase[3]):
+        plot_big.text(value, index + offset_low + d * 3, str(round(value, 3)), fontdict=font)
+    for index, value in enumerate(new_data_increase[4]):
+        plot_big.text(value, index + offset_high, str(round(value, 3)), fontdict=font)
     plot_big.set_title('Relative Change in Time with Buttons with Half the Diameter')
     plot_big.set_xlabel('Time Increase')
     plot_big.set_ylabel('Control Method')
