@@ -11,5 +11,7 @@ with open('data.csv', 'rt', encoding="utf-16") as f:
             probs.append(get_survey_for_prob(row))
         i += 1
 
-for i in range(4):
-    print(probs[i])
+print(probs[3])
+print(probs[0])
+print(probs[1])
+print(probs[2])
