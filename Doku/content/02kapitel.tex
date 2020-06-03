@@ -133,25 +133,17 @@ Die Funktionsweise des Eye-Trackings in der realen Welt ist nicht komplett auf d
 Im Gegensatz zu einem Eyetracker mit Umgebungskamera müssen die erfassten 2D-Blickdaten in 3D-Blickdaten für \ac{VR}-Umgebung konvertiert werden. Bei einem Eyetracker bewegt sich die Umgebungskamera mit der Bewegung des Kopfes mit. Das bedeutet, dass die Umgebungskamera immer in der selben Position in Relation zu den Augen steht. Die 2D-Blickdaten können daher in das aktuelle Umgebungsbild hinzugefügt werden. In \ac{VR} muss ein 3D-Blickvektor berechnet werden. Dieser setzt sich aus den 2D-Blickdaten und der Position des Kopfes zusammen. \cite{Clay_Koenig_Koenig_2019}
 
 \section{Unity}
-Im Rahmen dieser Arbeit wird die Laufzeit- und Entwicklungsumgebung Unity verwendet. weit verbreitet, Spiele werden damit erstellt, 
+Im Rahmen dieser Arbeit wird die Laufzeit- \cite{Schwichtenberg.2020} und Echtzeit-3D-Entwicklungsumgebung \cite{Unity.2020} Unity verwendet. Sie wird von \citeauthor{Unity-Facts.2020} entwickelt und wird unter anderem in den Bereichen Spiele; Auto, Transport und Fertigung; Film, Animation und Cinematics sowie Architektur, Ingenieur- und Bauwesen verwendet. \cite{Unity.2020} In der Spielebranche ist Unity weit verbreitet. Von den 1000 weltweit meist verkauften Mobilspiele sind 54\% mit Unity erstellt. Zudem basieren 50\% aller Spiele für PC, Konsole und Smartphones auf Unity. \cite{Unity-Facts.2020} So wurde zum Beispiel die Städteaufbausimulation Cities Skylines mithilfe von Unity entwickelt \cite{Cities.2020}.
 
-Die in dieser Arbeit verwendete Laufzeit- und Entwicklungsumgebung ist Unity. 
-Standardmäßig entspricht 1 Einheit 1 Meter (siehe \cite{BrentAllard.2017} \& \cite{AVividLight.2010}) --> Aussage ist plausibel, da standardmäßig in den Projekteinstellungen bei Physics die Gravitation auf -9,81 gesetzt ist.
+In Unity ist jedes Objekt ein GameObject. Erst mithilfe von Eigenschaften wird aus einem GameObject ein Baum, Licht oder spezieller Effekt. \cite{GameObjects.2020} Eigenschaften werden mithilfe von Komponenten dem GameObject hinzugefügt \cite{GameObjects.2020}, welche die eigentliche Funktionalität implementieren \cite{GameObject.2020}. Komponenten beschreiben daher das eigentliche Verhalten eines GameObjects. Eigene Komponenten werden mit C\#-Skripten erstellt. Für die Interaktion mit Unity muss das Skript von der Klasse MonoBehaviour abgeleitet sein. \cite{CreateScripts.2020} Jedes GameObject beinhaltet die Komponente Transform, welche die Position, die Drehung sowie Skalierung in der Spielwelt beziehunsgweise in der Szene darstellt. Über die Transform-Komponente wird das Parenting ermöglicht. Das heißt, dass ein Objekt mehrere Kind-Objekte beinhalten kann. Die Position der Kinder richtet sich dabei nach der Position des Eltern Objekts. \cite{Components.2020} Über das Prefab-System von Unity lassen sich GameObjects inklusive ihrer Komponenten und Kind-GameObjects als Asset speichern und in anderen Szenen wiederverwenden \cite{Prefabs.2020}. Assets sind eine Darstellung eines beliebigen Elements, welches im Projekt verwendeten werden kann \cite{Assets.2020}. Mithilfe eines Colliders lassen sich physikalische Kollisionen implementieren. Ein Collider beschreibt die Form eines Objektes und ist unsichtbar. \cite{Colliders.2020} \todo{Noch Canvas erklären??}
 
-Objekt Lebenszyklus; Start, Awake usw.
+Ein Unity-Skript führt eine Reihe von Ereignisfunktionen in einer vorgegebenen Reihenfolge aus. Nachfolgend werden die für diese Arbeit relevanten Ereignisfunktionen erläutert werden. Beim Laden einer Szene wird die Funktion Awake ausgeführt. Sie wird vor allen Startfunktionen und direkt nach der Instanziierung eines Prefabs aufgerufen. Vor der ersten Bildaktualisierung wird die Funktion Start ausgeführt. Beim Schließen einer Szene oder beim expliziten Aufruf zerstören eines Objekte wird die Funktion Destroy aufgerufen. Neben diesen in dieser Arbeit verwendeten Ereignisfunktionen gibt es noch weiter. Darunter fällt zum Beispiel die Update Funktion, welche bei jeder Bildaktualisierung ausgeführt wird. \cite{Order.2020} Für weitere Informationen bezüglich des Lebenszyklus und der Ausführungsreihenfolge eines Objektes sei an dieser Stelle auf die Dokumentation von Unity verwiesen \cite{Order.2020}. Um Bildaktualisierungen nicht zu lange durch zeitaufwendige Funktionen auzubremsen, existiert in Unity die Möglichkeit Coroutines zu verwenden. Eine Coroutine ist eine Funktion, welche am Ende einer Bildaktualisierung sich selbst unterbricht und bei der nächsten Bildaktualisierung fortfährt, wo sie zuletzt unterbrochen wurde. \cite{Coroutine.2020}
 
-Screenspace - overlay; screenspace - camera, worldspace
+In Unity sind Entfernungen und Positionen in Einheiten angegeben. Nach den Forenbeiträgen von \citeauthor{BrentAllard.2017} und \citeauthor{AVividLight.2010} entspricht eine Unity Einheit standardmäßig ein Meter \cite{BrentAllard.2017, AVividLight.2010}. Die Aussagen sind plausibel, da standardmäßig in den Projekteinstellungen bei Physics die Gravitation auf -9,81 gesetzt ist, was wiederum der Erdanziehungskraft entspricht. 
 
-GameObject, Collider, Component (Komponente / Skript), Canvas, Coroutine, usw.
+In Unity existieren viele Plugins beziehungsweise Assets. Viele dieser Assets sind kostenlos, andere wiederum sind kostenpflichtig. In den nachfolgenden Unterabschnitten werden zwei kostenlose Plugins vorgestellt, welche im Rahmen dieser Arbeit verwendet werden.
 
-Verweis auf Cities Skylines: \url{https://unity3d.com/showcase/case-stories/cities-skylines}
-
-prefab??
-
-\subsection{Plugins}
-Hier eine Einführung in Plugins in Unity geben. Danach Überleitung zu den verwendeten Plugins steamVR und hmd\_eyes. kostenlose und kostenpflichtige Plugins
-
-\subsubsection{SteamVR Unity Plugin}
+\subsection{SteamVR Unity Plugin}
 Das SteamVR Unity Plugin ist ein Opensource-Projekt, welches auf GitHub zur Verfügung steht. Das Plugin wird von \citeauthor{ValveSW.2020} entwickelt. \cite{ValveSW.2020} Das Plugin verbindet SteamVR mit Unity und übernimmt nach \citeauthor{ValveSW.2019} die drei folgenden Hauptaufgaben für Entwickler: \cite{ValveSW.2019} 
 
 \begin{enumerate}
@@ -160,9 +152,10 @@ Das SteamVR Unity Plugin ist ein Opensource-Projekt, welches auf GitHub zur Verf
 	\item Schätzen wie die Hand bei der Verwendung der Controller aussieht
 \end{enumerate}
 
-VR-Kamera, einfache Implementierung eines Laserpointers zur Verfügung
+Das Plugin stellt eine \ac{VR}-Kamera zur Verfügung, über die das Eintauchen mit \ac{VR} in die Umgebungen ermöglicht wird. Zudem stellt das Plugin verschiedene nützliche Implementierungen zur Verfügung, welche einfach in die eigene Umgebungen eingebunden werden können. Hierzu gehört als Beispiel der in dieser Arbeit verwendete Laserpointer. 
 
-\subsubsection{hmd\_eyes}
+\subsection{hmd\_eyes}
+\cite{hmd-eyes-doc.2020} und \cite{hmd-eyes.2020}
 SubscriptionController Low Level Access --> siehe Doku
 
 
