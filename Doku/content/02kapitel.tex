@@ -165,19 +165,19 @@ Der {\ttfamily GazeVisualizer} stellt die Visualisierung der aktuellen Blickposi
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics{GazeVisualizer}
+	\includegraphics[width=0.60\linewidth]{GazeVisualizer}
 	\caption[GazeVisualizer Marker]{GazeVisualizer Marker}
 	\label{fig:GazeVisualizer}
 \end{figure}
 
-Der {\ttfamily CalibrationController} unterstützt bei der Kalibrierung des Eye-Trackings. In \autoref{fig:Calibration-targets} ist die Anordnung der Zielpunkte während des Kalibriervorgangs in \ac{VR} dargestellt. \todo{JH: Weiter schreiben wenn Bild mit Targets da ist}
+Der {\ttfamily CalibrationController} unterstützt bei der Kalibrierung des Eye-Trackings. In \autoref{fig:Calibration-targets} ist die Anordnung der Zielpunkte während des Kalibriervorgangs in \ac{VR} dargestellt. Die Zielpunkte haben die Form eines Auges. Während Pupil Labs bei der Kalibrierung am Bildschirm die Zielpunkte auf einer Ebene durchführt (vgl. \autoref{fig:CalibrationMarker-2D}), wird die Kalibrierung in \ac{VR} bei dem Plugin in drei Ebenen durchgeführt. Pro Ebene sind sechs Zielpunkte angebracht, einer in der Mitte und die restlichen fünf gleichmäßig als Fünfeck verteilt. Die Zielpunkte der hinteren Ebenen befinden sich in einer Linie zum Zielpunkt der vorderen Ebene.
+
 \begin{figure}[!htbp]
 	\centering
-	\missingfigure{JH: Kalibrierungstargets in VR}
+	\includegraphics[width=0.60\linewidth]{tracking_calibration_dots}
 	\caption[Anordnung der Zielpunkte während des Kalibriervorgangs in VR]{Anordnung der Zielpunkte während des Kalibriervorgangs in \ac{VR}}
 	\label{fig:Calibration-targets}
 \end{figure}
-
 
 \section{Fitts' Gesetz}
 \label{section:FittsLaw}
