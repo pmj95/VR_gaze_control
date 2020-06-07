@@ -181,12 +181,12 @@ Der {\ttfamily CalibrationController} unterstützt bei der Kalibrierung des Eye-
 \section{Fitts' Gesetz}
 \label{section:FittsLaw}
 Fitts' Gesetz (im englischen Fitts's Law) ist eine vom US-Amerikanischen Psychologe Paul Morris Fitts im Jahre 1954 veröffentlichte Metrik, welche die Schwierigkeit des Bewegens eines Objektes an eine bestimmte Stelle numerisch beschreibt. \citeauthor{Fitts.1992} hat in seiner Veröffentlichung ein Experiment beschrieben, in dem Probanden einen Gegenstand entlang einer Linie in einen Zielbereich bewegen sollen. Numerische Parameter zur Bestimmung des \glqq Index of Difficulty\grqq{} (Index der Schwierigkeit) sind zum einen die Distanz D zum Zielbereich und die Breite des Zielbereiches W. \cite{Fitts.1992}
-\begin{equation}
+\begin{equation}\formelentry{Index of Difficulty Berechnung}
 ID = log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
 Eine Erhöhung der Distanz hat eine Erhöhung der Schwierigkeit zur Folge, wohingegen eine Erhöhung der Breite das Senken des Schwierigkeitsindex ID zur Folge hat. Ein niedriger Wert für ID bedeutet, dass das Objekt leicht zu treffen ist, ein hoher Wert bedeutet, dass das Objekt schwer zu treffen ist \cite{Fitts.1992}. 
 Basierend auf dieser Berechnung ist es möglich, die Bewegungsdauer \ac{MT} zu berechnen. Die Berechnung von \ac{MT} ist nach \citeauthor{Graham.1996} mit folgender Formel möglich \cite{Graham.1996}:
-\begin{equation}
+\begin{equation}\formelentry{Movement Time Berechnung}
 MT = a + b * ID = a + b * log_2 \left ( \frac{2D}{W} \right )
 \end{equation}
 Die Konstanten a und b sind Zeitkonstanten, die von dem verwendeten Eingabegerät abhängig sind. Dabei beschreibt a die Zeit, bis eine Bewegung beginnt und b die Beschleunigungskonstante. Daher erhöht sich die Zeit, bis das Objekt ausgewählt wird, sobald sich die Distanz erhöht. \cite{Graham.1996}
