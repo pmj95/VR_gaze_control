@@ -7,11 +7,11 @@ from accuracy_analysis import *
 from actions_analyzer import get_acts_per_sec
 from time_between_buttons import calc_time_between
 
-andre_dicts = get_dicts("./Andre")
-clemens_dicts = get_dicts("./clemens")
-joern_dicts = get_dicts("./joern")
-juli_dicts = get_dicts("./juli")
-all_dicts = [andre_dicts, clemens_dicts, joern_dicts, juli_dicts]
+proband1 = get_dicts("./proband1")
+proband2 = get_dicts("./proband2")
+proband3 = get_dicts("./proband3")
+proband4 = get_dicts("./proband4")
+all_dicts = [proband1, proband2, proband3, proband4]
 
 x = get_mean_time_data(all_dicts)
 y = get_accuracy(all_dicts)
